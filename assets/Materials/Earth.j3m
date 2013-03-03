@@ -1,0 +1,20 @@
+Material Earth : Common/MatDefs/Light/Lighting.j3md {
+   MaterialParameters {
+        UseMaterialColors : false
+        Shininess : 1.5
+        Minnaert : false
+        WardIso : false
+        LATC : false
+        HighQuality : false
+        VTangent : false
+        SeparateTexCoord : false
+        VertexLighting : true
+        PackedNormalParallax : false
+        ParallaxHeight : 0.0
+        SteepParallax : false
+        DiffuseMap : Flip Textures/earth.jpg
+        UseAlpha : false
+     }
+    AdditionalRenderState {
+    }
+}

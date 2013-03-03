@@ -1,0 +1,8 @@
+Material EasyMaterial : Common/MatDefs/Light/Lighting.j3md {
+     MaterialParameters {
+         Diffuse : 0.0 1.0 0.0 1.0
+        UseMaterialColors : true
+     }
+    AdditionalRenderState {
+    }
+}
