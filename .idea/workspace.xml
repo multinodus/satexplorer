@@ -14,42 +14,10 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add sprites engine">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Annotation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/AnnotationCacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEMSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataInterpreter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Feature.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FileDataSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FileFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapDataHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapDataset.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapFileFormatter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/GoogleProjection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/HGTDataInterpreter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/HGTTileDeliverer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/HTTPCommunicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/POI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Point.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Projectable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Projection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/ProjectionFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/SimpleProjection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/Tile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TileDeliverer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TiledData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/TrackPoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Walkroute.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteCacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkroutesHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Way.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebDataSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebXMLSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/XMLDataHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/XMLDataInterpreter.java" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add osm viewer">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/JFreeChartExporter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGLoader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SatteliteExplorer.iws" />
@@ -65,7 +33,7 @@
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
     <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362348771356" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362337561894" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362349769898" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362354174213" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +48,36 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/transformations/PredictorOfObservations.java" line="166" class="satteliteExplorer.scheduler.transformations.PredictorOfObservations" package="satteliteExplorer.scheduler.transformations">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/role/RoleDialogController.java" line="100" class="satteliteExplorer.ui.controls.role.RoleDialogController" package="satteliteExplorer.ui.controls.role">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -115,36 +112,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/transformations/PredictorOfObservations.java" line="166" class="satteliteExplorer.scheduler.transformations.PredictorOfObservations" package="satteliteExplorer.scheduler.transformations">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/role/RoleDialogController.java" line="100" class="satteliteExplorer.ui.controls.role.RoleDialogController" package="satteliteExplorer.ui.controls.role">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -167,9 +135,7 @@
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="7" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,17 +144,15 @@
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/POI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="44" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebDataSource.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WebDataSource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="2" selection-start="377" selection-end="377" vertical-scroll-proportion="0.4527845">
+            <state line="14" column="18" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,31 +160,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FreemapFileFormatter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapFileFormatter.java">
+      <file leaf-file-name="SVGLoader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tile.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/Tile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TiledData.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TiledData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
+            <state line="69" column="50" selection-start="2315" selection-end="2315" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JFreeChartExporter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/JFreeChartExporter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="3" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.5536398">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SVGTextureKey.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="33" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -229,9 +195,7 @@
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteCacheManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -249,9 +213,7 @@
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkroutesHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="7" column="34" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -274,9 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/atlas/SimpleTextureAtlas.java" />
-        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/TestDynamicSprites.java" />
-        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TileDeliverer.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/AnnotationCacheManager.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataSource.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FileFormatter.java" />
@@ -290,6 +249,9 @@
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkroutesHandler.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/POI.java" />
+        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGLoader.java" />
+        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java" />
+        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/JFreeChartExporter.java" />
       </list>
     </option>
   </component>
@@ -332,7 +294,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -439,11 +400,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="osm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jdem" />
+              <option name="myItemId" value="svg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,57 +414,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="osm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datasource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="osm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -587,6 +498,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -605,9 +517,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -802,7 +714,11 @@
       <created>1362348991516</created>
       <updated>1362348991516</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add osm viewer">
+      <created>1362350893606</created>
+      <updated>1362350893606</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -832,18 +748,17 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26537785" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39718804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19156414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26713532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22862129" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26958525" sideWeight="0.80843586" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26958525" sideWeight="0.7328647" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2759227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -852,6 +767,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26537785" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -894,7 +810,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add sprites engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add osm viewer" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -909,6 +825,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Raw version" />
     <MESSAGE value="Add sprites engine" />
+    <MESSAGE value="Add osm viewer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -918,34 +835,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/TestDynamicSprites.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="45" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#999#1007#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TileDeliverer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/AnnotationCacheManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
@@ -988,18 +877,14 @@
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TiledData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteCacheManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,9 +898,7 @@
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkroutesHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="34" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,24 +912,45 @@
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="7" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/POI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="44" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebDataSource.java">
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="377" selection-end="377" vertical-scroll-proportion="0.4527845">
+        <state line="10" column="33" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="50" selection-start="2315" selection-end="2315" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/JFreeChartExporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="3" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.5536398">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
