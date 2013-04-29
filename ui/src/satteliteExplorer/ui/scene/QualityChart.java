@@ -17,8 +17,9 @@ import satteliteExplorer.scheduler.util.Pair;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.List;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,7 +30,7 @@ import java.util.*;
  */
 public class QualityChart extends JFrame {
 
-  public QualityChart(){
+  public QualityChart() {
     DefaultXYZDataset dataset = createDataset();
     JFreeChart chart = createChart(dataset);
 
@@ -38,7 +39,7 @@ public class QualityChart extends JFrame {
     setContentPane(chartPanel);
   }
 
-  private DefaultXYZDataset createDataset(){
+  private DefaultXYZDataset createDataset() {
     DefaultXYZDataset dataset = new DefaultXYZDataset();
 
     Map<satteliteExplorer.db.entities.Task, Pair<SatModel, java.util.List<PredictorDataElement>>> schedule =
@@ -61,14 +62,14 @@ public class QualityChart extends JFrame {
       data[1][i] = task.getRegion().getLongitude();
 
       boolean explored = false;
-      for (PredictorDataElement element : p.s){
-        if (element.angle<element.visibleAngle){
+      for (PredictorDataElement element : p.s) {
+        if (element.angle < element.visibleAngle) {
           data[2][i] = 1;
           explored = true;
           break;
         }
       }
-      if (!explored){
+      if (!explored) {
         data[2][i] = 0;
       }
       dataset.addSeries(i, data);
@@ -78,7 +79,7 @@ public class QualityChart extends JFrame {
     return dataset;
   }
 
-  private XYPlot createPlot(DefaultXYZDataset dataset){
+  private XYPlot createPlot(DefaultXYZDataset dataset) {
     NumberAxis xAxis = new NumberAxis("Intensity");
     xAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
     xAxis.setLowerMargin(0.0);
@@ -100,7 +101,7 @@ public class QualityChart extends JFrame {
     return plot;
   }
 
-  private JFreeChart createChart(DefaultXYZDataset dataset){
+  private JFreeChart createChart(DefaultXYZDataset dataset) {
     XYPlot plot = createPlot(dataset);
 
     JFreeChart chart = new JFreeChart("Surface Plot", plot);

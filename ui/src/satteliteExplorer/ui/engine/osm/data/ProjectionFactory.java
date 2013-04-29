@@ -6,6 +6,6 @@ package satteliteExplorer.ui.engine.osm.data;
 // exist independently of proj4.
 
 public interface ProjectionFactory {
-	public Projection generate(String id);
+  public Projection generate(String id);
 
 }

@@ -2,148 +2,120 @@ package satteliteExplorer.ui.engine.sprites.atlas;
 
 import java.awt.image.BufferedImage;
 
-public class AtlasSprite implements Comparable<AtlasSprite>, Cloneable
-{
-   private TextureAtlas  atlas;
-   private int           atlasStartX;
-   private int           atlasStartY;
-   private BufferedImage image;
-   private String        id;              //to prevent creating the same atlasSprite from image, if user is nab.
-   
-   private float atlasStartU;
-   private float atlasStartV;
-   private float atlasEndU;
-   private float atlasEndV;
+public class AtlasSprite implements Comparable<AtlasSprite>, Cloneable {
+  private TextureAtlas atlas;
+  private int atlasStartX;
+  private int atlasStartY;
+  private BufferedImage image;
+  private String id;              //to prevent creating the same atlasSprite from image, if user is nab.
 
-   public AtlasSprite(String id, BufferedImage image)
-   {
-      this.image      = image;
-      this.id = id;
-   }
+  private float atlasStartU;
+  private float atlasStartV;
+  private float atlasEndU;
+  private float atlasEndV;
 
-   public AtlasSprite(BufferedImage image)
-   {
-      this(Integer.toHexString(image.hashCode()), image);
-   }
+  public AtlasSprite(String id, BufferedImage image) {
+    this.image = image;
+    this.id = id;
+  }
 
-   public int compareTo(AtlasSprite s)
-   {
-      return getHeight() - s.getHeight();
-   }
+  public AtlasSprite(BufferedImage image) {
+    this(Integer.toHexString(image.hashCode()), image);
+  }
 
-   public TextureAtlas getAtlas()
-   {
-      return atlas;
-   }
+  public int compareTo(AtlasSprite s) {
+    return getHeight() - s.getHeight();
+  }
 
-   public int getAtlasEndX()
-   {
-      return getAtlasStartX() + getWidth();
-   }
+  public TextureAtlas getAtlas() {
+    return atlas;
+  }
 
-   public int getAtlasEndY()
-   {
-      return getAtlasStartY() + getHeight();
-   }
+  public int getAtlasEndX() {
+    return getAtlasStartX() + getWidth();
+  }
 
-   public int getAtlasStartX()
-   {
-      return atlasStartX;
-   }
+  public int getAtlasEndY() {
+    return getAtlasStartY() + getHeight();
+  }
 
-   public int getAtlasStartY()
-   {
-      return atlasStartY;
-   }
+  public int getAtlasStartX() {
+    return atlasStartX;
+  }
 
-   public float getEndU()
-   {
-      return atlasEndU;
-   }
+  public int getAtlasStartY() {
+    return atlasStartY;
+  }
 
-   public float getEndV()
-   {
-      return atlasEndV;
-   }
+  public float getEndU() {
+    return atlasEndU;
+  }
 
-   public int getHeight()
-   {
-      return image.getHeight();
-   }
+  public float getEndV() {
+    return atlasEndV;
+  }
 
-   public BufferedImage getImage()
-   {
-      return image;
-   }
+  public int getHeight() {
+    return image.getHeight();
+  }
 
-   public float getStartU()
-   {
-      return atlasStartU;
-   }
+  public BufferedImage getImage() {
+    return image;
+  }
 
-   public float getStartV()
-   {
-      return atlasStartV;
-   }
+  public float getStartU() {
+    return atlasStartU;
+  }
 
-   public String getId()
-   {
-      return id;
-   }
+  public float getStartV() {
+    return atlasStartV;
+  }
 
-   public int getWidth()
-   {
-      return image.getWidth();
-   }
+  public String getId() {
+    return id;
+  }
 
-   protected void setAtlas(TextureAtlas atlas)
-   {
-      this.atlas = atlas;
-   }
+  public int getWidth() {
+    return image.getWidth();
+  }
 
-   protected void setAtlasStartX(int textureAtlasStartX)
-   {
-      this.atlasStartX = textureAtlasStartX;
-      atlasStartU = ((float) getAtlasStartX()) / atlas.getWidth();
-      atlasEndU   = ((float) getAtlasEndX()  ) / atlas.getWidth();
-   }
+  protected void setAtlas(TextureAtlas atlas) {
+    this.atlas = atlas;
+  }
 
-   protected void setAtlasStartY(int textureAtlasStartY)
-   {
-      this.atlasStartY = textureAtlasStartY;
-      atlasEndV   = 1 - ((float) getAtlasEndY()  ) / atlas.getHeight();
-      atlasStartV = 1 - ((float) getAtlasStartY()) / atlas.getHeight();
-   }
-   
-   public AtlasSprite getMirrorX()
-   {
-      try
-      {
-         AtlasSprite mirrorX = (AtlasSprite) this.clone();
-         mirrorX.atlasStartU = atlasEndU;
-         mirrorX.atlasEndU   = atlasStartU;
-         return mirrorX;
-      }
-      catch (CloneNotSupportedException ex)
-      {
-         ex.printStackTrace();
-         return null;
-      }
-   }
-   
-   public AtlasSprite getMirrorY()
-   {
-      try
-      {
-         AtlasSprite mirrorY = (AtlasSprite) this.clone();
-         mirrorY.atlasStartV = atlasEndV;
-         mirrorY.atlasEndV   = atlasStartV;
-         return mirrorY;
-      }
-      catch (CloneNotSupportedException ex)
-      {
-         ex.printStackTrace();
-         return null;
-      }
-   }
+  protected void setAtlasStartX(int textureAtlasStartX) {
+    this.atlasStartX = textureAtlasStartX;
+    atlasStartU = ((float) getAtlasStartX()) / atlas.getWidth();
+    atlasEndU = ((float) getAtlasEndX()) / atlas.getWidth();
+  }
+
+  protected void setAtlasStartY(int textureAtlasStartY) {
+    this.atlasStartY = textureAtlasStartY;
+    atlasEndV = 1 - ((float) getAtlasEndY()) / atlas.getHeight();
+    atlasStartV = 1 - ((float) getAtlasStartY()) / atlas.getHeight();
+  }
+
+  public AtlasSprite getMirrorX() {
+    try {
+      AtlasSprite mirrorX = (AtlasSprite) this.clone();
+      mirrorX.atlasStartU = atlasEndU;
+      mirrorX.atlasEndU = atlasStartU;
+      return mirrorX;
+    } catch (CloneNotSupportedException ex) {
+      ex.printStackTrace();
+      return null;
+    }
+  }
+
+  public AtlasSprite getMirrorY() {
+    try {
+      AtlasSprite mirrorY = (AtlasSprite) this.clone();
+      mirrorY.atlasStartV = atlasEndV;
+      mirrorY.atlasEndV = atlasStartV;
+      return mirrorY;
+    } catch (CloneNotSupportedException ex) {
+      ex.printStackTrace();
+      return null;
+    }
+  }
 }

@@ -29,26 +29,14 @@ import com.jme3.input.controls.KeyTrigger;
 import com.jme3.input.controls.MouseButtonTrigger;
 import com.jme3.light.AmbientLight;
 import com.jme3.light.DirectionalLight;
-import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
-import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
-import com.jme3.scene.control.BillboardControl;
-import com.jme3.scene.shape.Sphere;
 import com.jme3.system.AppSettings;
-import de.lessvoid.nifty.elements.Element;
-import de.lessvoid.nifty.elements.render.ImageRenderer;
-import de.lessvoid.nifty.render.NiftyImage;
 import satteliteExplorer.db.entities.User;
-import satteliteExplorer.ui.engine.sprites.Sprite;
-import satteliteExplorer.ui.engine.sprites.SpriteManager;
-import satteliteExplorer.ui.engine.sprites.SpriteMesh;
 import satteliteExplorer.ui.scene.models.planet.Planet;
 import satteliteExplorer.ui.scene.models.planet.PlanetAppState;
-
-import java.awt.*;
 
 /**
  * PlanetSimpleTest

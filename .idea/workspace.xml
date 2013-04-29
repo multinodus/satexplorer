@@ -14,20 +14,64 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add svg support">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
-      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Shaders\Particle.frag" afterPath="$PROJECT_DIR$/assets/3d/shaders/Particle.frag" />
-      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Shaders\Particle.j3md" afterPath="$PROJECT_DIR$/assets/3d/shaders/Particle.j3md" />
-      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Shaders\Particle.vert" afterPath="$PROJECT_DIR$/assets/3d/shaders/Particle.vert" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.lck" afterPath="$PROJECT_DIR$/hsqldb/storage.lck" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/LoginForm.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/LoginForm.java" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add qualityChart">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Annotation.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Annotation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/AnnotationCacheManager.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/AnnotationCacheManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/atlas/AtlasSprite.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/atlas/AtlasSprite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/ConvertionUtilities.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/ConvertionUtilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEMSource.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEMSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataInterpreter.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataInterpreter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataSource.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/DataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/models/EarthView.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/models/EarthView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Feature.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Feature.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FileDataSource.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FileDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/FileExtensionFilter.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/FileExtensionFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FileFormatter.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FileFormatter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/FileUtilities.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/FileUtilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapDataHandler.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapDataHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapDataset.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapDataset.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapFileFormatter.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/FreemapFileFormatter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/GoogleProjection.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/GoogleProjection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/HGTDataInterpreter.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/HGTDataInterpreter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/HGTTileDeliverer.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/HGTTileDeliverer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/HTTPCommunicator.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/HTTPCommunicator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/ImageUtilities.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/ImageUtilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/JFreeChartExporter.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/JFreeChartExporter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/MathUtilities.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/MathUtilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/POI.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/POI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/Pair.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/Pair.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/PlanetSimpleTest.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/PlanetSimpleTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Point.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Point.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Projectable.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Projectable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Projection.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Projection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/ProjectionFactory.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/ProjectionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/models/RegionView.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/models/RegionView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/models/SatModel.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/models/SatModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/SimpleProjection.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/SimpleProjection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/atlas/SimpleTextureAtlas.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/atlas/SimpleTextureAtlas.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/Sprite.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/Sprite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteAnimation.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteAnimation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteImage.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteManager.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteMesh.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteMesh.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/TestDynamicSprites.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/TestDynamicSprites.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.properties" afterPath="$PROJECT_DIR$/hsqldb/storage.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/atlas/TextureAtlas.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/atlas/TextureAtlas.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/Tile.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/Tile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TileDeliverer.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TileDeliverer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TiledData.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TiledData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/TrackPoint.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/TrackPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Walkroute.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Walkroute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteCacheManager.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteCacheManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteHandler.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkrouteHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkroutesHandler.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WalkroutesHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Way.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/data/Way.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebDataSource.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebXMLSource.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebXMLSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/XMLDataHandler.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/XMLDataHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/XMLDataInterpreter.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/XMLDataInterpreter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SatteliteExplorer.iws" />
@@ -43,7 +87,7 @@
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
     <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362348771356" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362337561894" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367257536892" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367260036584" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362838773317" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367257023781" ignored="false" />
@@ -149,7 +193,7 @@
       <file leaf-file-name="SVGTextureKey.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
+            <state line="21" column="13" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -158,8 +202,10 @@
       <file leaf-file-name="PlanetSimpleTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/PlanetSimpleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="24" selection-start="2756" selection-end="2756" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="59" column="24" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,7 +231,7 @@
       <file leaf-file-name="JmeControlsDemoScreenController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="18" selection-start="4876" selection-end="4876" vertical-scroll-proportion="0.18717949">
+            <state line="148" column="41" selection-start="5145" selection-end="5145" vertical-scroll-proportion="0.53589743">
               <folding />
             </state>
           </provider>
@@ -203,10 +249,8 @@
       <file leaf-file-name="QualityChart.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="52" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="40" column="0" selection-start="1323" selection-end="1323" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -223,7 +267,7 @@
       <file leaf-file-name="SpriteMesh.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteMesh.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="4" selection-start="7409" selection-end="7409" vertical-scroll-proportion="0.0">
+            <state line="191" column="3" selection-start="7000" selection-end="7000" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -473,230 +517,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transformations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hsqldb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Textures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SatteliteExplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shaders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -922,7 +742,11 @@
       <created>1362355968189</created>
       <updated>1362355968189</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add qualityChart">
+      <created>1367259969327</created>
+      <updated>1367259969327</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -947,7 +771,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47189096" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -963,7 +787,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.7444634" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.7444634" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25553662" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1014,7 +838,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add svg support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add qualityChart" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1031,6 +855,7 @@
     <MESSAGE value="Add sprites engine" />
     <MESSAGE value="Add osm viewer" />
     <MESSAGE value="Add svg support" />
+    <MESSAGE value="Add qualityChart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1082,7 +907,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/svg/SVGTextureKey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0">
+        <state line="21" column="13" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1096,15 +921,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/sprites/SpriteMesh.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="4" selection-start="7409" selection-end="7409" vertical-scroll-proportion="0.0">
+        <state line="191" column="3" selection-start="7000" selection-end="7000" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/PlanetSimpleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="24" selection-start="2756" selection-end="2756" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="59" column="24" selection-start="2278" selection-end="2278" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,10 +958,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="52" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="40" column="0" selection-start="1323" selection-end="1323" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,7 +972,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="18" selection-start="4876" selection-end="4876" vertical-scroll-proportion="0.18717949">
+        <state line="148" column="41" selection-start="5145" selection-end="5145" vertical-scroll-proportion="0.53589743">
           <folding />
         </state>
       </provider>

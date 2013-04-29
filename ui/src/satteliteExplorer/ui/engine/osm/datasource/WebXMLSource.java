@@ -11,35 +11,31 @@ import java.io.InputStream;
 
 public class WebXMLSource {
 
-	String url;
-	XMLDataInterpreter interpreter;
-	int statusCode;
-	
-	public WebXMLSource(String url, XMLDataHandler handler)
-	{
-		this.url = url;
-		interpreter = new XMLDataInterpreter(handler);
-	}
-	
-	public Object getData() throws IOException, SAXException
-	{
-		HttpClient client = new DefaultHttpClient();
-		HttpGet request = new HttpGet(url);
-		HttpResponse response = client.execute(request);
-		statusCode = response.getStatusLine().getStatusCode();
-		if(statusCode==200)
-		{
-			InputStream stream = response.getEntity().getContent();
-			return interpreter.getData(stream);
-		}
-		return null;
-	}
-	
-	public int getStatusCode()
-	{
-		return statusCode;
-	}
-	
+  String url;
+  XMLDataInterpreter interpreter;
+  int statusCode;
+
+  public WebXMLSource(String url, XMLDataHandler handler) {
+    this.url = url;
+    interpreter = new XMLDataInterpreter(handler);
+  }
+
+  public Object getData() throws IOException, SAXException {
+    HttpClient client = new DefaultHttpClient();
+    HttpGet request = new HttpGet(url);
+    HttpResponse response = client.execute(request);
+    statusCode = response.getStatusLine().getStatusCode();
+    if (statusCode == 200) {
+      InputStream stream = response.getEntity().getContent();
+      return interpreter.getData(stream);
+    }
+    return null;
+  }
+
+  public int getStatusCode() {
+    return statusCode;
+  }
+
 	/*
 	public static void main (String args[])
 	{

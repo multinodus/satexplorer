@@ -1,10 +1,8 @@
 package satteliteExplorer.ui.scene.models;
 
 import com.jme3.math.Matrix3f;
-import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import satteliteExplorer.scheduler.models.RegionModel;
-import satteliteExplorer.scheduler.transformations.SI_Transform;
 import satteliteExplorer.scheduler.util.VectorConstants;
 
 /**

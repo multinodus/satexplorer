@@ -20,8 +20,8 @@ public class JFreeChartExporter {
   /**
    * Exports a JFreeChart to a SVG file.
    *
-   * @param chart JFreeChart to export
-   * @param bounds the dimensions of the viewport
+   * @param chart   JFreeChart to export
+   * @param bounds  the dimensions of the viewport
    * @param svgFile the output file.
    * @throws IOException if writing the svgFile fails.
    */

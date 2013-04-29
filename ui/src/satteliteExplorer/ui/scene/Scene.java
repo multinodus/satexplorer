@@ -1,15 +1,11 @@
 package satteliteExplorer.ui.scene;
 
 import com.jme3.asset.AssetManager;
-import com.jme3.light.PointLight;
 import com.jme3.light.SpotLight;
 import com.jme3.math.ColorRGBA;
-import com.jme3.math.FastMath;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
-import com.jme3.scene.shape.Cylinder;
-import com.jme3.scene.shape.Sphere;
 import com.jme3.scene.shape.Torus;
 import satteliteExplorer.scheduler.World;
 import satteliteExplorer.scheduler.models.EarthModel;

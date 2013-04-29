@@ -3,7 +3,6 @@ package satteliteExplorer.ui.scene.models;
 import com.jme3.math.FastMath;
 import com.jme3.scene.Spatial;
 import satteliteExplorer.scheduler.models.EarthModel;
-import satteliteExplorer.scheduler.transformations.SI_Transform;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,11 +23,11 @@ public class EarthView implements IView {
   }
 
   public void update() {
-    float earthAngle = earthModel.getRotateAngle() > 0 ? earthModel.getRotateAngle(): earthModel.getRotateAngle() + FastMath.TWO_PI;
+    float earthAngle = earthModel.getRotateAngle() > 0 ? earthModel.getRotateAngle() : earthModel.getRotateAngle() + FastMath.TWO_PI;
 
     float angle = Math.abs(earthAngle - previousAngle);
 
-    if (angle > FastMath.HALF_PI){
+    if (angle > FastMath.HALF_PI) {
       angle = FastMath.TWO_PI - previousAngle + earthAngle;
     }
 
