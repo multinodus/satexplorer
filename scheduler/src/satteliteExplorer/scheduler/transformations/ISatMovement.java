@@ -12,16 +12,16 @@ import satteliteExplorer.scheduler.util.Pair;
  * To change this template use File | Settings | File Templates.
  */
 public interface ISatMovement {
-  Pair<Vector3f, Vector3f> TransformEllipseToOrbit(Vector2f position,
+  Pair<Vector3f, Vector3f> transformEllipseToOrbit(Vector2f position,
                                                    float inclination, float longitudeOfAscendingNode, float argumentOfPerigee);
 
-  double CalcuteTrueAnomaly(Vector2f position);
+  double calcuteTrueAnomaly(Vector2f position);
 
-  Vector2f GetInitialPosition(double a, double e, double trueAnomaly);
+  Vector2f getInitialPosition(double a, double e, double trueAnomaly);
 
-  Vector2f GetInitialSpeed(Vector2f initialPosition, double a, double e);
+  Vector2f getInitialSpeed(Vector2f initialPosition, double a, double e);
 
-  Vector2f GetAcceleration(Vector2f position);
+  Vector2f getAcceleration(Vector2f position);
 
-  Pair<Vector2f, Vector2f> CalcuteNextPosition(float trueAnomaly, float e, Vector2f position, Vector2f velocity, float T);
+  Pair<Vector2f, Vector2f> calcuteNextPosition(float trueAnomaly, float e, Vector2f position, Vector2f velocity, float T);
 }

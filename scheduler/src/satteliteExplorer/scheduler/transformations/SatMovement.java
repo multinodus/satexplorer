@@ -30,7 +30,7 @@ public class SatMovement implements ISatMovement {
     return _instance;
   }
 
-  public Pair<Vector3f, Vector3f> TransformEllipseToOrbit(Vector2f pos,
+  public Pair<Vector3f, Vector3f> transformEllipseToOrbit(Vector2f pos,
                                                           float inclination, float longitudeOfAscendingNode, float argumentOfPerigee) {
     Vector3f position = new Vector3f(pos.x, 0, pos.y);
 
@@ -56,7 +56,7 @@ public class SatMovement implements ISatMovement {
     return new Pair<Vector3f, Vector3f>(res.mult(position), axis3);
   }
 
-  public double CalcuteTrueAnomaly(Vector2f posXZ) {
+  public double calcuteTrueAnomaly(Vector2f posXZ) {
     Vector3f position = new Vector3f(posXZ.x, 0, posXZ.y);
     float buffer = position.dot(new Vector3f(1, 0, 0)) / position.length();
     if (buffer > 1) buffer = 1;
@@ -71,7 +71,7 @@ public class SatMovement implements ISatMovement {
     return angle;
   }
 
-  public Vector2f GetInitialPosition(double a, double e, double trueAnomaly) {
+  public Vector2f getInitialPosition(double a, double e, double trueAnomaly) {
     Vector2f res = new Vector2f((float) (a * (1 - e * e) / (1 + e * Math.cos(trueAnomaly))), 0);
     Matrix3f matrix3f = new Matrix3f();
     matrix3f.fromAngleAxis((float) SI_Transform.twoPiRangeConverter(trueAnomaly - Math.PI), new Vector3f(0, 0, 1));
@@ -79,7 +79,7 @@ public class SatMovement implements ISatMovement {
     return new Vector2f(v3.x, v3.y);
   }
 
-  public Vector2f GetInitialSpeed(Vector2f initialPosition, double a, double e) {
+  public Vector2f getInitialSpeed(Vector2f initialPosition, double a, double e) {
     Vector3f ellipseCenter = new Vector3f((float) (e * a), 0, 0);
     Vector3f velocityVector = new Vector3f(initialPosition.x, initialPosition.y, 0).subtract(ellipseCenter).cross(new Vector3f(0, 0, 1.0000004f));
     velocityVector = velocityVector.normalize();
@@ -88,18 +88,18 @@ public class SatMovement implements ISatMovement {
     return new Vector2f(res.x, res.y);
   }
 
-  public Vector2f GetAcceleration(Vector2f position) {
+  public Vector2f getAcceleration(Vector2f position) {
     float lenght = position.length();
     return position.mult((float) (-SI_Transform.GRAVITY_CONST * SI_Transform.EARTH_MASS / (lenght * lenght * lenght)));
   }
 
-  private Pair<Vector2f, Vector2f> EilerMove(Vector2f position, Vector2f velocity, float T, float dt) {
+  private Pair<Vector2f, Vector2f> eilerMove(Vector2f position, Vector2f velocity, float T, float dt) {
     Vector2f bufPosition = position;
     com.jme3.math.Vector2f newVelocity = velocity;
 
     float t = dt;
     do {
-      newVelocity = EilerMove(newVelocity, GetAcceleration(bufPosition), dt);
+      newVelocity = eilerMove(newVelocity, getAcceleration(bufPosition), dt);
       bufPosition = bufPosition.add(newVelocity.mult(dt));
       t += dt;
     }
@@ -107,11 +107,11 @@ public class SatMovement implements ISatMovement {
     return new Pair<Vector2f, Vector2f>(bufPosition, newVelocity);
   }
 
-  private Vector2f EilerMove(Vector2f position, Vector2f velocity, float dt) {
+  private Vector2f eilerMove(Vector2f position, Vector2f velocity, float dt) {
     return position.add(velocity.mult(dt));
   }
 
-  public Pair<Vector2f, Vector2f> CalcuteNextPosition(float trueAnomaly, float e, Vector2f position, Vector2f velocity, float T) {
+  public Pair<Vector2f, Vector2f> calcuteNextPosition(float trueAnomaly, float e, Vector2f position, Vector2f velocity, float T) {
     if (trueAnomaly > Math.PI) {
       trueAnomaly = (float) (2 * Math.PI) - trueAnomaly;
     }
@@ -125,6 +125,6 @@ public class SatMovement implements ISatMovement {
     }
 
     float dt = T / N;
-    return EilerMove(position, velocity, T, dt);
+    return eilerMove(position, velocity, T, dt);
   }
 }

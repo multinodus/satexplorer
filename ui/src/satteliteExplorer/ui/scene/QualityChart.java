@@ -46,7 +46,7 @@ public class QualityChart extends JFrame {
         new HashMap<satteliteExplorer.db.entities.Task, Pair<SatModel, java.util.List<PredictorDataElement>>>();
     for (satteliteExplorer.db.entities.Task task : PlanetSimpleTest.scene.getWorld().getTasks()) {
       PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
-      Pair<SatModel, java.util.List<PredictorDataElement>> data = predictorOfObservations.BestObservers(SI_Transform.INITIAL_TIME,
+      Pair<SatModel, java.util.List<PredictorDataElement>> data = predictorOfObservations.bestObservers(SI_Transform.INITIAL_TIME,
           new Date(SI_Transform.INITIAL_TIME.getTime() + 7 * DateTimeConstants.MSECS_IN_DAY), task.getRegion(), 0.01f,
           PlanetSimpleTest.scene.getWorld().getSatModels());
       schedule.put(task, data);

@@ -35,15 +35,15 @@ public class PredictorOfObservations {
     return _instance;
   }
 
-  public Pair<SatModel, List<PredictorDataElement>> BestObservers(Date now, Date end, Region region, float detalization,
+  public Pair<SatModel, List<PredictorDataElement>> bestObservers(Date now, Date end, Region region, float detalization,
                                                                   List<SatModel> sats) {
     LinkedList<SatModel> res = new LinkedList<SatModel>();
 
     List<Pair<SatModel, Double>> timeOfObservation = new ArrayList<Pair<SatModel, Double>>();
 
     for (SatModel sat : sats) {
-      List<PredictorDataElement> data = PredictAnglesToObject(now, end, sat, region, detalization);
-      double time = data.size() > 1 ? AllSecondsOfObservation(data) : 0;
+      List<PredictorDataElement> data = predictAnglesToObject(now, end, sat, region, detalization);
+      double time = data.size() > 1 ? allSecondsOfObservation(data) : 0;
       timeOfObservation.add(new Pair<SatModel, Double>(sat, time));
     }
 
@@ -58,10 +58,10 @@ public class PredictorOfObservations {
       res.add(p.f);
     }
 
-    return new Pair<SatModel, List<PredictorDataElement>>(res.get(0), PredictAnglesToObject(now, end, res.get(0), region, detalization));
+    return new Pair<SatModel, List<PredictorDataElement>>(res.get(0), predictAnglesToObject(now, end, res.get(0), region, detalization));
   }
 
-  public double AllSecondsOfObservation(List<PredictorDataElement> data) {
+  public double allSecondsOfObservation(List<PredictorDataElement> data) {
     int observationPeriodsCount = 0;
     double observationPeriodSeconds = (data.get(1).date.getTime() - data.get(0).date.getTime()) / DateTimeConstants.MSECS_IN_SECOND;
 
@@ -73,7 +73,7 @@ public class PredictorOfObservations {
     return (observationPeriodsCount * observationPeriodSeconds / 60.0);
   }
 
-  public List<PredictorDataElement> PredictAnglesToObject(Date now, Date end, SatModel sat, Region region, float earthSpeed) {
+  public List<PredictorDataElement> predictAnglesToObject(Date now, Date end, SatModel sat, Region region, float earthSpeed) {
     Date rrt = new Date(System.currentTimeMillis());
 
     Orbit orbit = sat.getOrbit();
@@ -89,9 +89,9 @@ public class PredictorOfObservations {
 
     double trueAnomaly = sat.getTrueAnomaly();
 
-    Vector2f orbitPosition = satsMovement.GetInitialPosition(orbit.getSemiMajorAxis(), orbit.getEccentricity(),
+    Vector2f orbitPosition = satsMovement.getInitialPosition(orbit.getSemiMajorAxis(), orbit.getEccentricity(),
         SI_Transform.twoPiRangeConverter(sat.getTrueAnomaly()));
-    Vector2f orbitVelocity = satsMovement.GetInitialSpeed(orbitPosition, orbit.getSemiMajorAxis(), orbit.getEccentricity());
+    Vector2f orbitVelocity = satsMovement.getInitialSpeed(orbitPosition, orbit.getSemiMajorAxis(), orbit.getEccentricity());
 
     synchronized (QuaternionTransformations.exSync) {
       QuaternionTransformations qt = QuaternionTransformations.I();
@@ -162,9 +162,9 @@ public class PredictorOfObservations {
         float visibleAngle = qt.calcute_r((float) sat.getVisibleAngle(), H,
             (float) SI_Transform.EARTH_RADIUS);
 
-        boolean isDay = PredictNight(qt, region, 0.1, s, anglePOSEandSun);
+        boolean isDay = predictNight(qt, region, 0.1, s, anglePOSEandSun);
 
-        result.add(new PredictorDataElement(new Date(now.getTime() + (long) (seconds * DateTimeConstants.MSECS_IN_SECOND)), PredictAngleToObject(sat, s, trueAnomaly,
+        result.add(new PredictorDataElement(new Date(now.getTime() + (long) (seconds * DateTimeConstants.MSECS_IN_SECOND)), predictAngleToObject(sat, s, trueAnomaly,
             quaternionLongitude, quaternionLatitude, quaternionIL, qt),
             visibleAngle, isDay));
 
@@ -175,19 +175,19 @@ public class PredictorOfObservations {
         rotationY.fromAngleAxis(earthSpeed, VectorConstants.up);
         greenwich = rotationY.mult(greenwich);
 
-        Pair<Vector2f, Vector2f> p = satsMovement.CalcuteNextPosition((float) trueAnomaly - FastMath.HALF_PI,
+        Pair<Vector2f, Vector2f> p = satsMovement.calcuteNextPosition((float) trueAnomaly - FastMath.HALF_PI,
             orbit.getEccentricity(), orbitPosition, orbitVelocity, (float) dsecond);
         orbitPosition = p.f;
         orbitVelocity = p.s;
 
-        Pair<Vector3f, Vector3f> p3 = satsMovement.TransformEllipseToOrbit(orbitPosition, (float) orbit.getInclination(),
+        Pair<Vector3f, Vector3f> p3 = satsMovement.transformEllipseToOrbit(orbitPosition, (float) orbit.getInclination(),
             (float) orbit.getLongitudeOfAscendingNode(), (float) orbit.getArgumentOfPericenter());
         satPosition = p3.f;
         orbitNormal = p3.s;
 
-        trueAnomaly = satsMovement.CalcuteTrueAnomaly(orbitPosition) + FastMath.HALF_PI;
+        trueAnomaly = satsMovement.calcuteTrueAnomaly(orbitPosition) + FastMath.HALF_PI;
 
-        sunPosition = SunModel.calcutePosition(YearAngleFrom(new Date(now.getTime() + (long) (seconds * DateTimeConstants.MSECS_IN_SECOND))));
+        sunPosition = SunModel.calcutePosition(yearAngleFrom(new Date(now.getTime() + (long) (seconds * DateTimeConstants.MSECS_IN_SECOND))));
       }
       double span = System.currentTimeMillis() - rrt.getTime();
 
@@ -197,14 +197,14 @@ public class PredictorOfObservations {
     return result;
   }
 
-  private float YearAngleFrom(Date date) {
+  private float yearAngleFrom(Date date) {
     long ts = date.getTime() - SI_Transform.INITIAL_TIME.getTime();
     double minutes = (ts / DateTimeConstants.MSECS_IN_MINUTE) % (525960);
     float angle = (float) (2 * Math.PI * ((float) minutes / 525960.0f));
     return angle;
   }
 
-  private float PredictAngleToObject(satteliteExplorer.scheduler.models.SatModel sat, float s, double trueAnomaly,
+  private float predictAngleToObject(satteliteExplorer.scheduler.models.SatModel sat, float s, double trueAnomaly,
                                      Quaternion quaternionLongitude, Quaternion quaternionLatitude,
                                      Quaternion quaternionIL, satteliteExplorer.scheduler.transformations.QuaternionTransformations qt) {
     Quaternion quaternionWpV = qt.createQuaternion(qt.basicVectors.i_3, -sat.getOrbit().getArgumentOfPericenter() + FastMath.PI +
@@ -218,7 +218,7 @@ public class PredictorOfObservations {
     return angle;
   }
 
-  public static boolean PredictNight(satteliteExplorer.scheduler.transformations.QuaternionTransformations qt,
+  public static boolean predictNight(satteliteExplorer.scheduler.transformations.QuaternionTransformations qt,
                                      Region region, double Acr, float s, double anglePOSEandEarth) {
     Quaternion quaternionISK_GSK = qt.quanterionISK_GSK(s);
 
@@ -232,11 +232,11 @@ public class PredictorOfObservations {
     return qt.isLit(quaternionISK_ESK, quaternionISK_Ob, Acr);
   }
 
-  public static List<SatModel> Predictor(Region region, Date start, Date finish, List<SatModel> group) {
+  public static List<SatModel> predict(Region region, Date start, Date finish, List<SatModel> group) {
     List<PredictorDataElement> data;
     List<List<Date>> VisibleList = new ArrayList<List<Date>>(group.size());
     for (int i = 0; i < group.size(); i++) {
-      data = PredictorOfObservations.getInstance().PredictAnglesToObject(start, finish, group.get(i), region, 0.1f);
+      data = PredictorOfObservations.getInstance().predictAnglesToObject(start, finish, group.get(i), region, 0.1f);
       List<Date> visTime = new ArrayList<Date>();
       for (PredictorDataElement element : data) {
         if ((element.angle < element.visibleAngle) && (element.isDay)) {
@@ -268,8 +268,8 @@ public class PredictorOfObservations {
     return bestSatModel;
   }
 
-  public static List<Date> SmallPredictor(Region region, SatModel sat, Date start, Date finish) {
-    List<PredictorDataElement> data = PredictorOfObservations.getInstance().PredictAnglesToObject(start, finish, sat, region, 0.1f);
+  public static List<Date> smallPredict(Region region, SatModel sat, Date start, Date finish) {
+    List<PredictorDataElement> data = PredictorOfObservations.getInstance().predictAnglesToObject(start, finish, sat, region, 0.1f);
     List<Date> visTime = new ArrayList<Date>();
     for (PredictorDataElement element : data) {
       if ((element.angle < element.visibleAngle) && (element.isDay)) {

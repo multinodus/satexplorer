@@ -54,9 +54,9 @@ public class SatModel implements IUpdatable {
     prevA = orbit.getSemiMajorAxis();
     prevE = orbit.getEccentricity();
 
-    orbitPosition = satMovement.GetInitialPosition(orbit.getSemiMajorAxis(), orbit.getEccentricity(),
+    orbitPosition = satMovement.getInitialPosition(orbit.getSemiMajorAxis(), orbit.getEccentricity(),
         SI_Transform.twoPiRangeConverter(trueAnomaly));
-    orbitVelocity = satMovement.GetInitialSpeed(orbitPosition, orbit.getSemiMajorAxis(), orbit.getEccentricity());
+    orbitVelocity = satMovement.getInitialSpeed(orbitPosition, orbit.getSemiMajorAxis(), orbit.getEccentricity());
 
     T = 2 * Math.PI;
     double b1 = SI_Transform.timePeriodRotationInSI(orbit.getSemiMajorAxis());
@@ -74,15 +74,15 @@ public class SatModel implements IUpdatable {
             counterOfReturn++;
         }*/
 
-    Pair<Vector2f, Vector2f> pair = satMovement.CalcuteNextPosition((float) (trueAnomaly - Math.PI / 2), orbit.getEccentricity(), orbitPosition, orbitVelocity,
+    Pair<Vector2f, Vector2f> pair = satMovement.calcuteNextPosition((float) (trueAnomaly - Math.PI / 2), orbit.getEccentricity(), orbitPosition, orbitVelocity,
         (float) dt);
     orbitPosition = pair.f;
     orbitVelocity = pair.s;
 
 
-    trueAnomaly = SI_Transform.twoPiRangeConverter(satMovement.CalcuteTrueAnomaly(orbitPosition) + Math.PI / 2);
+    trueAnomaly = SI_Transform.twoPiRangeConverter(satMovement.calcuteTrueAnomaly(orbitPosition) + Math.PI / 2);
 
-    Pair<Vector3f, Vector3f> pair3 = satMovement.TransformEllipseToOrbit(new Vector2f(orbitPosition.x,
+    Pair<Vector3f, Vector3f> pair3 = satMovement.transformEllipseToOrbit(new Vector2f(orbitPosition.x,
         orbitPosition.y), orbit.getInclination(), orbit.getLongitudeOfAscendingNode(), orbit.getArgumentOfPericenter());
     realPosition = pair3.f;
     orbitNormal = pair3.s;
