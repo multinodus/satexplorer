@@ -35,9 +35,16 @@ import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
+import com.jme3.scene.control.BillboardControl;
 import com.jme3.scene.shape.Sphere;
 import com.jme3.system.AppSettings;
+import de.lessvoid.nifty.elements.Element;
+import de.lessvoid.nifty.elements.render.ImageRenderer;
+import de.lessvoid.nifty.render.NiftyImage;
 import satteliteExplorer.db.entities.User;
+import satteliteExplorer.ui.engine.sprites.Sprite;
+import satteliteExplorer.ui.engine.sprites.SpriteManager;
+import satteliteExplorer.ui.engine.sprites.SpriteMesh;
 import satteliteExplorer.ui.scene.models.planet.Planet;
 import satteliteExplorer.ui.scene.models.planet.PlanetAppState;
 
@@ -55,12 +62,12 @@ public class PlanetSimpleTest extends SimpleApplication {
 
   public static void main(String[] args) {
     final LoginForm loginForm = new LoginForm();
-    loginForm.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
-    loginForm.setLocation(500, 300);
-    loginForm.setVisible(true);
-
-    while (loginForm.isVisible()) {
-    }
+//    loginForm.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+//    loginForm.setLocation(500, 300);
+//    loginForm.setVisible(true);
+//
+//    while (loginForm.isVisible()) {
+//    }
 
     user = loginForm.getUser();
 
@@ -131,6 +138,10 @@ public class PlanetSimpleTest extends SimpleApplication {
 
     JmeControlsDemo ui = new JmeControlsDemo();
     ui.simpleInitApp(this);
+
+//    NiftyImage newImage = ui.nifty.getRenderEngine().createImage("Textures/cross.jpg", false);
+//    Element img = ui.screen.findElementByName("bgimg");
+//    img.getRenderer(ImageRenderer.class).setImage(newImage);
   }
 
   @Override

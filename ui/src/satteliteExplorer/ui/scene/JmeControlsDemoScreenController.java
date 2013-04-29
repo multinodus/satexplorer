@@ -130,7 +130,8 @@ public class JmeControlsDemoScreenController implements ScreenController, KeyInp
       return;
     }
     if ("menuButtonSchedule".equals(id)) {
-      ScheduleChart frame = new ScheduleChart();
+//      ScheduleChart frame = new ScheduleChart();
+      QualityChart frame = new QualityChart();
       frame.setSize(new Dimension(800, 600));
       frame.show();
       return;

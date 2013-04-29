@@ -44,6 +44,8 @@ public class LoginForm extends JDialog implements ActionListener {
     add(panel, BorderLayout.CENTER);
     SUBMIT.addActionListener(this);
     setTitle("Авторизация");
+
+    user = findUser("operator", "operator");
   }
 
   public void actionPerformed(ActionEvent ae) {

@@ -8,7 +8,7 @@ public class Sprite
    private static final Vector3f DO_NOT_SEE = new Vector3f(Float.NEGATIVE_INFINITY, Float.NEGATIVE_INFINITY, Float.NEGATIVE_INFINITY);
    private int positionInArray = -1;
    private Vector3f position = new Vector3f();
-   private float size = 1f;
+   private float size = 10000f;
    private boolean deleted = false;
    private ColorRGBA color = new ColorRGBA(ColorRGBA.White);
    private SpriteImage image;

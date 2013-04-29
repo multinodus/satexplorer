@@ -184,7 +184,7 @@ public class SpriteMesh
    private void initGeometry(Texture texture)
    {
       spriteGeometry = new Geometry("SpriteMesh", mesh);
-      Material mat = new Material(assetManager, "3d/shaders/Particle.j3md");
+      Material mat = new Material(assetManager, "Shaders/Particle.j3md");
       mat.setTexture("Texture", texture);
       spriteGeometry.setMaterial(mat);
       rootNode.attachChild(spriteGeometry);
