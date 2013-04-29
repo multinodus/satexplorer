@@ -21,6 +21,13 @@ public class Equipment implements Serializable {
   private Set<Sat> sats = new HashSet<Sat>();
   private Set<DataCenter> dataCenters = new HashSet<DataCenter>();
   private EquipmentType equipmentType;
+  private Float deltaAngle;
+  private Float criticalAngle;
+  private Float span;
+  private Float resolution;
+  private Float storageCapacity;
+  private Long workTime;
+  private Long frameTime;
 
   public Equipment() {
 
@@ -53,6 +60,69 @@ public class Equipment implements Serializable {
 
   public void setSpeed(Float speed) {
     this.speed = speed;
+  }
+
+  @Column(name = "deltaAngle", nullable = false)
+  public Float getDeltaAngle() {
+    return deltaAngle;
+  }
+
+  public void setDeltaAngle(Float deltaAngle) {
+    this.deltaAngle = deltaAngle;
+  }
+
+  @Column(name = "criticalAngle", nullable = false)
+  public Float getCriticalAngle() {
+    return criticalAngle;
+  }
+
+  public void setCriticalAngle(Float criticalAngle) {
+    this.criticalAngle = criticalAngle;
+  }
+
+  @Column(name = "span", nullable = false)
+  public Float getSpan() {
+    return span;
+  }
+
+  public void setSpan(Float span) {
+    this.span = span;
+  }
+
+  @Column(name = "resolution", nullable = false)
+  public Float getResolution() {
+    return resolution;
+  }
+
+  public void setResolution(Float resolution) {
+    this.resolution = resolution;
+  }
+
+  @Column(name = "storageCapacity", nullable = false)
+  public Float getStorageCapacity() {
+    return storageCapacity;
+  }
+
+  public void setStorageCapacity(Float storageCapacity) {
+    this.storageCapacity = storageCapacity;
+  }
+
+  @Column(name = "workTime", nullable = false)
+  public Long getWorkTime() {
+    return workTime;
+  }
+
+  public void setWorkTime(Long workTime) {
+    this.workTime = workTime;
+  }
+
+  @Column(name = "frameTime", nullable = false)
+  public Long getFrameTime() {
+    return frameTime;
+  }
+
+  public void setFrameTime(Long frameTime) {
+    this.frameTime = frameTime;
   }
 
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "equipment")

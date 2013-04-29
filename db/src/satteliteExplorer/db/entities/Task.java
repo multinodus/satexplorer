@@ -2,6 +2,7 @@ package satteliteExplorer.db.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,6 +17,9 @@ public class Task implements Serializable {
   private Integer taskId;
   private Region region;
   private EquipmentType equipmentType;
+  private Date start;
+  private Date finish;
+  private Float cost;
 
   public Task() {
 
@@ -50,5 +54,32 @@ public class Task implements Serializable {
 
   public void setEquipmentType(EquipmentType equipmentType) {
     this.equipmentType = equipmentType;
+  }
+
+  @Column(name = "start", nullable = false)
+  public Date getStart() {
+    return start;
+  }
+
+  public void setStart(Date start) {
+    this.start = start;
+  }
+
+  @Column(name = "finish", nullable = false)
+  public Date getFinish() {
+    return finish;
+  }
+
+  public void setFinish(Date finish) {
+    this.finish = finish;
+  }
+
+  @Column(name = "cost", nullable = false)
+  public Float getCost() {
+    return cost;
+  }
+
+  public void setCost(Float cost) {
+    this.cost = cost;
   }
 }

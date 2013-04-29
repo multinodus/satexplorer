@@ -35,9 +35,7 @@
         <!-- this will create the database tables for us -->
         <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
         <!--<mapping resource="de/laliluna/example/Honey.hbm.xml" />-->
-        <mapping class="satteliteExplorer.db.entities.Constraint"/>
         <mapping class="satteliteExplorer.db.entities.DataCenter"/>
-        <mapping class="satteliteExplorer.db.entities.Effectiveness"/>
         <mapping class="satteliteExplorer.db.entities.Equipment"/>
         <mapping class="satteliteExplorer.db.entities.EquipmentType"/>
         <mapping class="satteliteExplorer.db.entities.Orbit"/>

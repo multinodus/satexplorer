@@ -9,9 +9,7 @@ import de.lessvoid.nifty.tools.Color;
 import satteliteExplorer.ui.controls.common.CommonBuilders;
 import satteliteExplorer.ui.controls.common.DialogPanelControlDefinition;
 import satteliteExplorer.ui.controls.common.MenuButtonControlDefinition;
-import satteliteExplorer.ui.controls.constraint.ConstraintDialogDefinition;
 import satteliteExplorer.ui.controls.dataCenter.DataCenterDialogDefinition;
-import satteliteExplorer.ui.controls.effectiveness.EffectivenessDialogDefinition;
 import satteliteExplorer.ui.controls.equipment.EquipmentDialogControlDefinition;
 import satteliteExplorer.ui.controls.equipmentType.EquipmentTypeDialogDefinition;
 import satteliteExplorer.ui.controls.listbox.EmptyDialogControlDefinition;
@@ -66,8 +64,6 @@ public class JmeControlsDemo {
     SatControlDefinition.register(nifty);
     DataCenterDialogDefinition.register(nifty);
     RegionDialogControlDefinition.register(nifty);
-    ConstraintDialogDefinition.register(nifty);
-    EffectivenessDialogDefinition.register(nifty);
     EquipmentTypeDialogDefinition.register(nifty);
     RoleDialogDefinition.register(nifty);
     UserDialogDefinition.register(nifty);
@@ -139,12 +135,6 @@ public class JmeControlsDemo {
                 backgroundColor("#5588");
                 childLayoutHorizontal();
                 padding("20px");
-                if (PlanetSimpleTest.user.getRole().getName().equals("Engeener")) {
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonConstraint", "Ограничения", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonEffectiveness", "Целевая функция", ""));
-                  panel(builders.hspacer("10px"));
-                }
                 if (PlanetSimpleTest.user.getRole().getName().equals("Admin")) {
                   control(MenuButtonControlDefinition.getControlBuilder("menuButtonRole", "Роли", ""));
                   panel(builders.hspacer("10px"));
@@ -167,10 +157,6 @@ public class JmeControlsDemo {
                 width("100%");
                 alignCenter();
                 valignCenter();
-                if (PlanetSimpleTest.user.getRole().getName().equals("Engeener")) {
-                  control(new ControlBuilder("dialogConstraint", ConstraintDialogDefinition.NAME));
-                  control(new ControlBuilder("dialogEffectiveness", EffectivenessDialogDefinition.NAME));
-                }
                 if (PlanetSimpleTest.user.getRole().getName().equals("Operator")) {
                   control(new ControlBuilder("dialogListBox", EmptyDialogControlDefinition.NAME));
                   control(new ControlBuilder("dialogOrbit", OrbitDialogControlDefinition.NAME));
