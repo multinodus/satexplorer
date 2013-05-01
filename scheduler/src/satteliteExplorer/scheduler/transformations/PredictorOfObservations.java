@@ -1,8 +1,12 @@
 package satteliteExplorer.scheduler.transformations;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 import com.jme3.math.*;
 import satteliteExplorer.db.entities.Orbit;
 import satteliteExplorer.db.entities.Region;
+import satteliteExplorer.db.entities.Task;
 import satteliteExplorer.scheduler.models.SatModel;
 import satteliteExplorer.scheduler.models.SunModel;
 import satteliteExplorer.scheduler.util.DateTimeConstants;
@@ -19,6 +23,18 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class PredictorOfObservations {
+  private class RegionQuaternions {
+    Quaternion quaternionLongitude;
+    Quaternion quaternionLatitude;
+    Quaternion quaternionIL;
+
+    public RegionQuaternions(Quaternion quaternionLongitude, Quaternion quaternionLatitude, Quaternion quaternionIL){
+      this.quaternionIL = quaternionIL;
+      this.quaternionLatitude = quaternionLatitude;
+      this.quaternionLongitude = quaternionLongitude;
+    }
+  }
+
   private volatile static satteliteExplorer.scheduler.transformations.PredictorOfObservations _instance;
 
   private static Object _sync = new Object();
@@ -35,53 +51,26 @@ public class PredictorOfObservations {
     return _instance;
   }
 
-  public Pair<SatModel, List<PredictorDataElement>> bestObservers(Date now, Date end, Region region, float detalization,
-                                                                  List<SatModel> sats) {
-    LinkedList<SatModel> res = new LinkedList<SatModel>();
-
-    List<Pair<SatModel, Double>> timeOfObservation = new ArrayList<Pair<SatModel, Double>>();
+  public Map<SatModel, Multimap<Task, PredictedDataElement>> observe(Date now, Date end, Collection<Task> tasks,
+                                                                     Collection<SatModel> sats, float detalization) {
+    Map<SatModel, Multimap<Task, PredictedDataElement>> res = Maps.newHashMap();
 
     for (SatModel sat : sats) {
-      List<PredictorDataElement> data = predictAnglesToObject(now, end, sat, region, detalization);
-      double time = data.size() > 1 ? allSecondsOfObservation(data) : 0;
-      timeOfObservation.add(new Pair<SatModel, Double>(sat, time));
-//      break;
+      Multimap<Task, PredictedDataElement> data = predictObservations(now, end, sat, tasks, detalization);
+      res.put(sat, data);
     }
 
-    Collections.sort(timeOfObservation, new Comparator<Pair<SatModel, Double>>() {
-      @Override
-      public int compare(Pair<SatModel, Double> o1, Pair<SatModel, Double> o2) {
-        return (int) (o2.s - o1.s);
-      }
-    });
-
-    for (Pair<SatModel, Double> p : timeOfObservation) {
-      res.add(p.f);
-    }
-
-    return new Pair<SatModel, List<PredictorDataElement>>(res.get(0), predictAnglesToObject(now, end, res.get(0), region, detalization));
+    return res;
   }
 
-  public double allSecondsOfObservation(List<PredictorDataElement> data) {
-    int observationPeriodsCount = 0;
-    double observationPeriodSeconds = (data.get(1).date.getTime() - data.get(0).date.getTime()) / DateTimeConstants.MSECS_IN_SECOND;
-
-    for (PredictorDataElement element : data) {
-      if (element.angle < element.visibleAngle) {
-        observationPeriodsCount++;
-      }
-    }
-    return (observationPeriodsCount * observationPeriodSeconds / 60.0);
-  }
-
-  public List<PredictorDataElement> predictAnglesToObject(Date now, Date end, SatModel sat, Region region, float earthSpeed) {
+  public Multimap<Task, PredictedDataElement> predictObservations(Date now, Date end, SatModel sat, Collection<Task> tasks, float earthSpeed) {
     Date rrt = new Date(System.currentTimeMillis());
 
     Orbit orbit = sat.getOrbit();
 
     ISatMovement satsMovement = SatMovement.getInstance();
 
-    List<PredictorDataElement> result = new ArrayList<PredictorDataElement>();
+    Multimap<Task, PredictedDataElement> result = ArrayListMultimap.create();
 
     Vector3f sunPosition = SunModel.Position;
     Vector3f satPosition = new Vector3f(sat.getRealPosition());
@@ -106,12 +95,16 @@ public class PredictorOfObservations {
 
       basicVectors.setISK(i1_1, i1_2, i1_3);
 
-      Quaternion quaternionLongitude = qt.createQuaternion(basicVectors.i_3, -region.getLongitude());
+      Map<Region, RegionQuaternions> quaternionMap = Maps.newHashMap();
+      for (Task task : tasks){
+        Quaternion quaternionLongitude = qt.createQuaternion(basicVectors.i_3, -task.getRegion().getLongitude());
 
-      Quaternion quaternionLatitude = qt.createQuaternion(basicVectors.i_2, region.getLatitude());
+        Quaternion quaternionLatitude = qt.createQuaternion(basicVectors.i_2, task.getRegion().getLatitude());
 
-      Quaternion quaternionIL = qt.createQuaternion(basicVectors.i_1, -orbit.getInclination()).mult(
-          qt.createQuaternion(basicVectors.i_3, -orbit.getLongitudeOfAscendingNode()));
+        Quaternion quaternionIL = qt.createQuaternion(basicVectors.i_1, -orbit.getInclination()).mult(
+            qt.createQuaternion(basicVectors.i_3, -orbit.getLongitudeOfAscendingNode()));
+        quaternionMap.put(task.getRegion(), new RegionQuaternions(quaternionLongitude, quaternionLongitude, quaternionIL));
+      }
 
       float s = (float) SI_Transform.calcuteAngle(SI_Transform.pointOfSpringEquinox, greenwich);
 
@@ -160,14 +153,17 @@ public class PredictorOfObservations {
 
         float H = satPosition.length() - (float) SI_Transform.EARTH_RADIUS;
 
-        float visibleAngle = qt.calcute_r((float) sat.getVisibleAngle(), H,
-            (float) SI_Transform.EARTH_RADIUS);
+        float visibleAngle = 0.1f;//qt.calcute_r((float) sat.getVisibleAngle(), H, (float) SI_Transform.EARTH_RADIUS);
 
-        boolean isDay = predictNight(qt, region, 0.1, s, anglePOSEandSun);
-
-        result.add(new PredictorDataElement(new Date(now.getTime() + (long) (seconds * DateTimeConstants.MSECS_IN_SECOND)), predictAngleToObject(sat, s, trueAnomaly,
-            quaternionLongitude, quaternionLatitude, quaternionIL, qt),
-            visibleAngle, isDay));
+        for (Task task : tasks){
+          boolean isDay = predictNight(qt, task.getRegion(), 0.1, s, anglePOSEandSun);
+          RegionQuaternions q = quaternionMap.get(task.getRegion());
+          float angle = predictAngleToObject(sat, s, trueAnomaly, q.quaternionLongitude, q.quaternionLatitude, q.quaternionIL, qt);
+          if (angle < visibleAngle){
+            result.put(task, new PredictedDataElement(new Date(now.getTime() + (long) (seconds * DateTimeConstants.MSECS_IN_SECOND)), angle,
+                visibleAngle, isDay));
+          }
+        }
 
         seconds += dsecond;
         s -= earthSpeed % FastMath.TWO_PI;
@@ -228,55 +224,8 @@ public class PredictorOfObservations {
 
     Quaternion quaternionISK_ESK = qt.quaternionISK_ESK(anglePOSEandEarth);
 
-    Quaternion quaternionDOb_ESK = qt.qauternionDOb_ESK(quaternionISK_Ob, quaternionISK_ESK);
+//    Quaternion quaternionDOb_ESK = qt.qauternionDOb_ESK(quaternionISK_Ob, quaternionISK_ESK);
 
     return qt.isLit(quaternionISK_ESK, quaternionISK_Ob, Acr);
-  }
-
-  public static List<SatModel> predict(Region region, Date start, Date finish, List<SatModel> group) {
-    List<PredictorDataElement> data;
-    List<List<Date>> VisibleList = new ArrayList<List<Date>>(group.size());
-    for (int i = 0; i < group.size(); i++) {
-      data = PredictorOfObservations.getInstance().predictAnglesToObject(start, finish, group.get(i), region, 0.1f);
-      List<Date> visTime = new ArrayList<Date>();
-      for (PredictorDataElement element : data) {
-        if ((element.angle < element.visibleAngle) && (element.isDay)) {
-          visTime.add(element.date);
-        }
-      }
-      VisibleList.add(visTime);
-    }
-    List<SatModel> bestSatModel = new ArrayList<SatModel>();
-    for (int k = 0; k < 3; k++) {
-      int countmax = 0;
-      int num = 0;
-      for (int i = 0; i < group.size(); i++) {
-        if (VisibleList.get(i).size() > countmax) {
-          countmax = VisibleList.get(i).size();
-          num = i;
-        }
-      }
-      bestSatModel.add(group.get(num));
-      for (Date tm : VisibleList.get(num)) {
-        for (int i = 0; i < group.size(); i++) {
-          if ((i != num) && (VisibleList.get(i).contains(tm))) {
-            VisibleList.get(i).remove(tm);
-          }
-        }
-      }
-      VisibleList.get(num).clear();
-    }
-    return bestSatModel;
-  }
-
-  public static List<Date> smallPredict(Region region, SatModel sat, Date start, Date finish) {
-    List<PredictorDataElement> data = PredictorOfObservations.getInstance().predictAnglesToObject(start, finish, sat, region, 0.1f);
-    List<Date> visTime = new ArrayList<Date>();
-    for (PredictorDataElement element : data) {
-      if ((element.angle < element.visibleAngle) && (element.isDay)) {
-        visTime.add(element.date);
-      }
-    }
-    return visTime;
   }
 }

@@ -9,13 +9,13 @@ import java.util.Date;
  * Time: 20:47
  * To change this template use File | Settings | File Templates.
  */
-public class PredictorDataElement {
+public class PredictedDataElement {
   public Date date;
   public float angle;
   public float visibleAngle;
   public boolean isDay;
 
-  public PredictorDataElement(Date date, float angle, float visibleAngle, boolean isDay) {
+  public PredictedDataElement(Date date, float angle, float visibleAngle, boolean isDay) {
     this.date = date;
     this.angle = angle;
     this.visibleAngle = visibleAngle;

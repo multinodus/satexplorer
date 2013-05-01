@@ -1,7 +1,7 @@
 package satteliteExplorer.ui.scene;
 
+import com.google.common.collect.Multimap;
 import com.jme3.math.FastMath;
-import com.jme3.texture.Texture;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
@@ -9,18 +9,19 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.LookupPaintScale;
 import org.jfree.chart.renderer.xy.XYBlockRenderer;
 import org.jfree.data.xy.DefaultXYZDataset;
+import satteliteExplorer.db.entities.Task;
 import satteliteExplorer.scheduler.models.SatModel;
-import satteliteExplorer.scheduler.transformations.PredictorDataElement;
+import satteliteExplorer.scheduler.transformations.PredictedDataElement;
 import satteliteExplorer.scheduler.transformations.PredictorOfObservations;
 import satteliteExplorer.scheduler.transformations.SI_Transform;
 import satteliteExplorer.scheduler.util.DateTimeConstants;
-import satteliteExplorer.scheduler.util.Pair;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,42 +55,38 @@ public class QualityChart extends JFrame {
   private DefaultXYZDataset createDataset() {
     DefaultXYZDataset dataset = new DefaultXYZDataset();
 
-    Map<satteliteExplorer.db.entities.Task, Pair<SatModel, java.util.List<PredictorDataElement>>> schedule =
-        new HashMap<satteliteExplorer.db.entities.Task, Pair<SatModel, java.util.List<PredictorDataElement>>>();
-    for (satteliteExplorer.db.entities.Task task : PlanetSimpleTest.scene.getWorld().getTasks()) {
-      PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
-      Pair<SatModel, java.util.List<PredictorDataElement>> data = predictorOfObservations.bestObservers(SI_Transform.INITIAL_TIME,
-          new Date(SI_Transform.INITIAL_TIME.getTime() + 7 * DateTimeConstants.MSECS_IN_DAY), task.getRegion(), 0.1f,
-          PlanetSimpleTest.scene.getWorld().getSatModels());
-      schedule.put(task, data);
-    }
+    PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
+    Map<SatModel, Multimap<Task, PredictedDataElement>> allData = predictorOfObservations.observe(SI_Transform.INITIAL_TIME,
+        new Date(SI_Transform.INITIAL_TIME.getTime() + DateTimeConstants.MSECS_IN_DAY), PlanetSimpleTest.scene.getWorld().getTasks(),
+        PlanetSimpleTest.scene.getWorld().getSatModels(), 0.1f);
 
-    int i = 0;
-    for (satteliteExplorer.db.entities.Task task : schedule.keySet()) {
-      Pair<SatModel, java.util.List<PredictorDataElement>> p = schedule.get(task);
+    int j = 0;
+    for (SatModel sat : allData.keySet()){
+      Multimap<Task, PredictedDataElement> observation = allData.get(sat);
+      int i = 0;
+      double[][] data = new double[3][observation.keys().size()];
+      for (satteliteExplorer.db.entities.Task task : observation.keys()) {
+        Collection<PredictedDataElement> elements = observation.get(task);
 
-      double[][] data = new double[3][schedule.keySet().size()];
+        data[0][i] = task.getRegion().getLongitude()* FastMath.RAD_TO_DEG;
+        data[1][i] = task.getRegion().getLatitude()* FastMath.RAD_TO_DEG;
 
-      data[0][i] = task.getRegion().getLongitude()* FastMath.RAD_TO_DEG;
-      data[1][i] = task.getRegion().getLatitude()* FastMath.RAD_TO_DEG;
-
-      boolean explored = false;
-      for (PredictorDataElement element : p.s) {
-        if (element.angle < element.visibleAngle) {
+        boolean explored = false;
+        for (PredictedDataElement element : elements) {
 //          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())){
-            data[2][i] = task.getCost();
-//          } else {
-//            data[2][i] = 0.5*task.getCost();
+            data[2][i] = 1;
+            explored = true;
+            break;
 //          }
-          explored = true;
-          break;
         }
+        if (!explored) {
+          data[2][i] = 0;
+        }
+        i++;
       }
-      if (!explored) {
-        data[2][i] = 0;
-      }
-      dataset.addSeries(i, data);
-      i++;
+      dataset.addSeries(j, data);
+      j++;
+      break;
     }
 
     return dataset;
