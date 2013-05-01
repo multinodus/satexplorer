@@ -40,6 +40,8 @@ public class SatModel implements IUpdatable {
   private int counterOfReturn = 0;
   private int timeOfReturn = 5;
 
+  private float explorationAngle;
+
   public SatModel(Sat sat) {
     this.sat = sat;
     this.orbit = sat.getOrbit();
@@ -64,6 +66,8 @@ public class SatModel implements IUpdatable {
     dt = b1 / b2;
 
     update();
+
+    explorationAngle = (float)Math.atan((20*sat.getEquipment().getSpan()/2000)/(sat.getOrbit().getSemiMajorAxis()-SI_Transform.EARTH_RADIUS))*FastMath.RAD_TO_DEG;
   }
 
   public void update() {
@@ -118,5 +122,9 @@ public class SatModel implements IUpdatable {
 
   public Sat getSat() {
     return sat;
+  }
+
+  public float getExplorationAngle() {
+    return explorationAngle;
   }
 }

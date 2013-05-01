@@ -94,7 +94,7 @@ public class World {
     Collection<Orbit> orbits = new ArrayList<Orbit>();
     for (int i = 0; i < orbitCount; i++) {
       Orbit orbit = new Orbit();
-      orbit.setSemiMajorAxis(9000000f + rnd.nextInt(900000));
+      orbit.setSemiMajorAxis((float)SI_Transform.EARTH_RADIUS + 650000 + rnd.nextInt(350000));
       orbit.setArgumentOfPericenter(rnd.nextFloat() * FastMath.TWO_PI);
       orbit.setEccentricity(rnd.nextFloat() * 0.1f);
       orbit.setInclination(FastMath.HALF_PI/*rnd.nextFloat()* FastMath.TWO_PI*/);

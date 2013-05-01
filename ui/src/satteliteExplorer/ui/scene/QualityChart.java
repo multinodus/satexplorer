@@ -57,8 +57,8 @@ public class QualityChart extends JFrame {
 
     PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
     Map<SatModel, Multimap<Task, PredictedDataElement>> allData = predictorOfObservations.observe(SI_Transform.INITIAL_TIME,
-        new Date(SI_Transform.INITIAL_TIME.getTime() + DateTimeConstants.MSECS_IN_DAY), PlanetSimpleTest.scene.getWorld().getTasks(),
-        PlanetSimpleTest.scene.getWorld().getSatModels(), 0.1f);
+        new Date(SI_Transform.INITIAL_TIME.getTime() + DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY), PlanetSimpleTest.scene.getWorld().getTasks(),
+        PlanetSimpleTest.scene.getWorld().getSatModels(), 0.05f);
 
     int j = 0;
     for (SatModel sat : allData.keySet()){

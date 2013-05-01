@@ -153,7 +153,7 @@ public class PredictorOfObservations {
 
         float H = satPosition.length() - (float) SI_Transform.EARTH_RADIUS;
 
-        float visibleAngle = 0.1f;//qt.calcute_r((float) sat.getVisibleAngle(), H, (float) SI_Transform.EARTH_RADIUS);
+        float visibleAngle = sat.getExplorationAngle();//qt.calcute_r((float) sat.getVisibleAngle(), H, (float) SI_Transform.EARTH_RADIUS);
 
         for (Task task : tasks){
           boolean isDay = predictNight(qt, task.getRegion(), 0.1, s, anglePOSEandSun);

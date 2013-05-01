@@ -65,8 +65,8 @@ public class Scene {
 
         SpotLight spotLight = new SpotLight();
         spotLight.setColor(new ColorRGBA(9f, 0.f, 0f, 1.0f));
-        spotLight.setSpotInnerAngle(satModel.getVisibleAngle());
-        spotLight.setSpotOuterAngle(satModel.getVisibleAngle());
+        spotLight.setSpotInnerAngle(satModel.getExplorationAngle());
+        spotLight.setSpotOuterAngle(satModel.getExplorationAngle());
         spotLight.setSpotRange(30800);
         rootNode.addLight(spotLight);
 
