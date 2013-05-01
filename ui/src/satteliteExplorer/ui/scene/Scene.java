@@ -7,6 +7,7 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Torus;
+import com.jme3.texture.Texture2D;
 import satteliteExplorer.scheduler.World;
 import satteliteExplorer.scheduler.models.EarthModel;
 import satteliteExplorer.scheduler.models.IUpdatable;
@@ -47,12 +48,12 @@ public class Scene {
         RegionModel regionModel = (RegionModel) entity;
 
         //Cylinder sphere = new Cylinder(32, 32, 1000, 10000);
-        Torus sphere = new Torus(32, 32, 100, regionModel.getRadius());
-        Geometry regionSpatial = new Geometry("", sphere);
-        regionSpatial.setMaterial(assetManager.loadMaterial("Materials/EasyMaterial.j3m"));
-        rootNode.attachChild(regionSpatial);
+//        Torus sphere = new Torus(32, 32, 100, regionModel.getRadius());
+//        Geometry regionSpatial = new Geometry("", sphere);
+//        regionSpatial.setMaterial(assetManager.loadMaterial("Materials/EasyMaterial.j3m"));
+//        rootNode.attachChild(regionSpatial);
 
-        RegionView regionView = new RegionView(regionModel, regionSpatial);
+        RegionView regionView = new RegionView(regionModel, null);
         views.add(regionView);
       }
       if (entity instanceof SatModel) {

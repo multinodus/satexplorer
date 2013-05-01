@@ -14,7 +14,7 @@ import satteliteExplorer.scheduler.util.VectorConstants;
  */
 public class RegionView implements IView {
   RegionModel regionModel;
-  Spatial spatial;
+  private Spatial spatial;
 
   public RegionView(RegionModel regionModel, Spatial spatial) {
     this.regionModel = regionModel;
@@ -23,9 +23,11 @@ public class RegionView implements IView {
   }
 
   public void update() {
-    spatial.setLocalTranslation(regionModel.getPosition());
-    Matrix3f matrix3f = new Matrix3f();
-    matrix3f.fromStartEndVectors(VectorConstants.right, regionModel.getPosition().normalize());
-    spatial.setLocalRotation(matrix3f);
+    if (spatial!=null){
+      spatial.setLocalTranslation(regionModel.getPosition());
+      Matrix3f matrix3f = new Matrix3f();
+      matrix3f.fromStartEndVectors(VectorConstants.right, regionModel.getPosition().normalize());
+      spatial.setLocalRotation(matrix3f);
+    }
   }
 }

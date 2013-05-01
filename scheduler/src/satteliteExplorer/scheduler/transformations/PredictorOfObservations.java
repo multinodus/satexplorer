@@ -45,6 +45,7 @@ public class PredictorOfObservations {
       List<PredictorDataElement> data = predictAnglesToObject(now, end, sat, region, detalization);
       double time = data.size() > 1 ? allSecondsOfObservation(data) : 0;
       timeOfObservation.add(new Pair<SatModel, Double>(sat, time));
+//      break;
     }
 
     Collections.sort(timeOfObservation, new Comparator<Pair<SatModel, Double>>() {

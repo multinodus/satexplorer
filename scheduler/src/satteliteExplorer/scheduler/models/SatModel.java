@@ -113,7 +113,7 @@ public class SatModel implements IUpdatable {
   }
 
   public float getVisibleAngle() {
-    return FastMath.DEG_TO_RAD * 1;
+    return FastMath.DEG_TO_RAD * sat.getEquipment().getCriticalAngle();
   }
 
   public Sat getSat() {

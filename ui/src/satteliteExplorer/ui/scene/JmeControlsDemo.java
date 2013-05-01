@@ -79,12 +79,12 @@ public class JmeControlsDemo {
     Screen screen = new ScreenBuilder("demo") {
 
       {
-        if (PlanetSimpleTest.user.getRole().getName().equals("Engeener")) {
+        if (PlanetSimpleTest.user.getRole().getName().equals("engeener")) {
           controller(new JmeControlsDemoScreenController(
               "menuButtonConstraint", "dialogConstraint",
               "menuButtonEffectiveness", "dialogEffectiveness"));
         }
-        if (PlanetSimpleTest.user.getRole().getName().equals("Operator")) {
+        if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
           controller(new JmeControlsDemoScreenController(
               "menuButtonListBox", "dialogListBox",
               "menuButtonDataCenter", "dialogDataCenter",
@@ -95,7 +95,7 @@ public class JmeControlsDemo {
               "menuButtonTask", "dialogTask",
               "menuButtonOrbit", "dialogOrbit"));
         }
-        if (PlanetSimpleTest.user.getRole().getName().equals("Admin")) {
+        if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
           controller(new JmeControlsDemoScreenController(
               "menuButtonRole", "dialogRole",
               "menuButtonUser", "dialogUser"));
@@ -105,7 +105,7 @@ public class JmeControlsDemo {
 
           {
             childLayoutVertical();
-            if (PlanetSimpleTest.user.getRole().getName().equals("Operator")) {
+            if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
               panel(new PanelBuilder("navigation") {
 
                 {
@@ -135,13 +135,13 @@ public class JmeControlsDemo {
                 backgroundColor("#5588");
                 childLayoutHorizontal();
                 padding("20px");
-                if (PlanetSimpleTest.user.getRole().getName().equals("Admin")) {
+                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
                   control(MenuButtonControlDefinition.getControlBuilder("menuButtonRole", "Роли", ""));
                   panel(builders.hspacer("10px"));
                   control(MenuButtonControlDefinition.getControlBuilder("menuButtonUser", "Пользователи", ""));
                   panel(builders.hspacer("10px"));
                 }
-                if (PlanetSimpleTest.user.getRole().getName().equals("Operator")) {
+                if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
                   control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipment", "Оборудование", ""));
                   panel(builders.hspacer("10px"));
                   control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipmentType", "Типы оборудования", ""));
@@ -157,7 +157,7 @@ public class JmeControlsDemo {
                 width("100%");
                 alignCenter();
                 valignCenter();
-                if (PlanetSimpleTest.user.getRole().getName().equals("Operator")) {
+                if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
                   control(new ControlBuilder("dialogListBox", EmptyDialogControlDefinition.NAME));
                   control(new ControlBuilder("dialogOrbit", OrbitDialogControlDefinition.NAME));
                   control(new ControlBuilder("dialogEquipment", EquipmentDialogControlDefinition.NAME));
@@ -167,7 +167,7 @@ public class JmeControlsDemo {
                   control(new ControlBuilder("dialogRegion", RegionDialogControlDefinition.NAME));
                   control(new ControlBuilder("dialogEquipmentType", EquipmentTypeDialogDefinition.NAME));
                 }
-                if (PlanetSimpleTest.user.getRole().getName().equals("Admin")) {
+                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
                   control(new ControlBuilder("dialogRole", RoleDialogDefinition.NAME));
                   control(new ControlBuilder("dialogUser", UserDialogDefinition.NAME));
                 }

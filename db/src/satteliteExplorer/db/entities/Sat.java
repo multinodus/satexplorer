@@ -42,7 +42,7 @@ public class Sat implements Serializable {
     this.orbit = orbit;
   }
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "equipmentId", nullable = false)
   public Equipment getEquipment() {
     return equipment;

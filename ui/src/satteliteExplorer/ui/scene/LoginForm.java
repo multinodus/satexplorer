@@ -2,6 +2,7 @@ package satteliteExplorer.ui.scene;
 
 import satteliteExplorer.db.EntityContext;
 import satteliteExplorer.db.entities.User;
+import satteliteExplorer.scheduler.World;
 
 import javax.swing.*;
 import java.awt.*;

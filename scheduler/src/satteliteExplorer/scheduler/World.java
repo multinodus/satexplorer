@@ -7,12 +7,10 @@ import satteliteExplorer.scheduler.models.EarthModel;
 import satteliteExplorer.scheduler.models.IUpdatable;
 import satteliteExplorer.scheduler.models.RegionModel;
 import satteliteExplorer.scheduler.models.SatModel;
+import satteliteExplorer.scheduler.transformations.SI_Transform;
 import satteliteExplorer.scheduler.util.DateTimeConstants;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -30,7 +28,7 @@ public class World {
   private Random rnd = new Random();
 
   public World() {
-    //generate();
+//    generate();
     load();
   }
 
@@ -43,20 +41,28 @@ public class World {
   }
 
   public void update() {
-    for (IUpdatable entity : entities) {
-      entity.update();
-    }
+//    for (IUpdatable entity : entities) {
+//      entity.update();
+//    }
   }
 
   private void generate() {
     int orbitCount = 6;
     int satCount = 1;
-    int regionCount = 5;
-    int equipmentTypeCount = 3;
-    int equipmentCount = 5;
-    int taskCount = 10;
+    int regionCount = 500;
+    int equipmentTypeCount = 1;
+    int equipmentCount = 1;
 
     Collection<Object> entities = new ArrayList<Object>();
+
+    Role role = new Role();
+    role.setName("operator");
+    User user = new User();
+    user.setRole(role);
+    user.setLogin("operator");
+    user.setPassword("operator");
+    entities.add(role);
+    entities.add(user);
 
     List<EquipmentType> equipmentTypes = new ArrayList<EquipmentType>();
     for (int i = 0; i < equipmentTypeCount; i++) {
@@ -71,7 +77,14 @@ public class World {
       for (int i = 0; i < equipmentCount; i++) {
         Equipment equipment = new Equipment();
         equipment.setDelay((long) (rnd.nextFloat() * DateTimeConstants.MSECS_IN_MINUTE));
-        equipment.setSpeed(10000f);
+        equipment.setCriticalAngle(30.0f);
+        equipment.setDeltaAngle(2.0f);
+        equipment.setFrameTime(7 * DateTimeConstants.MSECS_IN_SECOND);
+        equipment.setWorkTime(89 * DateTimeConstants.MSECS_IN_SECOND);
+        equipment.setResolution(36.0f);
+        equipment.setSpan(45000.0f);
+        equipment.setStorageCapacity(100.0f);
+        equipment.setSpeed(1.6f);
         equipment.setEquipmentType(type);
         equipments.add(equipment);
       }
@@ -104,18 +117,21 @@ public class World {
     ArrayList<Region> regions = new ArrayList<Region>();
     for (int i = 0; i < regionCount; i++) {
       Region region = new Region();
-      region.setLatitude(-FastMath.PI + rnd.nextFloat() * FastMath.TWO_PI);
+      region.setLatitude(-FastMath.PI/2 + rnd.nextFloat() * FastMath.PI);
       region.setLongitude(-FastMath.PI + rnd.nextFloat() * FastMath.TWO_PI);
-      region.setRadius(15000f);
+      region.setRadius(1000f);
       regions.add(region);
     }
     entities.addAll(regions);
 
     ArrayList<Task> tasks = new ArrayList<Task>();
-    for (int i = 0; i < taskCount; i++) {
+    for (int i = 0; i < regionCount; i++) {
       Task task = new Task();
       task.setEquipmentType(equipmentTypes.get((int) Math.round(rnd.nextFloat() * (equipmentTypeCount - 1))));
-      task.setRegion(regions.get((int) Math.round(rnd.nextFloat() * (regionCount - 1))));
+      task.setRegion(regions.get(i/*(int) Math.round(rnd.nextFloat() * (regionCount - 1))*/));
+      task.setCost(rnd.nextFloat());
+      task.setStart(new Date(SI_Transform.INITIAL_TIME.getTime() + (long)(rnd.nextFloat()*DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY)));
+      task.setFinish(new Date(task.getStart().getTime() + (long) (rnd.nextFloat() * DateTimeConstants.MSECS_IN_DAY)));
       tasks.add(task);
     }
     entities.addAll(tasks);
