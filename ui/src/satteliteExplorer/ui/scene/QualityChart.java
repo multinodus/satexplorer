@@ -1,5 +1,6 @@
 package satteliteExplorer.ui.scene;
 
+import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.jme3.math.FastMath;
 import org.jfree.chart.ChartPanel;
@@ -8,9 +9,13 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.LookupPaintScale;
 import org.jfree.chart.renderer.xy.XYBlockRenderer;
-import org.jfree.data.xy.DefaultXYZDataset;
+import org.jfree.chart.renderer.xy.XYShapeRenderer;
+import org.jfree.data.xy.*;
+import satteliteExplorer.db.EntityContext;
+import satteliteExplorer.db.entities.Sat;
 import satteliteExplorer.db.entities.Task;
 import satteliteExplorer.scheduler.models.SatModel;
+import satteliteExplorer.scheduler.optimizations.GeneticSolver;
 import satteliteExplorer.scheduler.transformations.PredictedDataElement;
 import satteliteExplorer.scheduler.transformations.PredictorOfObservations;
 import satteliteExplorer.scheduler.transformations.SI_Transform;
@@ -21,10 +26,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -44,7 +47,13 @@ public class QualityChart extends JFrame {
       System.out.println(e.toString());
     }
 
-    DefaultXYZDataset dataset = createDataset();
+    PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
+    Map<SatModel, Multimap<Task, PredictedDataElement>> allData = predictorOfObservations.observe(SI_Transform.INITIAL_TIME,
+        new Date(SI_Transform.INITIAL_TIME.getTime() + DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY), PlanetSimpleTest.scene.getWorld().getTasks(),
+        PlanetSimpleTest.scene.getWorld().getSatModels(), 0.05f);
+
+//    DefaultXYZDataset dataset = createDataset(allData);
+    XYDataset dataset = solve(allData);
     JFreeChart chart = createChart(dataset);
 
     ChartPanel chartPanel = new ChartPanel(chart);
@@ -52,13 +61,8 @@ public class QualityChart extends JFrame {
     setContentPane(chartPanel);
   }
 
-  private DefaultXYZDataset createDataset() {
+  private DefaultXYZDataset createDataset(Map<SatModel, Multimap<Task, PredictedDataElement>> allData) {
     DefaultXYZDataset dataset = new DefaultXYZDataset();
-
-    PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
-    Map<SatModel, Multimap<Task, PredictedDataElement>> allData = predictorOfObservations.observe(SI_Transform.INITIAL_TIME,
-        new Date(SI_Transform.INITIAL_TIME.getTime() + DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY), PlanetSimpleTest.scene.getWorld().getTasks(),
-        PlanetSimpleTest.scene.getWorld().getSatModels(), 0.05f);
 
     int j = 0;
     for (SatModel sat : allData.keySet()){
@@ -86,10 +90,106 @@ public class QualityChart extends JFrame {
       }
       dataset.addSeries(j, data);
       j++;
-      break;
+//      break;
     }
 
     return dataset;
+  }
+
+  private XYDataset solve(Map<SatModel, Multimap<Task, PredictedDataElement>> data){
+    List<Object> satList = EntityContext.get().getAllEntities(Sat.class);
+    List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
+
+    int satSize = satList.size();
+    int taskSize = taskList.size();
+
+    Map<Object, Integer> satIndexes = Maps.newHashMap();
+    Map<Object, Integer> taskIndexes = Maps.newHashMap();
+
+    int i = 0;
+    for (Object sat : satList){
+      satIndexes.put(sat, i);
+      i++;
+    }
+
+    i = 0;
+    for (Object task : taskList){
+      taskIndexes.put(task, i);
+      i++;
+    }
+
+    double[][] explorationCost = new double[taskSize][];
+    for (int taskIndex = 0; taskIndex < taskSize; taskIndex++){
+      explorationCost[taskIndex] = new double[satSize];
+    }
+
+    for (SatModel sat : data.keySet()){
+      Multimap<Task, PredictedDataElement> observation = data.get(sat);
+      for (satteliteExplorer.db.entities.Task task : observation.keys()) {
+        Collection<PredictedDataElement> elements = observation.get(task);
+
+        boolean explored = false;
+        double cost = 0;
+        for (PredictedDataElement element : elements) {
+          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())){
+            cost = task.getCost();
+            explored = true;
+            break;
+          } else {
+            cost = task.getCost()/4;
+          }
+        }
+        if (!explored) {
+          cost = 0;
+        }
+        explorationCost[taskIndexes.get(task)][satIndexes.get(sat.getSat())] = cost;
+      }
+    }
+
+    GeneticSolver solver = new GeneticSolver();
+    int[] result = null;
+    try {
+       result = solver.solve(satSize, taskSize, explorationCost, true);
+    } catch (Exception exc){
+      System.out.println(exc.toString());
+    }
+
+    XYSeriesCollection dataset = new XYSeriesCollection();
+    XYSeries[] serieses = new XYSeries[satSize+1];
+    for (int j = 0; j < serieses.length; j++){
+      serieses[j] = new XYSeries(j);
+    }
+
+    double[][] d = new double[3][result.length];
+    for (int j = 0; j < result.length; j++){
+      Task task = (Task)taskList.get(j);
+      serieses[result[j]].add(task.getRegion().getLongitude()* FastMath.RAD_TO_DEG,
+          task.getRegion().getLatitude()* FastMath.RAD_TO_DEG);
+    }
+
+    for (XYSeries series : serieses){
+      dataset.addSeries(series);
+    }
+    return dataset;
+  }
+
+  private XYPlot createPlot(XYDataset dataset) {
+    NumberAxis xAxis = new NumberAxis("Долгота");
+    xAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+    xAxis.setLowerMargin(0.0);
+    xAxis.setUpperMargin(0.0);
+    NumberAxis yAxis = new NumberAxis("Широта");
+    yAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+    yAxis.setLowerMargin(0.0);
+    yAxis.setUpperMargin(0.0);
+    XYShapeRenderer renderer = new XYShapeRenderer();
+
+    XYPlot plot = new XYPlot(dataset, xAxis, yAxis, renderer);
+    plot.setBackgroundImage(background);
+    plot.setDomainGridlinesVisible(false);
+    plot.setRangeGridlinePaint(Color.white);
+
+    return plot;
   }
 
   private XYPlot createPlot(DefaultXYZDataset dataset) {
@@ -121,7 +221,17 @@ public class QualityChart extends JFrame {
     return plot;
   }
 
-  private JFreeChart createChart(DefaultXYZDataset dataset) {
+  private JFreeChart createChart(XYDataset dataset) {
+    XYPlot plot = createPlot(dataset);
+
+    JFreeChart chart = new JFreeChart("Карта наблюдаемости", plot);
+//    chart.removeLegend();
+    chart.setBackgroundPaint(Color.white);
+
+    return chart;
+  }
+
+  private JFreeChart createChart(XYZDataset dataset) {
     XYPlot plot = createPlot(dataset);
 
     JFreeChart chart = new JFreeChart("Карта наблюдаемости", plot);

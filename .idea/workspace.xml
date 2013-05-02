@@ -14,12 +14,10 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Fix angles">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add genetic algorithm">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.lck" afterPath="$PROJECT_DIR$/hsqldb/storage.lck" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/schedulerLib.xml" afterPath="$PROJECT_DIR$/.idea/libraries/schedulerLib.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.properties" afterPath="$PROJECT_DIR$/hsqldb/storage.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -36,11 +34,11 @@
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
     <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367434430716" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367486450185" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367499444790" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362838773317" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367436011648" ignored="false" />
-    <file path="/QualityChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367439141583" ignored="false" />
+    <file path="/QualityChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367502219371" ignored="false" />
     <file path="/JmeControlsDemoScreenController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367427661481" ignored="false" />
     <file path="/PredictorOfObservations.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438283829" ignored="false" />
     <file path="/ISatMovement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367260502622" ignored="false" />
@@ -51,7 +49,7 @@
     <file path="/hibernate.cfg.xml" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367436091344" ignored="false" />
     <file path="/Sat.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367424767536" ignored="false" />
     <file path="/PredictorDataElement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367432638878" ignored="false" />
-    <file path="/GeneticSolver.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367495092321" ignored="false" />
+    <file path="/GeneticSolver.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367496682375" ignored="false" />
     <file path="/FitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367491584256" ignored="false" />
     <file path="/ExplorationTimeFitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367494980052" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,7 +66,22 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/role/RoleDialogController.java" line="100" class="satteliteExplorer.ui.controls.role.RoleDialogController" package="satteliteExplorer.ui.controls.role">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -103,22 +116,7 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/role/RoleDialogController.java" line="100" class="satteliteExplorer.ui.controls.role.RoleDialogController" package="satteliteExplorer.ui.controls.role">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -128,10 +126,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QualityChart.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="QualityChart.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="54" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0">
+            <state line="190" column="42" selection-start="6592" selection-end="6592" vertical-scroll-proportion="0.61870503">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,13 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneticSolver.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GeneticSolver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="11" selection-start="1172" selection-end="1172" vertical-scroll-proportion="0.37192118">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="50" column="58" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,9 +150,7 @@
         <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="15" column="40" selection-start="411" selection-end="437" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -255,10 +249,10 @@
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/transformations/PredictorOfObservations.java" />
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/models/SatModel.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java" />
-        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/FitnessFunction.java" />
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java" />
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" />
+        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
       </list>
     </option>
   </component>
@@ -640,6 +634,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatteliteExplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatteliteExplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SatteliteExplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -650,14 +698,14 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="133" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="151" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/scheduler" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="157" />
@@ -672,16 +720,16 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="project.propSubversion" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -915,7 +963,11 @@
       <created>1367439060892</created>
       <updated>1367439060892</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add genetic algorithm">
+      <created>1367495160456</created>
+      <updated>1367495160456</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -950,12 +1002,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22827938" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2725724" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22827938" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.7717206" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28620103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.81260645" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18739353" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -964,7 +1017,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27597955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2725724" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1007,7 +1059,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix angles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add genetic algorithm" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1030,6 +1082,7 @@
     <MESSAGE value="So many changes" />
     <MESSAGE value="Optimize calculations" />
     <MESSAGE value="Fix angles" />
+    <MESSAGE value="Add genetic algorithm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1130,27 +1183,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="54" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="40" selection-start="411" selection-end="437" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="11" selection-start="1172" selection-end="1172" vertical-scroll-proportion="0.37192118">
+        <state line="50" column="58" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="190" column="42" selection-start="6592" selection-end="6592" vertical-scroll-proportion="0.61870503">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

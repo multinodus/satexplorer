@@ -14,11 +14,11 @@ import org.jgap.impl.DefaultConfiguration;
 import org.jgap.impl.IntegerGene;
 
 public class GeneticSolver {
-  private static final int MAX_ALLOWED_EVOLUTIONS = 50;
+  private static final int MAX_ALLOWED_EVOLUTIONS = 1;
 
   public EvolutionMonitor m_monitor;
 
-  public void solve(int satSize, int taskSize, double[][] explorationCost, boolean a_doMonitor)
+  public int[] solve(int satSize, int taskSize, double[][] explorationCost, boolean a_doMonitor)
       throws Exception {
     // Start with a DefaultConfiguration, which comes setup with the
     // most common settings.
@@ -74,6 +74,18 @@ public class GeneticSolver {
     System.out.println("The best solution has a fitness value of " +
         bestSolutionSoFar.getFitnessValue());
     bestSolutionSoFar.setFitnessValueDirectly(-1);
+
+    return getResult(bestSolutionSoFar);
+  }
+
+  private int[] getResult(IChromosome bestSolutionSoFar){
+    int[] result = new int[bestSolutionSoFar.size()];
+
+    for (int i = 0; i < bestSolutionSoFar.size(); i++) {
+      result[i] = (Integer)bestSolutionSoFar.getGene(i).getAllele();
+    }
+
+    return result;
   }
 
   /**
@@ -82,7 +94,7 @@ public class GeneticSolver {
    * @author Klaus Meffert
    * @since 3.3.1
    */
-  public boolean uniqueChromosomes(Population a_pop) {
+  private boolean uniqueChromosomes(Population a_pop) {
     // Check that all chromosomes are unique
     for (int i = 0; i < a_pop.size() - 1; i++) {
       IChromosome c = a_pop.getChromosome(i);
