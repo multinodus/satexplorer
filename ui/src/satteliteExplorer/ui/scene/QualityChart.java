@@ -73,11 +73,11 @@ public class QualityChart extends JFrame {
 
         boolean explored = false;
         for (PredictedDataElement element : elements) {
-//          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())){
-            data[2][i] = 1;
+          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())){
+            data[2][i] = task.getCost();
             explored = true;
             break;
-//          }
+          }
         }
         if (!explored) {
           data[2][i] = 0;
@@ -107,7 +107,7 @@ public class QualityChart extends JFrame {
     scale.add(0, Color.red);
     scale.add(0.25, Color.orange);
     scale.add(0.5, Color.yellow);
-    scale.add(0.75, new Color(125, 255, 0));
+    scale.add(0.75, new Color(200, 255, 0));
     scale.add(1.0, Color.green);
     renderer.setPaintScale(scale);
     renderer.setBlockHeight(1);

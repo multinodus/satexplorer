@@ -3,10 +3,12 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/lib/ui" />
       <root url="file://$PROJECT_DIR$/lib/db" />
+      <root url="file://$PROJECT_DIR$/lib/scheduler" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
     <jarDirectory url="file://$PROJECT_DIR$/lib/db" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/scheduler" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/lib/ui" recursive="false" />
   </library>
 </component>
