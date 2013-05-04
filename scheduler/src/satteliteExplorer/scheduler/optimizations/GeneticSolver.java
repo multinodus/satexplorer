@@ -14,7 +14,7 @@ import org.jgap.impl.DefaultConfiguration;
 import org.jgap.impl.IntegerGene;
 
 public class GeneticSolver {
-  private static final int MAX_ALLOWED_EVOLUTIONS = 1;
+  private static final int MAX_ALLOWED_EVOLUTIONS = 5000;
 
   public EvolutionMonitor m_monitor;
 
@@ -44,7 +44,7 @@ public class GeneticSolver {
 
     Gene[] genes = new Gene[taskSize];
     for (int i = 0; i < taskSize; i++) {
-      genes[i] = new IntegerGene(conf, 0, satSize - 1);
+      genes[i] = new IntegerGene(conf, 0, satSize);
     }
 
     IChromosome sampleChromosome = new Chromosome(conf, genes);
@@ -53,6 +53,7 @@ public class GeneticSolver {
     conf.setPopulationSize(20);
 
     Genotype population = Genotype.randomInitialGenotype(conf);
+//    Genotype population = createInitialGenotype(conf, genes, taskSize, satSize, explorationCost);
 
     long startTime = System.currentTimeMillis();
     for (int i = 0; i < MAX_ALLOWED_EVOLUTIONS; i++) {
@@ -76,6 +77,26 @@ public class GeneticSolver {
     bestSolutionSoFar.setFitnessValueDirectly(-1);
 
     return getResult(bestSolutionSoFar);
+  }
+
+  private Genotype createInitialGenotype(Configuration conf, Gene[] genes, int taskSize, int satSize, double[][] explorationCost)
+    throws Exception{
+    Gene[] initial_genes = genes.clone();
+    for (int i = 0; i < taskSize; i++){
+      double max = 0;
+      int index = 0;
+      for (int j = 0; j < satSize+1; j++){
+        if (explorationCost[i][j] > max){
+          max = explorationCost[i][j];
+          index = j;
+        }
+      }
+      initial_genes[i].setAllele(index);
+    }
+    Chromosome initial_chromosome = new Chromosome(conf, initial_genes);
+    Population initial_population = new Population(conf, initial_chromosome);
+    Genotype population = new Genotype(conf, initial_population);
+    return population;
   }
 
   private int[] getResult(IChromosome bestSolutionSoFar){

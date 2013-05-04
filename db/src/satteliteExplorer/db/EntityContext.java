@@ -1,8 +1,10 @@
 package satteliteExplorer.db;
 
+import com.google.common.collect.Lists;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import satteliteExplorer.db.entities.Sat;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -44,6 +46,9 @@ public class EntityContext {
         List entities = session.createQuery("select h from " + className.getSimpleName() + " as h")
             .list();
         tx.commit();
+        if (className == Sat.class){
+          entities = Lists.newArrayList(entities.get(0));
+        }
         storage.put(className, entities);
         return entities;
       } catch (RuntimeException e) {

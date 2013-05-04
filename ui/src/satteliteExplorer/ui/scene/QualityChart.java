@@ -49,7 +49,7 @@ public class QualityChart extends JFrame {
 
     PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
     Map<SatModel, Multimap<Task, PredictedDataElement>> allData = predictorOfObservations.observe(SI_Transform.INITIAL_TIME,
-        new Date(SI_Transform.INITIAL_TIME.getTime() + DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY), PlanetSimpleTest.scene.getWorld().getTasks(),
+        new Date(SI_Transform.INITIAL_TIME.getTime() + 40*DateTimeConstants.MSECS_IN_HOUR/*DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY*/), PlanetSimpleTest.scene.getWorld().getTasks(),
         PlanetSimpleTest.scene.getWorld().getSatModels(), 0.05f);
 
 //    DefaultXYZDataset dataset = createDataset(allData);
@@ -120,7 +120,7 @@ public class QualityChart extends JFrame {
 
     double[][] explorationCost = new double[taskSize][];
     for (int taskIndex = 0; taskIndex < taskSize; taskIndex++){
-      explorationCost[taskIndex] = new double[satSize];
+      explorationCost[taskIndex] = new double[satSize+1];
     }
 
     for (SatModel sat : data.keySet()){
@@ -128,28 +128,33 @@ public class QualityChart extends JFrame {
       for (satteliteExplorer.db.entities.Task task : observation.keys()) {
         Collection<PredictedDataElement> elements = observation.get(task);
 
-        boolean explored = false;
         double cost = 0;
         for (PredictedDataElement element : elements) {
           if (element.date.after(task.getStart()) && element.date.before(task.getFinish())){
             cost = task.getCost();
-            explored = true;
             break;
           } else {
             cost = task.getCost()/4;
           }
         }
-        if (!explored) {
-          cost = 0;
-        }
         explorationCost[taskIndexes.get(task)][satIndexes.get(sat.getSat())] = cost;
+      }
+    }
+
+    for (int j = 0; j < explorationCost.length; j++){
+      double sum = 0;
+      for (int k = 0; k < explorationCost[j].length; k++){
+        sum += explorationCost[j][k];
+      }
+      if (sum < 0.00001){
+        explorationCost[j][satSize] = 1;
       }
     }
 
     GeneticSolver solver = new GeneticSolver();
     int[] result = null;
     try {
-       result = solver.solve(satSize, taskSize, explorationCost, true);
+       result = solver.solve(satSize, taskSize, explorationCost, false);
     } catch (Exception exc){
       System.out.println(exc.toString());
     }
@@ -192,7 +197,7 @@ public class QualityChart extends JFrame {
     return plot;
   }
 
-  private XYPlot createPlot(DefaultXYZDataset dataset) {
+  private XYPlot createPlot2(DefaultXYZDataset dataset) {
     NumberAxis xAxis = new NumberAxis("Долгота");
     xAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
     xAxis.setLowerMargin(0.0);
@@ -231,8 +236,8 @@ public class QualityChart extends JFrame {
     return chart;
   }
 
-  private JFreeChart createChart(XYZDataset dataset) {
-    XYPlot plot = createPlot(dataset);
+  private JFreeChart createChart(DefaultXYZDataset dataset) {
+    XYPlot plot = createPlot2(dataset);
 
     JFreeChart chart = new JFreeChart("Карта наблюдаемости", plot);
     chart.removeLegend();

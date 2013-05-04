@@ -14,8 +14,9 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add genetic algorithm">
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Change chart">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.lck" afterPath="$PROJECT_DIR$/hsqldb/storage.lck" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/src/satteliteExplorer/db/EntityContext.java" afterPath="$PROJECT_DIR$/db/src/satteliteExplorer/db/EntityContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.properties" afterPath="$PROJECT_DIR$/hsqldb/storage.properties" />
@@ -32,13 +33,13 @@
     <file path="/EarthView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362328785373" ignored="false" />
     <file path="/RegionView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367420396718" ignored="false" />
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
-    <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367434430716" ignored="false" />
+    <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367660886968" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367499444790" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367603014620" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362838773317" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367436011648" ignored="false" />
-    <file path="/QualityChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367502219371" ignored="false" />
+    <file path="/QualityChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367664784686" ignored="false" />
     <file path="/JmeControlsDemoScreenController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367427661481" ignored="false" />
     <file path="/PredictorOfObservations.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438283829" ignored="false" />
     <file path="/ISatMovement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367260502622" ignored="false" />
@@ -49,9 +50,10 @@
     <file path="/hibernate.cfg.xml" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367436091344" ignored="false" />
     <file path="/Sat.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367424767536" ignored="false" />
     <file path="/PredictorDataElement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367432638878" ignored="false" />
-    <file path="/GeneticSolver.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367496682375" ignored="false" />
+    <file path="/GeneticSolver.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367665089596" ignored="false" />
     <file path="/FitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367491584256" ignored="false" />
-    <file path="/ExplorationTimeFitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367494980052" ignored="false" />
+    <file path="/ExplorationTimeFitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367508571321" ignored="false" />
+    <file path="/EntityContext.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367509138699" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/role/RoleDialogController.java" line="100" class="satteliteExplorer.ui.controls.role.RoleDialogController" package="satteliteExplorer.ui.controls.role">
         <option name="ENABLED" value="true" />
@@ -116,7 +119,6 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -126,21 +128,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QualityChart.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="QualityChart.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="190" column="42" selection-start="6592" selection-end="6592" vertical-scroll-proportion="0.61870503">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="158" column="43" selection-start="5520" selection-end="5520" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneticSolver.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GeneticSolver.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="58" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+            <state line="18" column="88" selection-start="462" selection-end="462" vertical-scroll-proportion="0.6439394">
               <folding />
             </state>
           </provider>
@@ -149,7 +149,16 @@
       <file leaf-file-name="ExplorationTimeFitnessFunction.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="40" selection-start="411" selection-end="437" vertical-scroll-proportion="0.0">
+            <state line="29" column="55" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntityContext.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/src/satteliteExplorer/db/EntityContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="9" selection-start="1352" selection-end="1352" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -200,24 +209,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/World.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="15" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/LoginForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="30" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -237,7 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemo.java" />
         <option value="$PROJECT_DIR$/db/src/satteliteExplorer/db/entities/Sat.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/PlanetSimpleTest.java" />
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/transformations/PredictorDataElement.java" />
@@ -251,8 +241,9 @@
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java" />
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/FitnessFunction.java" />
         <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java" />
-        <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" />
+        <option value="$PROJECT_DIR$/db/src/satteliteExplorer/db/EntityContext.java" />
         <option value="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
+        <option value="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" />
       </list>
     </option>
   </component>
@@ -294,6 +285,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -690,13 +683,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="133" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="151" />
     <property name="OverrideImplement.combined" value="true" />
@@ -705,14 +696,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="156" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/scheduler" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="157" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="832" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="823" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="836" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="153" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="147" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="152" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="146" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
@@ -725,9 +716,10 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="project.propSubversion" />
+    <property name="options.lastSelected" value="project.propCompiler" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
@@ -756,11 +748,11 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="satteliteExplorer.ui.scene.PlanetSimpleTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="-Xmx3024m -Xms1024m" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -967,7 +959,11 @@
       <created>1367495160456</created>
       <updated>1367495160456</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Change chart">
+      <created>1367502417468</created>
+      <updated>1367502417468</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -998,7 +994,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2589438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33901194" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1007,8 +1003,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.81260645" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18739353" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2689394" sideWeight="0.7768313" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22316866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1059,7 +1055,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add genetic algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change chart" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1083,6 +1079,7 @@
     <MESSAGE value="Optimize calculations" />
     <MESSAGE value="Fix angles" />
     <MESSAGE value="Add genetic algorithm" />
+    <MESSAGE value="Change chart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1096,25 +1093,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/ui/jME3-core.jar!/com/jme3/app/Application.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="0" selection-start="4284" selection-end="4284" vertical-scroll-proportion="0.7407407" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/PlanetSimpleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="42" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/transformations/SI_Transform.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="13" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
@@ -1183,26 +1161,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java">
+    <entry file="jar://$PROJECT_DIR$/lib/scheduler/jgap.jar!/org/jgap/Population.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="40" selection-start="411" selection-end="437" vertical-scroll-proportion="0.0">
+        <state line="94" column="0" selection-start="4340" selection-end="4340" vertical-scroll-proportion="0.7547771" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/scheduler/jgap.jar!/org/jgap/FitnessFunction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="62" selection-start="410" selection-end="410" vertical-scroll-proportion="0.35883906">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java">
+    <entry file="file://$PROJECT_DIR$/db/src/satteliteExplorer/db/EntityContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="58" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
+        <state line="50" column="9" selection-start="1352" selection-end="1352" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="55" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="42" selection-start="6592" selection-end="6592" vertical-scroll-proportion="0.61870503">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="158" column="43" selection-start="5520" selection-end="5520" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="88" selection-start="462" selection-end="462" vertical-scroll-proportion="0.6439394">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,7 +1253,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>scheduler</last-edited>
+          <last-edited>SatteliteExplorer</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
