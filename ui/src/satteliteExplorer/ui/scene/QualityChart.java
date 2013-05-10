@@ -24,6 +24,8 @@ import satteliteExplorer.scheduler.util.DateTimeConstants;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -38,6 +40,7 @@ import java.util.List;
  */
 public class QualityChart extends JFrame {
   private Image background;
+  private JFreeChart chart;
 
   public QualityChart() {
     try {
@@ -59,6 +62,11 @@ public class QualityChart extends JFrame {
     ChartPanel chartPanel = new ChartPanel(chart);
     chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
     setContentPane(chartPanel);
+  }
+
+  public Image createImage(){
+    BufferedImage objBufferedImage= chart.createBufferedImage(600,800);
+    return objBufferedImage;
   }
 
   private DefaultXYZDataset createDataset(Map<SatModel, Multimap<Task, PredictedDataElement>> allData) {

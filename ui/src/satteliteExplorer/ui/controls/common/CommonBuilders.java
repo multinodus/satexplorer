@@ -23,12 +23,22 @@ public class CommonBuilders {
     }};
   }
 
-  public EffectBuilder createFadeEffect() {
+  public EffectBuilder createFadeEffectIn() {
+    return new EffectBuilder("fade") {{
+      effectParameter("start", "#0");
+      effectParameter("end", "#f");
+      length(300);
+      startDelay(300);
+      inherit(true);
+    }};
+  }
+
+  public EffectBuilder createFadeEffectOut() {
     return new EffectBuilder("fade") {{
       effectParameter("start", "#f");
       effectParameter("end", "#0");
       length(300);
-      startDelay(300);
+      startDelay(0);
       inherit(true);
     }};
   }

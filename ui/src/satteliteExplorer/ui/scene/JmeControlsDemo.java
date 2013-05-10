@@ -104,58 +104,13 @@ public class JmeControlsDemo {
         layer(new LayerBuilder("layer") {
 
           {
-            childLayoutVertical();
-            if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
-              panel(new PanelBuilder("navigation") {
+            childLayoutHorizontal();
 
-                {
-                  width("100%");
-                  height("35px");
-                  backgroundColor("#5588");
-                  childLayoutHorizontal();
-                  padding("20px");
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonListBox", "", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonOrbit", "Орбиты", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonSat", "КА", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonDataCenter", "ЦОД", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonRegion", "Регион", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonTask", "Задачи", ""));
-                }
-              });
-            }
-            panel(new PanelBuilder("navigation2") {
-              {
-                width("100%");
-                height("35px");
-                backgroundColor("#5588");
-                childLayoutHorizontal();
-                padding("20px");
-                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonRole", "Роли", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonUser", "Пользователи", ""));
-                  panel(builders.hspacer("10px"));
-                }
-                if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipment", "Оборудование", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipmentType", "Типы оборудования", ""));
-                  panel(builders.hspacer("10px"));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonSchedule", "Запуск планирования", ""));
-                }
-              }
-            });
             panel(new PanelBuilder("dialogParent") {
-
               {
                 childLayoutOverlay();
-                width("100%");
-                alignCenter();
+//                width("85%");
+                alignLeft();
                 valignCenter();
                 if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
                   control(new ControlBuilder("dialogListBox", EmptyDialogControlDefinition.NAME));
@@ -166,13 +121,53 @@ public class JmeControlsDemo {
                   control(new ControlBuilder("dialogDataCenter", DataCenterDialogDefinition.NAME));
                   control(new ControlBuilder("dialogRegion", RegionDialogControlDefinition.NAME));
                   control(new ControlBuilder("dialogEquipmentType", EquipmentTypeDialogDefinition.NAME));
-                }
-                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
                   control(new ControlBuilder("dialogRole", RoleDialogDefinition.NAME));
                   control(new ControlBuilder("dialogUser", UserDialogDefinition.NAME));
                 }
+                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
+
+                }
               }
             });
+
+            if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
+              panel(new PanelBuilder("navigation") {
+                {
+                  valignTop();
+                  alignRight();
+                  width("130px");
+                  height("35px");
+//                  backgroundColor("#5588");
+                  childLayoutVertical();
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonListBox", "", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonOrbit", "Орбиты", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonSat", "КА", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonDataCenter", "ППИ", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonRegion", "Регион", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonTask", "Задачи", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipment", "Оборудование", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipmentType", "Типы оборудования", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonSchedule", "Запуск планирования", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonRole", "Роли", ""));
+                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonUser", "Пользователи", ""));
+                }
+              });
+            }
+//            panel(new PanelBuilder("navigation2") {
+//              {
+//                width("100%");
+//                height("35px");
+//                backgroundColor("#5588");
+//                childLayoutHorizontal();
+//                padding("20px");
+//                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
+//
+//                }
+//                if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
+//
+//                }
+//              }
+//            });
           }
         });
       }

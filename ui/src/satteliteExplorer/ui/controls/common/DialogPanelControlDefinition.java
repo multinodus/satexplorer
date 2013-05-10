@@ -22,16 +22,19 @@ public class DialogPanelControlDefinition {
         visible(false);
         childLayoutCenter();
         panel(new PanelBuilder("#effectPanel") {{
-          style("nifty-panel");
+//          style("nifty-panel");
+          backgroundColor("#5588");
           childLayoutVertical();
           alignCenter();
           valignCenter();
-          width("50%");
-          height("60%");
+          width("90%");
+          height("90%");
           padding("14px,20px,26px,19px");
-          onShowEffect(builders.createMoveEffect("in", "left", 500));
-          onHideEffect(builders.createMoveEffect("out", "right", 500));
-          onHideEffect(builders.createFadeEffect());
+          onShowEffect(builders.createFadeEffectIn());
+          onHideEffect(builders.createFadeEffectOut());
+//          onHideEffect(builders.createFadeEffectOut());
+//          onShowEffect(builders.createMoveEffect("in", "up", 500));
+//          onHideEffect(builders.createMoveEffect("out", "down", 500));
         }});
       }});
     }}.registerControlDefintion(nifty);
