@@ -1,5 +1,6 @@
 package satteliteExplorer.ui.scene;
 
+import com.jme3.app.SimpleApplication;
 import de.lessvoid.nifty.EndNotify;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
@@ -18,6 +19,7 @@ import de.lessvoid.nifty.screen.KeyInputHandler;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 import de.lessvoid.nifty.tools.Color;
+import satteliteExplorer.ui.controls.common.ImagePanelDefinition;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ public class JmeControlsDemoScreenController implements ScreenController, KeyInp
   private static final Logger logger = Logger.getLogger(JmeControlsDemoScreenController.class.getName());
   private static final Color HELP_COLOR = new Color("#aaaf");
 
+  private UIApplication app;
   private Nifty nifty;
   private Screen screen;
   private Element consolePopup;
@@ -49,7 +52,8 @@ public class JmeControlsDemoScreenController implements ScreenController, KeyInp
   // This keeps the current menu button
   private String currentMenuButtonId;
 
-  public JmeControlsDemoScreenController(final String... mapping) {
+  public JmeControlsDemoScreenController(UIApplication app, final String... mapping) {
+    this.app = app;
     if (mapping == null || mapping.length == 0 || mapping.length % 2 != 0) {
       logger.warning("expecting pairs of values that map menuButton IDs to dialog IDs");
     } else {
@@ -130,10 +134,9 @@ public class JmeControlsDemoScreenController implements ScreenController, KeyInp
       return;
     }
     if ("menuButtonSchedule".equals(id)) {
-      QualityChart frame = new QualityChart();
+      QualityChart frame = new QualityChart(app);
       frame.setSize(new Dimension(800, 600));
-      frame.show();
-      return;
+//      frame.show();
     }
     changeDialogTo(id);
   }
@@ -168,6 +171,9 @@ public class JmeControlsDemoScreenController implements ScreenController, KeyInp
       if (id.indexOf("ListBox") == -1) {
         nextElement.show();
       }
+//      if (id.indexOf("chartImg")!=-1){
+//        nextElement.onStartScreen();
+//      }
 
       Element currentElement = screen.findElementByName(buttonToDialogMap.get(currentMenuButtonId));
       modifyMoveEffect(EffectEventId.onHide, currentElement, currentIndex < nextIndex ? "left" : "right");

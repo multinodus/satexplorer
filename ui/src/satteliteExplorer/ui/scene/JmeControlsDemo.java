@@ -8,6 +8,7 @@ import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.tools.Color;
 import satteliteExplorer.ui.controls.common.CommonBuilders;
 import satteliteExplorer.ui.controls.common.DialogPanelControlDefinition;
+import satteliteExplorer.ui.controls.common.ImagePanelDefinition;
 import satteliteExplorer.ui.controls.common.MenuButtonControlDefinition;
 import satteliteExplorer.ui.controls.dataCenter.DataCenterDialogDefinition;
 import satteliteExplorer.ui.controls.equipment.EquipmentDialogControlDefinition;
@@ -28,12 +29,15 @@ import satteliteExplorer.ui.controls.user.UserDialogDefinition;
  */
 public class JmeControlsDemo {
 
-  private static CommonBuilders builders = new CommonBuilders();
+  private CommonBuilders builders = new CommonBuilders();
+  private UIApplication app;
 
-  public NiftyJmeDisplay simpleInitApp(SimpleApplication a) {
+  public NiftyJmeDisplay simpleInitApp(UIApplication a) {
     /**
      * Nifty-JME integration
      */
+    app = a;
+
     NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(
         a.getAssetManager(), a.getInputManager(), a.getAudioRenderer(), a.getGuiViewPort());
     Nifty nifty = niftyDisplay.getNifty();
@@ -67,6 +71,7 @@ public class JmeControlsDemo {
     EquipmentTypeDialogDefinition.register(nifty);
     RoleDialogDefinition.register(nifty);
     UserDialogDefinition.register(nifty);
+    ImagePanelDefinition.register(nifty);
 
     createDemoScreen(nifty);
     nifty.gotoScreen("demo");
@@ -74,18 +79,13 @@ public class JmeControlsDemo {
     return niftyDisplay;
   }
 
-  private static Screen createDemoScreen(final Nifty nifty) {
+  private Screen createDemoScreen(final Nifty nifty) {
     final CommonBuilders common = new CommonBuilders();
     Screen screen = new ScreenBuilder("demo") {
 
       {
-        if (PlanetSimpleTest.user.getRole().getName().equals("engeener")) {
-          controller(new JmeControlsDemoScreenController(
-              "menuButtonConstraint", "dialogConstraint",
-              "menuButtonEffectiveness", "dialogEffectiveness"));
-        }
-        if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
-          controller(new JmeControlsDemoScreenController(
+        if (app.user.getRole().getName().equals("operator")) {
+          controller(new JmeControlsDemoScreenController( app,
               "menuButtonListBox", "dialogListBox",
               "menuButtonDataCenter", "dialogDataCenter",
               "menuButtonRegion", "dialogRegion",
@@ -93,13 +93,15 @@ public class JmeControlsDemo {
               "menuButtonEquipmentType", "dialogEquipmentType",
               "menuButtonSat", "dialogSat",
               "menuButtonTask", "dialogTask",
-              "menuButtonOrbit", "dialogOrbit"));
-        }
-        if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
-          controller(new JmeControlsDemoScreenController(
+              "menuButtonOrbit", "dialogOrbit",
               "menuButtonRole", "dialogRole",
-              "menuButtonUser", "dialogUser"));
+              "menuButtonUser", "dialogUser",
+              "menuButtonSchedule", "chartImg"));
         }
+//        if (UIApplication.user.getRole().getName().equals("admin")) {
+//          controller(new JmeControlsDemoScreenController(
+//              );
+//        }
         inputMapping("de.lessvoid.nifty.input.mapping.DefaultInputMapping"); // this will enable Keyboard events for the screen controller
         layer(new LayerBuilder("layer") {
 
@@ -112,7 +114,7 @@ public class JmeControlsDemo {
 //                width("85%");
                 alignLeft();
                 valignCenter();
-                if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
+                if (app.user.getRole().getName().equals("operator")) {
                   control(new ControlBuilder("dialogListBox", EmptyDialogControlDefinition.NAME));
                   control(new ControlBuilder("dialogOrbit", OrbitDialogControlDefinition.NAME));
                   control(new ControlBuilder("dialogEquipment", EquipmentDialogControlDefinition.NAME));
@@ -123,14 +125,15 @@ public class JmeControlsDemo {
                   control(new ControlBuilder("dialogEquipmentType", EquipmentTypeDialogDefinition.NAME));
                   control(new ControlBuilder("dialogRole", RoleDialogDefinition.NAME));
                   control(new ControlBuilder("dialogUser", UserDialogDefinition.NAME));
+                  control(new ControlBuilder("chartImg", ImagePanelDefinition.NAME));
                 }
-                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
+                if (app.user.getRole().getName().equals("admin")) {
 
                 }
               }
             });
 
-            if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
+            if (app.user.getRole().getName().equals("operator")) {
               panel(new PanelBuilder("navigation") {
                 {
                   valignTop();
@@ -160,10 +163,10 @@ public class JmeControlsDemo {
 //                backgroundColor("#5588");
 //                childLayoutHorizontal();
 //                padding("20px");
-//                if (PlanetSimpleTest.user.getRole().getName().equals("admin")) {
+//                if (UIApplication.user.getRole().getName().equals("admin")) {
 //
 //                }
-//                if (PlanetSimpleTest.user.getRole().getName().equals("operator")) {
+//                if (UIApplication.user.getRole().getName().equals("operator")) {
 //
 //                }
 //              }
@@ -175,7 +178,7 @@ public class JmeControlsDemo {
     return screen;
   }
 
-  private static void registerMenuButtonHintStyle(final Nifty nifty) {
+  private void registerMenuButtonHintStyle(final Nifty nifty) {
     new StyleBuilder() {
 
       {
@@ -238,7 +241,7 @@ public class JmeControlsDemo {
     }.build(nifty);
   }
 
-  private static void registerStyles(final Nifty nifty) {
+  private void registerStyles(final Nifty nifty) {
     new StyleBuilder() {
 
       {

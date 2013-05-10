@@ -14,7 +14,7 @@ import org.jgap.impl.DefaultConfiguration;
 import org.jgap.impl.IntegerGene;
 
 public class GeneticSolver {
-  private static final int MAX_ALLOWED_EVOLUTIONS = 5000;
+  private static final int MAX_ALLOWED_EVOLUTIONS = 50;
 
   public EvolutionMonitor m_monitor;
 

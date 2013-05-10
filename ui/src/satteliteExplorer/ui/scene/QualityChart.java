@@ -10,7 +10,10 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.LookupPaintScale;
 import org.jfree.chart.renderer.xy.XYBlockRenderer;
 import org.jfree.chart.renderer.xy.XYShapeRenderer;
-import org.jfree.data.xy.*;
+import org.jfree.data.xy.DefaultXYZDataset;
+import org.jfree.data.xy.XYDataset;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 import satteliteExplorer.db.EntityContext;
 import satteliteExplorer.db.entities.Sat;
 import satteliteExplorer.db.entities.Task;
@@ -25,11 +28,12 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -42,7 +46,7 @@ public class QualityChart extends JFrame {
   private Image background;
   private JFreeChart chart;
 
-  public QualityChart() {
+  public QualityChart(UIApplication app) {
     try {
       File file = new File(System.getProperty("user.dir") + "/assets/Textures/earth_mini.jpg");
       background = ImageIO.read(file);
@@ -52,8 +56,8 @@ public class QualityChart extends JFrame {
 
     PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
     Map<SatModel, Multimap<Task, PredictedDataElement>> allData = predictorOfObservations.observe(SI_Transform.INITIAL_TIME,
-        new Date(SI_Transform.INITIAL_TIME.getTime() + 40*DateTimeConstants.MSECS_IN_HOUR/*DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY*/), PlanetSimpleTest.scene.getWorld().getTasks(),
-        PlanetSimpleTest.scene.getWorld().getSatModels(), 0.05f);
+        new Date(SI_Transform.INITIAL_TIME.getTime() + 40 * DateTimeConstants.MSECS_IN_HOUR/*DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY*/), app.scene.getWorld().getTasks(),
+        app.scene.getWorld().getSatModels(), 0.05f);
 
 //    DefaultXYZDataset dataset = createDataset(allData);
     XYDataset dataset = solve(allData);
@@ -62,30 +66,33 @@ public class QualityChart extends JFrame {
     ChartPanel chartPanel = new ChartPanel(chart);
     chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
     setContentPane(chartPanel);
-  }
 
-  public Image createImage(){
-    BufferedImage objBufferedImage= chart.createBufferedImage(600,800);
-    return objBufferedImage;
+    BufferedImage bufferedImage = chart.createBufferedImage(800, 600);
+    try {
+      File outputfile = new File(System.getProperty("user.dir") + "/out/production/ui/Textures/" + "chart.png");
+      ImageIO.write(bufferedImage, "png", outputfile);
+    } catch (IOException exc){
+      System.out.println(exc.toString());
+    }
   }
 
   private DefaultXYZDataset createDataset(Map<SatModel, Multimap<Task, PredictedDataElement>> allData) {
     DefaultXYZDataset dataset = new DefaultXYZDataset();
 
     int j = 0;
-    for (SatModel sat : allData.keySet()){
+    for (SatModel sat : allData.keySet()) {
       Multimap<Task, PredictedDataElement> observation = allData.get(sat);
       int i = 0;
       double[][] data = new double[3][observation.keys().size()];
       for (satteliteExplorer.db.entities.Task task : observation.keys()) {
         Collection<PredictedDataElement> elements = observation.get(task);
 
-        data[0][i] = task.getRegion().getLongitude()* FastMath.RAD_TO_DEG;
-        data[1][i] = task.getRegion().getLatitude()* FastMath.RAD_TO_DEG;
+        data[0][i] = task.getRegion().getLongitude() * FastMath.RAD_TO_DEG;
+        data[1][i] = task.getRegion().getLatitude() * FastMath.RAD_TO_DEG;
 
         boolean explored = false;
         for (PredictedDataElement element : elements) {
-          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())){
+          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())) {
             data[2][i] = task.getCost();
             explored = true;
             break;
@@ -104,7 +111,7 @@ public class QualityChart extends JFrame {
     return dataset;
   }
 
-  private XYDataset solve(Map<SatModel, Multimap<Task, PredictedDataElement>> data){
+  private XYDataset solve(Map<SatModel, Multimap<Task, PredictedDataElement>> data) {
     List<Object> satList = EntityContext.get().getAllEntities(Sat.class);
     List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
 
@@ -115,46 +122,46 @@ public class QualityChart extends JFrame {
     Map<Object, Integer> taskIndexes = Maps.newHashMap();
 
     int i = 0;
-    for (Object sat : satList){
+    for (Object sat : satList) {
       satIndexes.put(sat, i);
       i++;
     }
 
     i = 0;
-    for (Object task : taskList){
+    for (Object task : taskList) {
       taskIndexes.put(task, i);
       i++;
     }
 
     double[][] explorationCost = new double[taskSize][];
-    for (int taskIndex = 0; taskIndex < taskSize; taskIndex++){
-      explorationCost[taskIndex] = new double[satSize+1];
+    for (int taskIndex = 0; taskIndex < taskSize; taskIndex++) {
+      explorationCost[taskIndex] = new double[satSize + 1];
     }
 
-    for (SatModel sat : data.keySet()){
+    for (SatModel sat : data.keySet()) {
       Multimap<Task, PredictedDataElement> observation = data.get(sat);
       for (satteliteExplorer.db.entities.Task task : observation.keys()) {
         Collection<PredictedDataElement> elements = observation.get(task);
 
         double cost = 0;
         for (PredictedDataElement element : elements) {
-          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())){
+          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())) {
             cost = task.getCost();
             break;
           } else {
-            cost = task.getCost()/4;
+            cost = task.getCost() / 4;
           }
         }
         explorationCost[taskIndexes.get(task)][satIndexes.get(sat.getSat())] = cost;
       }
     }
 
-    for (int j = 0; j < explorationCost.length; j++){
+    for (int j = 0; j < explorationCost.length; j++) {
       double sum = 0;
-      for (int k = 0; k < explorationCost[j].length; k++){
+      for (int k = 0; k < explorationCost[j].length; k++) {
         sum += explorationCost[j][k];
       }
-      if (sum < 0.00001){
+      if (sum < 0.00001) {
         explorationCost[j][satSize] = 1;
       }
     }
@@ -162,25 +169,25 @@ public class QualityChart extends JFrame {
     GeneticSolver solver = new GeneticSolver();
     int[] result = null;
     try {
-       result = solver.solve(satSize, taskSize, explorationCost, false);
-    } catch (Exception exc){
+      result = solver.solve(satSize, taskSize, explorationCost, false);
+    } catch (Exception exc) {
       System.out.println(exc.toString());
     }
 
     XYSeriesCollection dataset = new XYSeriesCollection();
-    XYSeries[] serieses = new XYSeries[satSize+1];
-    for (int j = 0; j < serieses.length; j++){
+    XYSeries[] serieses = new XYSeries[satSize + 1];
+    for (int j = 0; j < serieses.length; j++) {
       serieses[j] = new XYSeries(j);
     }
 
     double[][] d = new double[3][result.length];
-    for (int j = 0; j < result.length; j++){
-      Task task = (Task)taskList.get(j);
-      serieses[result[j]].add(task.getRegion().getLongitude()* FastMath.RAD_TO_DEG,
-          task.getRegion().getLatitude()* FastMath.RAD_TO_DEG);
+    for (int j = 0; j < result.length; j++) {
+      Task task = (Task) taskList.get(j);
+      serieses[result[j]].add(task.getRegion().getLongitude() * FastMath.RAD_TO_DEG,
+          task.getRegion().getLatitude() * FastMath.RAD_TO_DEG);
     }
 
-    for (XYSeries series : serieses){
+    for (XYSeries series : serieses) {
       dataset.addSeries(series);
     }
     return dataset;
@@ -216,7 +223,7 @@ public class QualityChart extends JFrame {
     yAxis.setUpperMargin(0.0);
     XYBlockRenderer renderer = new XYBlockRenderer();
 
-    LookupPaintScale scale = new LookupPaintScale(0,1.0,Color.lightGray);
+    LookupPaintScale scale = new LookupPaintScale(0, 1.0, Color.lightGray);
     scale.add(0, Color.red);
     scale.add(0.25, Color.orange);
     scale.add(0.5, Color.yellow);

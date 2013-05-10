@@ -22,7 +22,6 @@ THE SOFTWARE.
 package satteliteExplorer.ui.scene;
 
 import com.jme3.app.SimpleApplication;
-import com.jme3.asset.AssetManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.MouseInput;
 import com.jme3.input.controls.ActionListener;
@@ -40,13 +39,13 @@ import satteliteExplorer.ui.scene.models.planet.Planet;
 import satteliteExplorer.ui.scene.models.planet.PlanetAppState;
 
 /**
- * PlanetSimpleTest
+ * UIApplication
  */
-public class PlanetSimpleTest extends SimpleApplication {
+public class UIApplication extends SimpleApplication {
 
   private PlanetAppState planetAppState;
-  public static Scene scene;
-  public static User user;
+  public Scene scene;
+  public User user;
   private boolean isOperator = false;
 
   public static void main(String[] args) {
@@ -58,13 +57,14 @@ public class PlanetSimpleTest extends SimpleApplication {
 //    while (loginForm.isVisible()) {
 //    }
 
-    user = loginForm.getUser();
+    User user = loginForm.getUser();
 
     if (user != null) {
       loginForm.dispose();
       AppSettings settings = new AppSettings(true);
       settings.setResolution(1366, 688);
-      PlanetSimpleTest app = new PlanetSimpleTest();
+      UIApplication app = new UIApplication();
+      app.user = user;
 
       app.setDisplayStatView(false);
       app.setShowSettings(false);
@@ -80,7 +80,7 @@ public class PlanetSimpleTest extends SimpleApplication {
     // Only show severe errors in log
     java.util.logging.Logger.getLogger("com.jme3").setLevel(java.util.logging.Level.SEVERE);
 
-    isOperator = PlanetSimpleTest.user.getRole().getName().equals("operator");
+    isOperator = user.getRole().getName().equals("operator");
     // Toggle wireframe
     inputManager.addMapping("TOGGLE_WIREFRAME",
         new KeyTrigger(KeyInput.KEY_T));
