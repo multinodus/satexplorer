@@ -14,73 +14,40 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Reformat">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/satteliteExplorer/scheduler/optimizations/OptimizationServer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/satteliteExplorer/scheduler/optimizations/OptimizationServerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assembly.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/optimization.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/server.iml" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\TestDynamicSprites.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\Annotation.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\Feature.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\GoogleProjection.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\POI.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\Point.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\Projectable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\Projection.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\ProjectionFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\SimpleProjection.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\TrackPoint.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\Walkroute.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\data\Way.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\AnnotationCacheManager.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\DataInterpreter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\DataSource.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\FileDataSource.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\FileFormatter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\FreemapDataHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\FreemapDataset.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\FreemapFileFormatter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\HTTPCommunicator.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\Tile.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\TileDeliverer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\TiledData.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\WalkrouteCacheManager.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\WalkrouteHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\WalkroutesHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\WebDataSource.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\WebXMLSource.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\XMLDataHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\datasource\XMLDataInterpreter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\jdem\DEM.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\jdem\DEMSource.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\jdem\HGTDataInterpreter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\osm\jdem\HGTTileDeliverer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\Sprite.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\SpriteAnimation.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\SpriteImage.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\SpriteManager.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\SpriteMesh.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\atlas\AtlasSprite.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\atlas\SimpleTextureAtlas.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\sprites\atlas\TextureAtlas.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\svg\JFreeChartExporter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\svg\SVGLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\engine\svg\SVGTextureKey.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\SatteliteExplorer.iml" afterPath="$PROJECT_DIR$/satexplorer.iml" />
-      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\scheduler\src\satteliteExplorer\scheduler\optimizations\ExplorationTimeFitnessFunction.java" afterPath="$PROJECT_DIR$/server/src/satteliteExplorer/scheduler/optimizations/genetic/ExplorationTimeFitnessFunction.java" />
-      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\scheduler\src\satteliteExplorer\scheduler\optimizations\GeneticSolver.java" afterPath="$PROJECT_DIR$/server/src/satteliteExplorer/scheduler/optimizations/genetic/GeneticSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.lck" afterPath="$PROJECT_DIR$/hsqldb/storage.lck" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/UIApplication.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/UIApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/schedulerLib.xml" afterPath="$PROJECT_DIR$/.idea/libraries/schedulerLib.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.properties" afterPath="$PROJECT_DIR$/hsqldb/storage.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/ui.iml" afterPath="$PROJECT_DIR$/ui/ui.iml" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Refactoring">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Textures/chart.png" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\Images\COD.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\Images\earth-wallpaper-25.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\Images\earth.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\Images\sat.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\background-new.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\button-red.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\cc-mixter-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\chatcontrol\chat-icon-ninja.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\chatcontrol\chat-icon-user.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\dragndrop\Chest Lid.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\dragndrop\Chest Open.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\dragndrop\Key.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\freesound.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\nifty-logo-150x150.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\nifty-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\overlay-credits-bottom.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\overlay-credits-top.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\sound\19546__tobi123__Gong_mf2.wav" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\sound\744__elmomo__MutantJewsArp.wav" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\sound\Loveshadow_-_Almost_Given_Up.ogg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\face1.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\face2.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\face3.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\hud-frame.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\niftytemplate.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\screen1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\screen2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\screen3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\tutorial\start-background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\yang.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Interface\yin.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\assets\Textures\cross.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SatteliteExplorer.iws" />
@@ -96,7 +63,7 @@
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
     <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367660886968" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368214636555" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368221270991" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368183207290" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367436011648" ignored="false" />
@@ -200,33 +167,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QualityChart.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="87" selection-start="6202" selection-end="6202" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImagePanelDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/common/ImagePanelDefinition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="14" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImagePanelController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/common/ImagePanelController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OptimizationServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/satteliteExplorer/scheduler/optimizations/OptimizationServer.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -245,10 +185,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="60" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.4857143">
+            <state line="63" column="60" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MathUtilities.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/MathUtilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="19" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileUtilities.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/FileUtilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="19" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConvertionUtilities.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/ConvertionUtilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="45" selection-start="807" selection-end="807" vertical-scroll-proportion="-7.5238094">
               <folding />
             </state>
           </provider>
@@ -258,15 +225,6 @@
         <entry file="file://$PROJECT_DIR$/assembly.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="7" column="44" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="satexplorer.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/satexplorer.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="21" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -409,6 +367,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -793,7 +787,11 @@
       <created>1368207368329</created>
       <updated>1368207368329</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Refactoring">
+      <created>1368221255245</created>
+      <updated>1368221255245</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -885,7 +883,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -913,6 +911,7 @@
     <MESSAGE value="Fix genetic solver" />
     <MESSAGE value="Change UI" />
     <MESSAGE value="Reformat" />
+    <MESSAGE value="Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -926,32 +925,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/listbox/EmptyDialogControlDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="29" selection-start="633" selection-end="633" vertical-scroll-proportion="0.3313783" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="17" selection-start="5770" selection-end="5770" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="0" selection-start="6054" selection-end="6054" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="672" selection-end="672" vertical-scroll-proportion="0.33123028">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/common/ImagePanelController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
@@ -1033,7 +1006,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="60" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.4857143">
+        <state line="63" column="60" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/MathUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/FileUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="19" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/util/ConvertionUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="45" selection-start="807" selection-end="807" vertical-scroll-proportion="-7.5238094">
           <folding />
         </state>
       </provider>
