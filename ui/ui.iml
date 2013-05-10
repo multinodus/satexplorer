@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="db" />
     <orderEntry type="library" name="dbLib" level="project" />
     <orderEntry type="module" module-name="scheduler" />
+    <orderEntry type="module" module-name="server" />
   </component>
 </module>
 

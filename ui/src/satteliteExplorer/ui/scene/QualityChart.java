@@ -18,7 +18,8 @@ import satteliteExplorer.db.EntityContext;
 import satteliteExplorer.db.entities.Sat;
 import satteliteExplorer.db.entities.Task;
 import satteliteExplorer.scheduler.models.SatModel;
-import satteliteExplorer.scheduler.optimizations.GeneticSolver;
+import satteliteExplorer.scheduler.optimizations.OptimizationServer;
+import satteliteExplorer.scheduler.optimizations.genetic.GeneticSolver;
 import satteliteExplorer.scheduler.transformations.PredictedDataElement;
 import satteliteExplorer.scheduler.transformations.PredictorOfObservations;
 import satteliteExplorer.scheduler.transformations.SI_Transform;
@@ -45,8 +46,11 @@ import java.util.Map;
 public class QualityChart extends JFrame {
   private Image background;
   private JFreeChart chart;
+  private UIApplication app;
 
   public QualityChart(UIApplication app) {
+    this.app = app;
+
     try {
       File file = new File(System.getProperty("user.dir") + "/assets/Textures/earth_mini.jpg");
       background = ImageIO.read(file);
@@ -166,10 +170,10 @@ public class QualityChart extends JFrame {
       }
     }
 
-    GeneticSolver solver = new GeneticSolver();
+    OptimizationServer optimizationServer = app.optimizationServer;
     int[] result = null;
     try {
-      result = solver.solve(satSize, taskSize, explorationCost, false);
+      result = optimizationServer.solve(satSize, taskSize, explorationCost, "genetic");
     } catch (Exception exc) {
       System.out.println(exc.toString());
     }

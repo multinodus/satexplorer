@@ -1,4 +1,4 @@
-package satteliteExplorer.scheduler.optimizations;
+package satteliteExplorer.scheduler.optimizations.genetic;
 
 import org.jgap.FitnessFunction;
 import org.jgap.IChromosome;

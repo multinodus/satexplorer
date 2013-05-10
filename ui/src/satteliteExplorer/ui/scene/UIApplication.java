@@ -35,17 +35,24 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 import com.jme3.system.AppSettings;
 import satteliteExplorer.db.entities.User;
+import satteliteExplorer.scheduler.optimizations.OptimizationServer;
 import satteliteExplorer.ui.scene.models.planet.Planet;
 import satteliteExplorer.ui.scene.models.planet.PlanetAppState;
+
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 /**
  * UIApplication
  */
 public class UIApplication extends SimpleApplication {
 
+  private static final String BINDING_NAME = "optimizeService";
   private PlanetAppState planetAppState;
   public Scene scene;
   public User user;
+  public OptimizationServer optimizationServer;
   private boolean isOperator = false;
 
   public static void main(String[] args) {
@@ -60,18 +67,25 @@ public class UIApplication extends SimpleApplication {
     User user = loginForm.getUser();
 
     if (user != null) {
-      loginForm.dispose();
-      AppSettings settings = new AppSettings(true);
-      settings.setResolution(1366, 688);
-      UIApplication app = new UIApplication();
-      app.user = user;
+      try {
+        loginForm.dispose();
+        AppSettings settings = new AppSettings(true);
+        settings.setResolution(1366, 688);
+        UIApplication app = new UIApplication();
+        app.user = user;
 
-      app.setDisplayStatView(false);
-      app.setShowSettings(false);
-      app.setDisplayFps(false);
-      app.setSettings(settings);
+        app.setDisplayStatView(false);
+        app.setShowSettings(false);
+        app.setDisplayFps(false);
+        app.setSettings(settings);
 
-      app.start();
+//        Registry registry = LocateRegistry.getRegistry("localhost", 2099);
+//        app.optimizationServer = (OptimizationServer) registry.lookup(BINDING_NAME);
+
+        app.start();
+      } catch (Exception exc){
+        System.out.println(exc.toString());
+      }
     }
   }
 

@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/lib/ui" />
       <root url="file://$PROJECT_DIR$/lib/db" />
-      <root url="file://$PROJECT_DIR$/lib/scheduler" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
