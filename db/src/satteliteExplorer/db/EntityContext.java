@@ -46,7 +46,7 @@ public class EntityContext {
         List entities = session.createQuery("select h from " + className.getSimpleName() + " as h")
             .list();
         tx.commit();
-        if (className == Sat.class){
+        if (className == Sat.class) {
           entities = Lists.newArrayList(entities.get(0));
         }
         storage.put(className, entities);

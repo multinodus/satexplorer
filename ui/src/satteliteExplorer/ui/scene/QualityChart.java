@@ -71,7 +71,7 @@ public class QualityChart extends JFrame {
     try {
       File outputfile = new File(System.getProperty("user.dir") + "/out/production/ui/Textures/" + "chart.png");
       ImageIO.write(bufferedImage, "png", outputfile);
-    } catch (IOException exc){
+    } catch (IOException exc) {
       System.out.println(exc.toString());
     }
   }

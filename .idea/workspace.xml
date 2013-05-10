@@ -14,15 +14,23 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Change UI">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/common/ImagePanelController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/common/ImagePanelDefinition.java" />
-      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\satteliteExplorer\ui\scene\PlanetSimpleTest.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/UIApplication.java" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Reformat">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.lck" afterPath="$PROJECT_DIR$/hsqldb/storage.lck" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/jdem/DEM.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/src/satteliteExplorer/db/EntityContext.java" afterPath="$PROJECT_DIR$/db/src/satteliteExplorer/db/EntityContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/ExplorationTimeFitnessFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/optimizations/GeneticSolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemo.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/LoginForm.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/LoginForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/transformations/PredictorOfObservations.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/transformations/PredictorOfObservations.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/models/RegionView.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/models/RegionView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/models/SatModel.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/models/SatModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TileDeliverer.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/TileDeliverer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebXMLSource.java" afterPath="$PROJECT_DIR$/ui/src/satteliteExplorer/ui/engine/osm/datasource/WebXMLSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/World.java" afterPath="$PROJECT_DIR$/scheduler/src/satteliteExplorer/scheduler/World.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.properties" afterPath="$PROJECT_DIR$/hsqldb/storage.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,7 +47,7 @@
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
     <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367660886968" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368205230431" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368207266739" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368183207290" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367436011648" ignored="false" />
@@ -141,7 +149,7 @@
       <file leaf-file-name="QualityChart.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="101" selection-start="3165" selection-end="3165" vertical-scroll-proportion="0.0">
+            <state line="81" column="14" selection-start="3166" selection-end="3166" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,8 +160,10 @@
       <file leaf-file-name="JmeControlsDemo.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="87" selection-start="5810" selection-end="5810" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="127" column="17" selection-start="5770" selection-end="5770" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,8 +171,10 @@
       <file leaf-file-name="JmeControlsDemoScreenController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="9" selection-start="6159" selection-end="6159" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="174" column="0" selection-start="6054" selection-end="6054" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,8 +211,10 @@
       <file leaf-file-name="Scene.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="13" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="29" column="13" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -217,7 +231,7 @@
       <file leaf-file-name="ImagePanelController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/common/ImagePanelController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="39" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.5272727">
+            <state line="54" column="19" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.6060606">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1087,7 +1101,11 @@
       <created>1368175872216</created>
       <updated>1368175872216</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Change UI">
+      <created>1368205265053</created>
+      <updated>1368205265053</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1263,8 +1281,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="13" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="29" column="13" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,7 +1297,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/QualityChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="101" selection-start="3165" selection-end="3165" vertical-scroll-proportion="0.0">
+        <state line="81" column="14" selection-start="3166" selection-end="3166" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1307,15 +1327,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="87" selection-start="5810" selection-end="5810" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="127" column="17" selection-start="5770" selection-end="5770" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/scene/JmeControlsDemoScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="9" selection-start="6159" selection-end="6159" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="174" column="0" selection-start="6054" selection-end="6054" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,7 +1354,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/satteliteExplorer/ui/controls/common/ImagePanelController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="39" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.5272727">
+        <state line="54" column="19" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.6060606">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

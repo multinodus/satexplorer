@@ -80,13 +80,13 @@ public class GeneticSolver {
   }
 
   private Genotype createInitialGenotype(Configuration conf, Gene[] genes, int taskSize, int satSize, double[][] explorationCost)
-    throws Exception{
+      throws Exception {
     Gene[] initial_genes = genes.clone();
-    for (int i = 0; i < taskSize; i++){
+    for (int i = 0; i < taskSize; i++) {
       double max = 0;
       int index = 0;
-      for (int j = 0; j < satSize+1; j++){
-        if (explorationCost[i][j] > max){
+      for (int j = 0; j < satSize + 1; j++) {
+        if (explorationCost[i][j] > max) {
           max = explorationCost[i][j];
           index = j;
         }
@@ -99,11 +99,11 @@ public class GeneticSolver {
     return population;
   }
 
-  private int[] getResult(IChromosome bestSolutionSoFar){
+  private int[] getResult(IChromosome bestSolutionSoFar) {
     int[] result = new int[bestSolutionSoFar.size()];
 
     for (int i = 0; i < bestSolutionSoFar.size(); i++) {
-      result[i] = (Integer)bestSolutionSoFar.getGene(i).getAllele();
+      result[i] = (Integer) bestSolutionSoFar.getGene(i).getAllele();
     }
 
     return result;

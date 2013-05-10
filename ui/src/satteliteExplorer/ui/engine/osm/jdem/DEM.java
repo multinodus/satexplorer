@@ -45,7 +45,7 @@ public class DEM implements satteliteExplorer.ui.engine.osm.datasource.TiledData
 
 		
 		/*
-		
+
 		System.out.println("getHeight(): lon="+lon+ " lat="+lat+ " coordProj=" + coordProj +
 				" proj=" + proj);
 		*/

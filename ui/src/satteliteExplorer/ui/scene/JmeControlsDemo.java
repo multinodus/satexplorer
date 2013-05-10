@@ -1,6 +1,5 @@
 package satteliteExplorer.ui.scene;
 
-import com.jme3.app.SimpleApplication;
 import com.jme3.niftygui.NiftyJmeDisplay;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.*;
@@ -85,7 +84,7 @@ public class JmeControlsDemo {
 
       {
         if (app.user.getRole().getName().equals("operator")) {
-          controller(new JmeControlsDemoScreenController( app,
+          controller(new JmeControlsDemoScreenController(app,
               "menuButtonListBox", "dialogListBox",
               "menuButtonDataCenter", "dialogDataCenter",
               "menuButtonRegion", "dialogRegion",

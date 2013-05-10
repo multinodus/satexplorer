@@ -94,7 +94,7 @@ public class World {
     Collection<Orbit> orbits = new ArrayList<Orbit>();
     for (int i = 0; i < orbitCount; i++) {
       Orbit orbit = new Orbit();
-      orbit.setSemiMajorAxis((float)SI_Transform.EARTH_RADIUS + 650000 + rnd.nextInt(350000));
+      orbit.setSemiMajorAxis((float) SI_Transform.EARTH_RADIUS + 650000 + rnd.nextInt(350000));
       orbit.setArgumentOfPericenter(rnd.nextFloat() * FastMath.TWO_PI);
       orbit.setEccentricity(rnd.nextFloat() * 0.1f);
       orbit.setInclination(FastMath.HALF_PI/*rnd.nextFloat()* FastMath.TWO_PI*/);
@@ -117,7 +117,7 @@ public class World {
     ArrayList<Region> regions = new ArrayList<Region>();
     for (int i = 0; i < regionCount; i++) {
       Region region = new Region();
-      region.setLatitude(-FastMath.PI/2 + rnd.nextFloat() * FastMath.PI);
+      region.setLatitude(-FastMath.PI / 2 + rnd.nextFloat() * FastMath.PI);
       region.setLongitude(-FastMath.PI + rnd.nextFloat() * FastMath.TWO_PI);
       region.setRadius(1000f);
       regions.add(region);
@@ -130,7 +130,7 @@ public class World {
       task.setEquipmentType(equipmentTypes.get((int) Math.round(rnd.nextFloat() * (equipmentTypeCount - 1))));
       task.setRegion(regions.get(i/*(int) Math.round(rnd.nextFloat() * (regionCount - 1))*/));
       task.setCost(rnd.nextFloat());
-      task.setStart(new Date(SI_Transform.INITIAL_TIME.getTime() + (long)(rnd.nextFloat()*DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY)));
+      task.setStart(new Date(SI_Transform.INITIAL_TIME.getTime() + (long) (rnd.nextFloat() * DateTimeConstants.DAYS_IN_WEEK * DateTimeConstants.MSECS_IN_DAY)));
       task.setFinish(new Date(task.getStart().getTime() + (long) (rnd.nextFloat() * DateTimeConstants.MSECS_IN_DAY)));
       tasks.add(task);
     }

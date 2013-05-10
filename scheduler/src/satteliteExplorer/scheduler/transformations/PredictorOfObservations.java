@@ -13,7 +13,9 @@ import satteliteExplorer.scheduler.util.DateTimeConstants;
 import satteliteExplorer.scheduler.util.Pair;
 import satteliteExplorer.scheduler.util.VectorConstants;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,7 +30,7 @@ public class PredictorOfObservations {
     Quaternion quaternionLatitude;
     Quaternion quaternionIL;
 
-    public RegionQuaternions(Quaternion quaternionLongitude, Quaternion quaternionLatitude, Quaternion quaternionIL){
+    public RegionQuaternions(Quaternion quaternionLongitude, Quaternion quaternionLatitude, Quaternion quaternionIL) {
       this.quaternionIL = quaternionIL;
       this.quaternionLatitude = quaternionLatitude;
       this.quaternionLongitude = quaternionLongitude;
@@ -96,7 +98,7 @@ public class PredictorOfObservations {
       basicVectors.setISK(i1_1, i1_2, i1_3);
 
       Map<Region, RegionQuaternions> quaternionMap = Maps.newHashMap();
-      for (Task task : tasks){
+      for (Task task : tasks) {
         Quaternion quaternionLongitude = qt.createQuaternion(basicVectors.i_3, -task.getRegion().getLongitude());
 
         Quaternion quaternionLatitude = qt.createQuaternion(basicVectors.i_2, task.getRegion().getLatitude());
@@ -155,11 +157,11 @@ public class PredictorOfObservations {
 
         float visibleAngle = sat.getExplorationAngle();//qt.calcute_r((float) sat.getVisibleAngle(), H, (float) SI_Transform.EARTH_RADIUS);
 
-        for (Task task : tasks){
+        for (Task task : tasks) {
           boolean isDay = predictNight(qt, task.getRegion(), 0.1, s, anglePOSEandSun);
           RegionQuaternions q = quaternionMap.get(task.getRegion());
           float angle = predictAngleToObject(sat, s, trueAnomaly, q.quaternionLongitude, q.quaternionLatitude, q.quaternionIL, qt);
-          if (angle < visibleAngle){
+          if (angle < visibleAngle) {
             result.put(task, new PredictedDataElement(new Date(now.getTime() + (long) (seconds * DateTimeConstants.MSECS_IN_SECOND)), angle,
                 visibleAngle, isDay));
           }

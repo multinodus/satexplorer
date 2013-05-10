@@ -10,7 +10,7 @@ import org.jgap.IChromosome;
  * Time: 14:47
  * To change this template use File | Settings | File Templates.
  */
-public class ExplorationTimeFitnessFunction extends FitnessFunction{
+public class ExplorationTimeFitnessFunction extends FitnessFunction {
   private double[][] explorationCost;
 
   public ExplorationTimeFitnessFunction(double[][] explorationCost) {
@@ -21,8 +21,8 @@ public class ExplorationTimeFitnessFunction extends FitnessFunction{
   @Override
   protected double evaluate(IChromosome chromosome) {
     double total = 0;
-    for (int taskIndex = 0; taskIndex < chromosome.size(); taskIndex++){
-      int satIndex = (Integer)chromosome.getGene(taskIndex).getAllele();
+    for (int taskIndex = 0; taskIndex < chromosome.size(); taskIndex++) {
+      int satIndex = (Integer) chromosome.getGene(taskIndex).getAllele();
       total += explorationCost[taskIndex][satIndex];
     }
     return total;

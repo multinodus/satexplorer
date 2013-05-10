@@ -1,6 +1,5 @@
 package satteliteExplorer.ui.scene;
 
-import com.jme3.app.SimpleApplication;
 import de.lessvoid.nifty.EndNotify;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
@@ -19,7 +18,6 @@ import de.lessvoid.nifty.screen.KeyInputHandler;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 import de.lessvoid.nifty.tools.Color;
-import satteliteExplorer.ui.controls.common.ImagePanelDefinition;
 
 import java.awt.*;
 import java.util.ArrayList;

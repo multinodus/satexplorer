@@ -23,7 +23,7 @@ public class RegionView implements IView {
   }
 
   public void update() {
-    if (spatial!=null){
+    if (spatial != null) {
       spatial.setLocalTranslation(regionModel.getPosition());
       Matrix3f matrix3f = new Matrix3f();
       matrix3f.fromStartEndVectors(VectorConstants.right, regionModel.getPosition().normalize());
