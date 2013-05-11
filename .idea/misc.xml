@@ -26,6 +26,10 @@
       <list>
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/ui/pom.xml" />
+        <option value="$PROJECT_DIR$/server/pom.xml" />
+        <option value="$PROJECT_DIR$/scheduler/pom.xml" />
+        <option value="$PROJECT_DIR$/db/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
