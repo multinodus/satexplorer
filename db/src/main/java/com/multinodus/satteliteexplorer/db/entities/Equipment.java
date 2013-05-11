@@ -26,8 +26,8 @@ public class Equipment implements Serializable {
   private Float span;
   private Float resolution;
   private Float storageCapacity;
-  private Long workTime;
-  private Long frameTime;
+  private Float snapshotVolume;
+  private Long snapshotTime;
 
   public Equipment() {
 
@@ -107,22 +107,22 @@ public class Equipment implements Serializable {
     this.storageCapacity = storageCapacity;
   }
 
-  @Column(name = "workTime", nullable = false)
-  public Long getWorkTime() {
-    return workTime;
+  @Column(name = "snapshotVolume", nullable = false)
+  public Float getSnapshotVolume() {
+    return snapshotVolume;
   }
 
-  public void setWorkTime(Long workTime) {
-    this.workTime = workTime;
+  public void setSnapshotVolume(Float snapshotVolume) {
+    this.snapshotVolume = snapshotVolume;
   }
 
-  @Column(name = "frameTime", nullable = false)
-  public Long getFrameTime() {
-    return frameTime;
+  @Column(name = "snapshotTime", nullable = false)
+  public Long getSnapshotTime() {
+    return snapshotTime;
   }
 
-  public void setFrameTime(Long frameTime) {
-    this.frameTime = frameTime;
+  public void setSnapshotTime(Long snapshotTime) {
+    this.snapshotTime = snapshotTime;
   }
 
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "equipment")
@@ -132,15 +132,6 @@ public class Equipment implements Serializable {
 
   public void setSats(Set<Sat> sats) {
     this.sats = sats;
-  }
-
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "equipment")
-  public Set<DataCenter> getDataCenters() {
-    return dataCenters;
-  }
-
-  public void setDataCenters(Set<DataCenter> dataCenters) {
-    this.dataCenters = dataCenters;
   }
 
   @ManyToOne(fetch = FetchType.LAZY)

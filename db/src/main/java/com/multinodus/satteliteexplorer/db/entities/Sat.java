@@ -1,7 +1,10 @@
 package com.multinodus.satteliteexplorer.db.entities;
 
+import com.google.common.collect.Sets;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,6 +19,9 @@ public class Sat implements Serializable {
   private Integer satId;
   private Orbit orbit;
   private Equipment equipment;
+  private Float trueAnomaly;
+  private Set<SceneVariant> sceneVariantSet = Sets.newHashSet();
+  private Set<Schedule> schedules = Sets.newHashSet();
 
   public Sat() {
 
@@ -50,6 +56,33 @@ public class Sat implements Serializable {
 
   public void setEquipment(Equipment equipment) {
     this.equipment = equipment;
+  }
+
+  @Column(name = "trueAnomaly", nullable = false)
+  public Float getTrueAnomaly() {
+    return trueAnomaly;
+  }
+
+  public void setTrueAnomaly(Float trueAnomaly) {
+    this.trueAnomaly = trueAnomaly;
+  }
+
+  @ManyToMany(fetch = FetchType.LAZY, mappedBy = "satSet")
+  public Set<SceneVariant> getSceneVariantSet() {
+    return sceneVariantSet;
+  }
+
+  public void setSceneVariantSet(Set<SceneVariant> sceneVariantSet) {
+    this.sceneVariantSet = sceneVariantSet;
+  }
+
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "sat")
+  public Set<Schedule> getSchedules() {
+    return schedules;
+  }
+
+  public void setSchedules(Set<Schedule> schedules) {
+    this.schedules = schedules;
   }
 }
 

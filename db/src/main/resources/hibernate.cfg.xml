@@ -44,6 +44,8 @@
         <mapping class="com.multinodus.satteliteexplorer.db.entities.Sat"/>
         <mapping class="com.multinodus.satteliteexplorer.db.entities.Task"/>
         <mapping class="com.multinodus.satteliteexplorer.db.entities.User"/>
+        <mapping class="com.multinodus.satteliteexplorer.db.entities.SceneVariant"/>
+        <mapping class="com.multinodus.satteliteexplorer.db.entities.Schedule"/>
     </session-factory>
 
 </hibernate-configuration>

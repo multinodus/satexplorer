@@ -52,6 +52,7 @@ public class World {
     int regionCount = 500;
     int equipmentTypeCount = 1;
     int equipmentCount = 1;
+    int dataCentersCount = 4;
 
     Collection<Object> entities = new ArrayList<Object>();
 
@@ -79,8 +80,8 @@ public class World {
         equipment.setDelay((long) (rnd.nextFloat() * DateTimeConstants.MSECS_IN_MINUTE));
         equipment.setCriticalAngle(30.0f);
         equipment.setDeltaAngle(2.0f);
-        equipment.setFrameTime(7 * DateTimeConstants.MSECS_IN_SECOND);
-        equipment.setWorkTime(89 * DateTimeConstants.MSECS_IN_SECOND);
+        equipment.setSnapshotTime(7 * DateTimeConstants.MSECS_IN_SECOND);
+        equipment.setSnapshotVolume(10.0f);
         equipment.setResolution(36.0f);
         equipment.setSpan(45000.0f);
         equipment.setStorageCapacity(100.0f);
@@ -109,6 +110,7 @@ public class World {
         Sat sat = new Sat();
         sat.setOrbit(orbit);
         sat.setEquipment(equipments.get((int) Math.round(rnd.nextFloat() * (equipmentCount - 1))));
+        sat.setTrueAnomaly(0.0f);
         sats.add(sat);
       }
     }
@@ -123,6 +125,15 @@ public class World {
       regions.add(region);
     }
     entities.addAll(regions);
+
+    ArrayList<DataCenter> dataCenters = new ArrayList<DataCenter>();
+    for (int i = 0; i < dataCentersCount; i++) {
+      DataCenter dataCenter = new DataCenter();
+      dataCenter.setLatitude(-FastMath.PI / 2 + rnd.nextFloat() * FastMath.PI);
+      dataCenter.setLongitude(-FastMath.PI + rnd.nextFloat() * FastMath.TWO_PI);
+      dataCenters.add(dataCenter);
+    }
+    entities.addAll(dataCenters);
 
     ArrayList<Task> tasks = new ArrayList<Task>();
     for (int i = 0; i < regionCount; i++) {

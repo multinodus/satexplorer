@@ -1,8 +1,11 @@
 package com.multinodus.satteliteexplorer.db.entities;
 
+import com.google.common.collect.Sets;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +23,7 @@ public class Task implements Serializable {
   private Date start;
   private Date finish;
   private Float cost;
+  private Set<SceneVariant> sceneVariantSet = Sets.newHashSet();
 
   public Task() {
 
@@ -81,5 +85,14 @@ public class Task implements Serializable {
 
   public void setCost(Float cost) {
     this.cost = cost;
+  }
+
+  @ManyToMany(fetch = FetchType.LAZY, mappedBy = "taskSet")
+  public Set<SceneVariant> getSceneVariantSet() {
+    return sceneVariantSet;
+  }
+
+  public void setSceneVariantSet(Set<SceneVariant> sceneVariantSet) {
+    this.sceneVariantSet = sceneVariantSet;
   }
 }
