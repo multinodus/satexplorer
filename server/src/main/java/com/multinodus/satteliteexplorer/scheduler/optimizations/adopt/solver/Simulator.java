@@ -14,6 +14,7 @@ import com.multinodus.satteliteexplorer.scheduler.optimizations.adopt.common.Uti
 import com.multinodus.satteliteexplorer.scheduler.optimizations.adopt.problem.MaxCSPProblem;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.adopt.problem.Problem;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -67,15 +68,16 @@ public class Simulator implements MessageSender {
 
       algorithmName = args[0];
       problemType = args[1];
-      inputFileName = args[2];
+      inputFileName = System.getProperty("user.dir") + "\\Problems\\" + args[2];
 
       masterName = "agent" + Master.masterID;
 
       /*Instrumentation Code*/
       PrintWriter pwtr = null;
-      String fname = "Logs/Summary.txt";
+      String fname = System.getProperty("user.dir")+"\\Logs\\Summary.txt";
       try {
-        FileWriter ffile = new FileWriter(fname);
+        File file = new File(fname);
+        FileWriter ffile = new FileWriter(file);
         pwtr = new PrintWriter(ffile);
       } catch (IOException e) {
         System.out.println("Error opening " + fname + " for logging.");

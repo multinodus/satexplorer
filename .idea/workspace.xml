@@ -14,36 +14,11 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Update UI">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Adopt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/AgentThread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Algorithm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/common/Clock.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/Context.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/common/Instrumentation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/IntraSBB.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Intradopt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/common/Logger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Master.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/MaxCSP.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Problems/MaxCSP.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Problems/MaxCSP1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Problems/MaxCSP2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPConstraint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPProblem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/MessageSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/NominalValue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/PriorityNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/PriorityTree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/Problem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/SBB.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Simulator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/common/Utility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/Value.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/Variable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/startAdopt-Debug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/startAdopt" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add Adopt algorithm">
+      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\server\src\main\java\com\multinodus\satteliteexplorer\scheduler\optimizations\adopt\solver\Problems\MaxCSP.txt" afterPath="$PROJECT_DIR$/Problems/MaxCSP.txt" />
+      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\server\src\main\java\com\multinodus\satteliteexplorer\scheduler\optimizations\adopt\solver\Problems\MaxCSP1.txt" afterPath="$PROJECT_DIR$/Problems/MaxCSP1.txt" />
+      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\server\src\main\java\com\multinodus\satteliteexplorer\scheduler\optimizations\adopt\solver\Problems\MaxCSP2.txt" afterPath="$PROJECT_DIR$/Problems/MaxCSP2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Simulator.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Simulator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SatteliteExplorer.iws" />
@@ -57,9 +32,9 @@
     <file path="/EarthView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362328785373" ignored="false" />
     <file path="/RegionView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367420396718" ignored="false" />
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
-    <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368275538989" ignored="false" />
+    <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368295185332" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368291723862" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368294244193" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368183207290" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281247800" ignored="false" />
@@ -97,6 +72,8 @@
     <file path="/EarthModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368285568698" ignored="false" />
     <file path="/MainScreenController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368287148261" ignored="false" />
     <file path="/MaxCSPConstraint.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368293162288" ignored="false" />
+    <file path="/Simulator.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368295306144" ignored="false" />
+    <file path="/MaxCSPProblem.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368295273455" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,15 +149,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Adopt.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Adopt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="268" column="62" selection-start="7795" selection-end="7795" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AgentThread.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/AgentThread.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -251,19 +219,28 @@
       <file leaf-file-name="Simulator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Simulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="187" column="39" selection-start="6291" selection-end="6291" vertical-scroll-proportion="0.7942857">
+            <state line="79" column="55" selection-start="2504" selection-end="2504" vertical-scroll-proportion="-1.8103896">
               <folding>
-                <element signature="e#0#13342#0" expanded="true" />
+                <element signature="e#0#13483#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Algorithm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Algorithm.java">
+      <file leaf-file-name="MaxCSPProblem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPProblem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="36" selection-start="4770" selection-end="4770" vertical-scroll-proportion="0.0">
+            <state line="152" column="51" selection-start="3583" selection-end="3583" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QualityChart.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="13" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -290,7 +267,6 @@
       <list>
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/AgentThread.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/Context.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPProblem.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/NominalValue.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/PriorityNode.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/PriorityTree.java" />
@@ -303,6 +279,7 @@
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/IntraSBB.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Master.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/SBB.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPProblem.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Simulator.java" />
       </list>
     </option>
@@ -1087,139 +1064,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multinodus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satteliteexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multinodus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="satteliteexplorer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
+              <option name="myItemId" value="Problems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1237,6 +1082,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.searchVisible" value="true" />
@@ -1256,6 +1102,7 @@
       <recent name="C:\Users\т\IdeaProjects\satexplorer\lib\ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\т\IdeaProjects\satexplorer" />
       <recent name="C:\Users\т\IdeaProjects\satexplorer\ui" />
       <recent name="C:\Users\т\IdeaProjects\satexplorer\ui\src\main\resources" />
       <recent name="C:\Users\т\IdeaProjects\satexplorer\db\src\main\resources" />
@@ -1345,17 +1192,23 @@
     <configuration default="false" name="Simulator" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" />
       <option name="MAIN_CLASS_NAME" value="com.multinodus.satteliteexplorer.scheduler.optimizations.adopt.solver.Simulator" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="sbb maxcsp-chain MaxCSP.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="server" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -1581,7 +1434,11 @@
       <created>1368290626929</created>
       <updated>1368290626929</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add Adopt algorithm">
+      <created>1368294212045</created>
+      <updated>1368294212045</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1613,7 +1470,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27597955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.73594546" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33901194" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42759797" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1622,8 +1479,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26969698" sideWeight="0.2265758" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16742425" sideWeight="0.7240204" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.325" sideWeight="0.67632025" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32367972" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.325" sideWeight="0.73594546" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2640545" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1673,7 +1530,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Adopt algorithm" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1706,6 +1563,7 @@
     <MESSAGE value="Move to maven" />
     <MESSAGE value="Change database's scheme" />
     <MESSAGE value="Update UI" />
+    <MESSAGE value="Add Adopt algorithm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1719,20 +1577,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/NominalValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="55" selection-start="986" selection-end="986" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/PriorityNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/PriorityTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="285" column="17" selection-start="7295" selection-end="7295" vertical-scroll-proportion="0.0">
@@ -1834,11 +1678,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="13" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPProblem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="51" selection-start="3583" selection-end="3583" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Simulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="39" selection-start="6291" selection-end="6291" vertical-scroll-proportion="0.7942857">
+        <state line="79" column="55" selection-start="2504" selection-end="2504" vertical-scroll-proportion="-1.8103896">
           <folding>
-            <element signature="e#0#13342#0" expanded="true" />
+            <element signature="e#0#13483#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
