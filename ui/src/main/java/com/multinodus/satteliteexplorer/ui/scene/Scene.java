@@ -31,8 +31,11 @@ public class Scene {
   private World world;
   private Collection<IView> views = new ArrayList<IView>();
   private boolean isStopped;
+  private UIApplication app;
 
-  public Scene(AssetManager assetManager, Node rootNode, PlanetAppState planetAppState) {
+  public Scene(AssetManager assetManager, Node rootNode, PlanetAppState planetAppState, UIApplication app) {
+    this.app = app;
+
     world = new World();
 
     Node satNode = new Node("SatNode");
@@ -96,7 +99,9 @@ public class Scene {
 
   private void update() {
     try {
-      world.update();
+      if (app.isPlaying()){
+        world.update();
+      }
       Thread.sleep(50);
     } catch (InterruptedException exc) {
       isStopped = true;

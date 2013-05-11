@@ -30,7 +30,7 @@ public class SI_Transform {
 
   public final static float ANGLE_EARTH = 0;//0.41f;
 
-  public final static float EARTH_SPEED = 0.02f;
+  public final static float EARTH_SPEED = 0.002f;
 
   public final static Date INITIAL_TIME = new Date(109, 11, 21, 15, 00, 00);
 

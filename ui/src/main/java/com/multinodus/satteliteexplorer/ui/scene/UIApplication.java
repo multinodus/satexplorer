@@ -39,6 +39,8 @@ import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServ
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.Planet;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.PlanetAppState;
 
+import java.awt.*;
+
 /**
  * UIApplication
  */
@@ -50,6 +52,7 @@ public class UIApplication extends SimpleApplication {
   public User user;
   public OptimizationServer optimizationServer;
   private boolean isOperator = false;
+  private boolean playing = false;
 
   public static void main(String[] args) {
     final LoginForm loginForm = new LoginForm();
@@ -65,8 +68,13 @@ public class UIApplication extends SimpleApplication {
     if (user != null) {
       try {
         loginForm.dispose();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
         AppSettings settings = new AppSettings(true);
-        settings.setResolution(1366, 688);
+//        settings.setFullscreen(true);
+        settings.setFrequency(60);
+        settings.setResolution(screenSize.width, screenSize.height-65);
+        settings.setTitle("Автоматизированная система планирования распределения задач ДЗЗ в группировке КА");
         UIApplication app = new UIApplication();
         app.user = user;
 
@@ -132,10 +140,10 @@ public class UIApplication extends SimpleApplication {
     planetAppState = new PlanetAppState();
     stateManager.attach(planetAppState);
 
-    scene = new Scene(assetManager, rootNode, planetAppState);
+    scene = new Scene(assetManager, rootNode, planetAppState, this);
     scene.startWorldUpdate();
 
-    JmeControlsDemo ui = new JmeControlsDemo();
+    MainScreen ui = new MainScreen();
     ui.simpleInitApp(this);
 
 //    NiftyImage newImage = ui.nifty.getRenderEngine().createImage("Textures/cross.jpg", false);
@@ -145,16 +153,14 @@ public class UIApplication extends SimpleApplication {
 
   @Override
   public void simpleUpdate(float tpf) {
-    if (isOperator) {
-      // slow camera down as we approach a planet
-      Planet planet = planetAppState.getNearestPlanet();
-      if (planet != null && planet.getPlanetToCamera() != null) {
-        //System.out.println(planet.getName() + ": " + planet.getDistanceToCamera());
-        this.getFlyByCamera().setMoveSpeed(
-            FastMath.clamp(planet.getDistanceToCamera(), 5, 100000));
-      }
-      scene.updateView();
+    // slow camera down as we approach a planet
+    Planet planet = planetAppState.getNearestPlanet();
+    if (planet != null && planet.getPlanetToCamera() != null) {
+      //System.out.println(planet.getName() + ": " + planet.getDistanceToCamera());
+      this.getFlyByCamera().setMoveSpeed(
+          FastMath.clamp(planet.getDistanceToCamera(), 5, 100000));
     }
+    scene.updateView();
   }
 
   private ActionListener actionListener = new ActionListener() {
@@ -168,4 +174,11 @@ public class UIApplication extends SimpleApplication {
     }
   };
 
+  public boolean isPlaying() {
+    return playing;
+  }
+
+  public void setPlaying(boolean playing) {
+    this.playing = playing;
+  }
 }

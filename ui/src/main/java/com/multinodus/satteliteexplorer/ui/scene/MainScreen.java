@@ -3,6 +3,7 @@ package com.multinodus.satteliteexplorer.ui.scene;
 import com.jme3.niftygui.NiftyJmeDisplay;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.*;
+import de.lessvoid.nifty.controls.button.builder.ButtonBuilder;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.tools.Color;
 import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
@@ -26,7 +27,7 @@ import com.multinodus.satteliteexplorer.ui.controls.user.UserDialogDefinition;
  *
  * @author zathras
  */
-public class JmeControlsDemo {
+public class MainScreen {
 
   private CommonBuilders builders = new CommonBuilders();
   private UIApplication app;
@@ -48,8 +49,6 @@ public class JmeControlsDemo {
      */
     nifty.loadStyleFile("nifty-default-styles.xml");
     nifty.loadControlFile("nifty-default-controls.xml");
-    nifty.registerSound("intro", "Interface/sound/19546__tobi123__Gong_mf2.wav");
-    nifty.registerMusic("credits", "Interface/sound/Loveshadow_-_Almost_Given_Up.ogg");
     nifty.registerMouseCursor("hand", "Interface/mouse-cursor-hand.png", 5, 4);
     //nifty.setDebugOptionPanelColors(true);
     registerMenuButtonHintStyle(nifty);
@@ -84,7 +83,7 @@ public class JmeControlsDemo {
 
       {
         if (app.user.getRole().getName().equals("operator")) {
-          controller(new JmeControlsDemoScreenController(app,
+          controller(new MainScreenController(app,
               "menuButtonListBox", "dialogListBox",
               "menuButtonDataCenter", "dialogDataCenter",
               "menuButtonRegion", "dialogRegion",
@@ -98,78 +97,130 @@ public class JmeControlsDemo {
               "menuButtonSchedule", "chartImg"));
         }
 //        if (UIApplication.user.getRole().getName().equals("admin")) {
-//          controller(new JmeControlsDemoScreenController(
+//          controller(new MainScreenController(
 //              );
 //        }
         inputMapping("de.lessvoid.nifty.input.mapping.DefaultInputMapping"); // this will enable Keyboard events for the screen controller
         layer(new LayerBuilder("layer") {
-
           {
-            childLayoutHorizontal();
+            childLayoutVertical();
 
-            panel(new PanelBuilder("dialogParent") {
+            panel(new PanelBuilder("mainPanel") {
               {
-                childLayoutOverlay();
-//                width("85%");
-                alignLeft();
-                valignCenter();
-                if (app.user.getRole().getName().equals("operator")) {
-                  control(new ControlBuilder("dialogListBox", EmptyDialogControlDefinition.NAME));
-                  control(new ControlBuilder("dialogOrbit", OrbitDialogControlDefinition.NAME));
-                  control(new ControlBuilder("dialogEquipment", EquipmentDialogControlDefinition.NAME));
-                  control(new ControlBuilder("dialogSat", SatControlDefinition.NAME));
-                  control(new ControlBuilder("dialogTask", TaskDialogDefinition.NAME));
-                  control(new ControlBuilder("dialogDataCenter", DataCenterDialogDefinition.NAME));
-                  control(new ControlBuilder("dialogRegion", RegionDialogControlDefinition.NAME));
-                  control(new ControlBuilder("dialogEquipmentType", EquipmentTypeDialogDefinition.NAME));
-                  control(new ControlBuilder("dialogRole", RoleDialogDefinition.NAME));
-                  control(new ControlBuilder("dialogUser", UserDialogDefinition.NAME));
-                  control(new ControlBuilder("chartImg", ImagePanelDefinition.NAME));
-                }
-                if (app.user.getRole().getName().equals("admin")) {
+                alignCenter();
+                valignTop();
+                childLayoutHorizontal();
 
+                panel(new PanelBuilder("dialogParent") {
+                  {
+                    childLayoutOverlay();
+    //                width("85%");
+                    alignLeft();
+                    valignCenter();
+                    if (app.user.getRole().getName().equals("operator")) {
+                      control(new ControlBuilder("dialogListBox", EmptyDialogControlDefinition.NAME));
+                      control(new ControlBuilder("dialogOrbit", OrbitDialogControlDefinition.NAME));
+                      control(new ControlBuilder("dialogEquipment", EquipmentDialogControlDefinition.NAME));
+                      control(new ControlBuilder("dialogSat", SatControlDefinition.NAME));
+                      control(new ControlBuilder("dialogTask", TaskDialogDefinition.NAME));
+                      control(new ControlBuilder("dialogDataCenter", DataCenterDialogDefinition.NAME));
+                      control(new ControlBuilder("dialogRegion", RegionDialogControlDefinition.NAME));
+                      control(new ControlBuilder("dialogEquipmentType", EquipmentTypeDialogDefinition.NAME));
+                      control(new ControlBuilder("dialogRole", RoleDialogDefinition.NAME));
+                      control(new ControlBuilder("dialogUser", UserDialogDefinition.NAME));
+                      control(new ControlBuilder("chartImg", ImagePanelDefinition.NAME));
+                    }
+                    if (app.user.getRole().getName().equals("admin")) {
+
+                    }
+                  }
+                });
+
+                if (app.user.getRole().getName().equals("operator")) {
+                  panel(new PanelBuilder("navigation") {
+                    {
+                      valignTop();
+                      alignRight();
+                      width("130px");
+                      height("35px");
+    //                  backgroundColor("#5588");
+                      childLayoutVertical();
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonListBox", "", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonOrbit", "Орбиты", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonSat", "КА", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonDataCenter", "ППИ", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonRegion", "Регионы", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonTask", "Задачи", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipment", "Оборудование", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipmentType", "Типы оборудования", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonRole", "Роли", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonUser", "Пользователи", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonSceneVariant", "Сцены", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonLoadScene", "Загрузить сцену", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonSaveScene", "Сохранить сцену", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonSchedule", "Запуск планирования", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonAnalyzeSchedule", "Анализировать план", ""));
+                      control(MenuButtonControlDefinition.getControlBuilder("menuButtonSaveSchedule", "Сохранить план", ""));
+                    }
+                  });
                 }
+    //            panel(new PanelBuilder("navigation2") {
+    //              {
+    //                width("100%");
+    //                height("35px");
+    //                backgroundColor("#5588");
+    //                childLayoutHorizontal();
+    //                padding("20px");
+    //                if (UIApplication.user.getRole().getName().equals("admin")) {
+    //
+    //                }
+    //                if (UIApplication.user.getRole().getName().equals("operator")) {
+    //
+    //                }
+    //              }
+    //            });
               }
             });
 
-            if (app.user.getRole().getName().equals("operator")) {
-              panel(new PanelBuilder("navigation") {
-                {
-                  valignTop();
-                  alignRight();
-                  width("130px");
-                  height("35px");
-//                  backgroundColor("#5588");
-                  childLayoutVertical();
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonListBox", "", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonOrbit", "Орбиты", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonSat", "КА", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonDataCenter", "ППИ", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonRegion", "Регион", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonTask", "Задачи", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipment", "Оборудование", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonEquipmentType", "Типы оборудования", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonSchedule", "Запуск планирования", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonRole", "Роли", ""));
-                  control(MenuButtonControlDefinition.getControlBuilder("menuButtonUser", "Пользователи", ""));
+            panel(new PanelBuilder("playPanel") {
+              {
+
+                childLayoutHorizontal();
+                backgroundColor("#5588");
+                height("50px");
+                valignBottom();
+                panel(builders.hspacer("45%"));
+                panel(new PanelBuilder() {{
+                  childLayoutCenter();
+                  alignCenter();
+                  valignCenter();
+                control(new ButtonBuilder("playButton", ">") {{
+                  width("40px");
+                  height("40px");
                 }
-              });
-            }
-//            panel(new PanelBuilder("navigation2") {
-//              {
-//                width("100%");
-//                height("35px");
-//                backgroundColor("#5588");
-//                childLayoutHorizontal();
-//                padding("20px");
-//                if (UIApplication.user.getRole().getName().equals("admin")) {
-//
-//                }
-//                if (UIApplication.user.getRole().getName().equals("operator")) {
-//
-//                }
-//              }
-//            });
+                });
+                }});
+                panel(new PanelBuilder() {{
+                  childLayoutCenter();
+                  alignCenter();
+                  valignCenter();
+                  control(new ButtonBuilder("pauseButton", "||") {{
+                    width("40px");
+                    height("40px");
+                  }
+                  });
+                }});
+
+                panel(builders.hspacer("35%"));
+
+                panel(new PanelBuilder() {{
+                  childLayoutCenter();
+                  alignRight();
+                  valignCenter();
+                  control(builders.createLabel("timeLabel", app.scene.getWorld().getCurrentTime().toString(), "100%"));
+                }});
+              }
+            });
           }
         });
       }

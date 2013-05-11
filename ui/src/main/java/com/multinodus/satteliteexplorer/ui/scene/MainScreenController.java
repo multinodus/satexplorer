@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-public class JmeControlsDemoScreenController implements ScreenController, KeyInputHandler {
-  private static final Logger logger = Logger.getLogger(JmeControlsDemoScreenController.class.getName());
+public class MainScreenController implements ScreenController, KeyInputHandler {
+  private static final Logger logger = Logger.getLogger(MainScreenController.class.getName());
   private static final Color HELP_COLOR = new Color("#aaaf");
 
   private UIApplication app;
@@ -50,7 +50,7 @@ public class JmeControlsDemoScreenController implements ScreenController, KeyInp
   // This keeps the current menu button
   private String currentMenuButtonId;
 
-  public JmeControlsDemoScreenController(UIApplication app, final String... mapping) {
+  public MainScreenController(UIApplication app, final String... mapping) {
     this.app = app;
     if (mapping == null || mapping.length == 0 || mapping.length % 2 != 0) {
       logger.warning("expecting pairs of values that map menuButton IDs to dialog IDs");
@@ -83,6 +83,16 @@ public class JmeControlsDemoScreenController implements ScreenController, KeyInp
 
   @Override
   public void onEndScreen() {
+  }
+
+  @NiftyEventSubscriber(id = "playButton")
+  public void onPlayButtonClicked(final String id, final ButtonClickedEvent event) {
+    app.setPlaying(true);
+  }
+
+  @NiftyEventSubscriber(id = "pauseButton")
+  public void onPauseButtonClicked(final String id, final ButtonClickedEvent event) {
+    app.setPlaying(false);
   }
 
   @Override

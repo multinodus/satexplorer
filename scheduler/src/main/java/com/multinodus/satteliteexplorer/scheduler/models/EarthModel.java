@@ -66,4 +66,8 @@ public class EarthModel implements IUpdatable {
   public float getRotateAngle() {
     return rotateAngle;
   }
+
+  public Date getCurrentTime() {
+    return dateTimeFrom(yearAngle);
+  }
 }

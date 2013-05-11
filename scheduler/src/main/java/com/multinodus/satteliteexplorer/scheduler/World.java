@@ -24,6 +24,8 @@ public class World {
   private List<SatModel> satModels;
   private List<RegionModel> regionModels;
   private List<Task> tasks;
+  private Date currentTime;
+  private EarthModel earthModel;
 
   private Random rnd = new Random();
 
@@ -41,9 +43,10 @@ public class World {
   }
 
   public void update() {
-//    for (IUpdatable entity : entities) {
-//      entity.update();
-//    }
+    for (IUpdatable entity : entities) {
+      entity.update();
+    }
+    currentTime = earthModel.getCurrentTime();
   }
 
   private void generate() {
@@ -151,7 +154,7 @@ public class World {
   }
 
   private void load() {
-    EarthModel earthModel = new EarthModel();
+    earthModel = new EarthModel();
     entities.add(earthModel);
 
     satModels = new ArrayList<SatModel>();
@@ -174,6 +177,8 @@ public class World {
     for (Object task : EntityContext.get().getAllEntities(Task.class)) {
       tasks.add((Task) task);
     }
+
+    currentTime = earthModel.getCurrentTime();
   }
 
   public Collection<IUpdatable> getEntities() {
@@ -190,5 +195,13 @@ public class World {
 
   public List<Task> getTasks() {
     return tasks;
+  }
+
+  public Date getCurrentTime() {
+    return currentTime;
+  }
+
+  public void setCurrentTime(Date currentTime) {
+    this.currentTime = currentTime;
   }
 }
