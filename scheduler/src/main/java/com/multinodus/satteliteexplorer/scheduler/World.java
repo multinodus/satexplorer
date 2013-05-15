@@ -24,6 +24,7 @@ public class World {
   private List<SatModel> satModels;
   private List<RegionModel> regionModels;
   private List<Task> tasks;
+  private List<DataCenter> dataCenters;
   private Date currentTime;
   private EarthModel earthModel;
 
@@ -178,6 +179,11 @@ public class World {
       tasks.add((Task) task);
     }
 
+    dataCenters = new ArrayList<DataCenter>();
+    for (Object dataCenter : EntityContext.get().getAllEntities(DataCenter.class)){
+      dataCenters.add((DataCenter) dataCenter);
+    }
+
     currentTime = earthModel.getCurrentTime();
   }
 
@@ -195,6 +201,10 @@ public class World {
 
   public List<Task> getTasks() {
     return tasks;
+  }
+
+  public List<DataCenter> getDataCenters() {
+    return dataCenters;
   }
 
   public Date getCurrentTime() {

@@ -1,8 +1,11 @@
 package com.multinodus.satteliteexplorer.ui.scene;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.jme3.math.FastMath;
+import com.multinodus.satteliteexplorer.db.entities.DataCenter;
+import com.multinodus.satteliteexplorer.ui.engine.util.Pair;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
@@ -30,10 +33,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -58,12 +59,13 @@ public class QualityChart extends JFrame {
     }
 
     PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
-    Map<SatModel, Multimap<Task, PredictedDataElement>> allData = predictorOfObservations.observe(SI_Transform.INITIAL_TIME,
-        new Date(SI_Transform.INITIAL_TIME.getTime() + 40 * DateTimeConstants.MSECS_IN_HOUR/*DateTimeConstants.DAYS_IN_WEEK*DateTimeConstants.MSECS_IN_DAY*/), app.scene.getWorld().getTasks(),
-        app.scene.getWorld().getSatModels(), 0.05f);
+    Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations = Maps.newHashMap();
+    Map<SatModel, List<PredictedDataElement>> dataCenterObservations = Maps.newHashMap();
+    predictorOfObservations.observe(SI_Transform.INITIAL_TIME, new Date(SI_Transform.INITIAL_TIME.getTime() + 40 * DateTimeConstants.MSECS_IN_HOUR),
+        app.scene.getWorld().getTasks(), app.scene.getWorld().getSatModels(), app.scene.getWorld().getDataCenters(), 0.05f, taskObservations, dataCenterObservations);
 
-//    DefaultXYZDataset dataset = createDataset(allData);
-    XYDataset dataset = solve(allData);
+//    DefaultXYZDataset dataset = createDataset(taskObservations);
+    XYDataset dataset = solve(taskObservations, dataCenterObservations);
     JFreeChart chart = createChart(dataset);
 
     ChartPanel chartPanel = new ChartPanel(chart);
@@ -114,7 +116,11 @@ public class QualityChart extends JFrame {
     return dataset;
   }
 
-  private XYDataset solve(Map<SatModel, Multimap<Task, PredictedDataElement>> data) {
+  private XYDataset solve(Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
+                          Map<SatModel, List<PredictedDataElement>> dataCenterObservations) {
+
+
+
     List<Object> satList = EntityContext.get().getAllEntities(Sat.class);
     List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
 
@@ -141,8 +147,8 @@ public class QualityChart extends JFrame {
       explorationCost[taskIndex] = new double[satSize + 1];
     }
 
-    for (SatModel sat : data.keySet()) {
-      Multimap<Task, PredictedDataElement> observation = data.get(sat);
+    for (SatModel sat : taskObservations.keySet()) {
+      Multimap<Task, PredictedDataElement> observation = taskObservations.get(sat);
       for (com.multinodus.satteliteexplorer.db.entities.Task task : observation.keys()) {
         Collection<PredictedDataElement> elements = observation.get(task);
 
