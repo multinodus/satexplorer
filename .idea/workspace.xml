@@ -14,12 +14,11 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add multiple knapsack problem's solver">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/util/KnapsackData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/transformations/PredictorOfObservations.java" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/transformations/PredictorOfObservations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/TestSolver.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/TestSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Prepare knapsackData">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/IKnapsackData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/MultipleChoiseKnapsack.java" />
+      <change type="MOVED" beforePath="C:\Users\т\IdeaProjects\satexplorer\server\src\main\java\com\multinodus\satteliteexplorer\scheduler\optimizations\genetic\ExplorationTimeFitnessFunction.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/KnapsackFitnessFunction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/GeneticSolver.java" afterPath="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/GeneticSolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SatteliteExplorer.iws" />
@@ -35,7 +34,7 @@
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
     <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368295185332" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368619010453" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368721178155" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368183207290" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281247800" ignored="false" />
@@ -50,9 +49,9 @@
     <file path="/hibernate.cfg.xml" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281282175" ignored="false" />
     <file path="/Sat.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281123538" ignored="false" />
     <file path="/PredictorDataElement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367432638878" ignored="false" />
-    <file path="/GeneticSolver.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367665089596" ignored="false" />
+    <file path="/GeneticSolver.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368729194703" ignored="false" />
     <file path="/FitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367491584256" ignored="false" />
-    <file path="/ExplorationTimeFitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367508571321" ignored="false" />
+    <file path="/ExplorationTimeFitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368727176359" ignored="false" />
     <file path="/EntityContext.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367509138699" ignored="false" />
     <file path="/JFreeChartExporter.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368169730276" ignored="false" />
     <file path="/DialogPanelControlDefinition.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368175696242" ignored="false" />
@@ -86,6 +85,8 @@
     <file path="$PROJECT_DIR$/../RailsGitBranch/rails/sapsan_trunk/scheduler/src/com/kg/rails/scheduler/timescheduler/activities/station/path/LineScheduleSearchPathElement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368618794274" ignored="false" />
     <file path="/LineScheduleSearchPathElement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368618793029" ignored="false" />
     <file path="/KnapsackData.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368646164241" ignored="false" />
+    <file path="/KnapsackFitnessFunction.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368727177197" ignored="false" />
+    <file path="/MultipleChoiseKnapsack.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368738795995" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,22 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/role/RoleDialogController.java" line="100" class="com.multinodus.satteliteexplorer.ui.controls.role.RoleDialogController" package="com.multinodus.satteliteexplorer.ui.controls.role">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -135,22 +151,7 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/role/RoleDialogController.java" line="100" class="com.multinodus.satteliteexplorer.ui.controls.role.RoleDialogController" package="com.multinodus.satteliteexplorer.ui.controls.role">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -161,28 +162,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SBB.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/SBB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="8" selection-start="2803" selection-end="2803" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Simulator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Simulator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="6" selection-start="4959" selection-end="4959" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MultipleKnapsackSolver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/MultipleKnapsackSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="82" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
+            <state line="322" column="53" selection-start="9772" selection-end="9772" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MultipleChoiseKnapsack.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/MultipleChoiseKnapsack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="128" column="23" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.45721272">
               <folding />
             </state>
           </provider>
@@ -191,20 +183,17 @@
       <file leaf-file-name="TestSolver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/TestSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="65" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.0">
+            <state line="23" column="39" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PredictorOfObservations.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PredictorOfObservations.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/transformations/PredictorOfObservations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="13" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.7493858">
-              <folding>
-                <element signature="e#4049#4289#0" expanded="true" />
-                <element signature="e#4280#4281#0" expanded="true" />
-              </folding>
+            <state line="73" column="53" selection-start="2815" selection-end="2815" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,25 +201,7 @@
       <file leaf-file-name="KnapsackData.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/util/KnapsackData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="234" selection-end="265" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuaternionTransformations.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/transformations/QuaternionTransformations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaxCSPProblem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPProblem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="51" selection-start="3583" selection-end="3583" vertical-scroll-proportion="0.0">
+            <state line="22" column="3" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -239,7 +210,36 @@
       <file leaf-file-name="QualityChart.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="8" selection-start="5270" selection-end="5270" vertical-scroll-proportion="0.0">
+            <state line="197" column="75" selection-start="7301" selection-end="7301" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KnapsackFitnessFunction.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/KnapsackFitnessFunction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="32" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IKnapsackData.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/IKnapsackData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneticSolver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/GeneticSolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="79" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -248,7 +248,7 @@
       <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="47" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.0">
+            <state line="210" column="23" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -273,12 +273,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/Value.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/Variable.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Adopt.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Algorithm.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Intradopt.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/IntraSBB.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Master.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/SBB.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/problem/MaxCSPProblem.java" />
@@ -289,6 +283,12 @@
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/KnapsackData.java" />
         <option value="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/transformations/PredictorOfObservations.java" />
+        <option value="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/util/KnapsackData.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/IKnapsackData.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/ExplorationTimeFitnessFunction.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/KnapsackFitnessFunction.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/GeneticSolver.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/MultipleChoiseKnapsack.java" />
       </list>
     </option>
   </component>
@@ -340,8 +340,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -862,6 +860,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="genetic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multinodus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satteliteexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="optimizations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="branchandbound" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1116,6 +1164,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -1131,9 +1181,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1481,7 +1531,11 @@
       <created>1368615293559</created>
       <updated>1368615293559</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Prepare knapsackData">
+      <created>1368647294974</created>
+      <updated>1368647294974</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1511,18 +1565,17 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47189096" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2044293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22316866" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.73594546" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42759797" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33049405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22827938" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26969698" sideWeight="0.2265758" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16742425" sideWeight="0.7240204" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27575758" sideWeight="0.7955707" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27575758" sideWeight="0.7768313" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.318569" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1531,6 +1584,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33049405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4173765" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1573,7 +1627,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add multiple knapsack problem's solver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prepare knapsackData" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1609,6 +1663,7 @@
     <MESSAGE value="Add Adopt algorithm" />
     <MESSAGE value="Fix Adopt algorithm" />
     <MESSAGE value="Add multiple knapsack problem's solver" />
+    <MESSAGE value="Prepare knapsackData" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1622,39 +1677,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Intradopt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="268" column="3" selection-start="9203" selection-end="9203" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/IntraSBB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="5" selection-start="1879" selection-end="1879" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Master.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="3" selection-start="3231" selection-end="3231" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/MessageSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="17" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/adopt/solver/SBB.java">
@@ -1690,48 +1715,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/util/KnapsackData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="234" selection-end="265" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/TestSolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="65" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="8" selection-start="5270" selection-end="5270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/MultipleKnapsackSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="82" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
+        <state line="23" column="39" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="47" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.0">
+        <state line="210" column="23" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/IKnapsackData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/GeneticSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="79" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/genetic/KnapsackFitnessFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="32" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/QualityChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="75" selection-start="7301" selection-end="7301" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/util/KnapsackData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="3" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/transformations/PredictorOfObservations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="13" selection-start="3097" selection-end="3097" vertical-scroll-proportion="0.7493858">
-          <folding>
-            <element signature="e#4049#4289#0" expanded="true" />
-            <element signature="e#4280#4281#0" expanded="true" />
-          </folding>
+        <state line="73" column="53" selection-start="2815" selection-end="2815" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/MultipleKnapsackSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="322" column="53" selection-start="9772" selection-end="9772" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/multinodus/satteliteexplorer/scheduler/optimizations/branchandbound/MultipleChoiseKnapsack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="23" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.45721272">
+          <folding />
         </state>
       </provider>
     </entry>

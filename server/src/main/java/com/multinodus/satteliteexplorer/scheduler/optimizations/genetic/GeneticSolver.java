@@ -8,6 +8,7 @@ package com.multinodus.satteliteexplorer.scheduler.optimizations.genetic;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
 import org.jgap.*;
 import org.jgap.audit.EvolutionMonitor;
 import org.jgap.impl.DefaultConfiguration;
@@ -18,7 +19,7 @@ public class GeneticSolver {
 
   public EvolutionMonitor m_monitor;
 
-  public int[] solve(int satSize, int taskSize, double[][] explorationCost, boolean a_doMonitor)
+  public int[] solve(IKnapsackData knapsackData, boolean a_doMonitor)
       throws Exception {
     // Start with a DefaultConfiguration, which comes setup with the
     // most common settings.
@@ -33,7 +34,7 @@ public class GeneticSolver {
     conf.setKeepPopulationSizeConstant(false);
 
     FitnessFunction myFunc =
-        new ExplorationTimeFitnessFunction(explorationCost);
+        new KnapsackFitnessFunction(knapsackData);
     conf.setFitnessFunction(myFunc);
     if (a_doMonitor) {
       // Turn on monitoring/auditing of evolution progress.
@@ -42,9 +43,9 @@ public class GeneticSolver {
       conf.setMonitor(m_monitor);
     }
 
-    Gene[] genes = new Gene[taskSize];
-    for (int i = 0; i < taskSize; i++) {
-      genes[i] = new IntegerGene(conf, 0, satSize);
+    Gene[] genes = new Gene[knapsackData.getN() + 1];
+    for (int i = 0; i < knapsackData.getN() + 1; i++) {
+      genes[i] = new IntegerGene(conf, 0, knapsackData.getM());
     }
 
     IChromosome sampleChromosome = new Chromosome(conf, genes);
