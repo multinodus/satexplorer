@@ -14,11 +14,12 @@ import org.jgap.audit.EvolutionMonitor;
 import org.jgap.impl.DefaultConfiguration;
 import org.jgap.impl.IntegerGene;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GeneticSolver {
-  private static final int MAX_ALLOWED_EVOLUTIONS = 10;
+  private static final int MAX_ALLOWED_EVOLUTIONS = 150;
 
   public EvolutionMonitor m_monitor;
 
@@ -46,17 +47,34 @@ public class GeneticSolver {
       conf.setMonitor(m_monitor);
     }
 
-    Gene[] genes = new Gene[knapsackData.getN()];
-    List<Integer> indexes = new ArrayList<Integer>();
+    List<Integer> geneIndexes = new ArrayList<Integer>();
+    List<List<Integer>> alleleIndexes = new ArrayList<List<Integer>>();
 
     for (int i = 0; i < knapsackData.getN(); i++) {
       if (knapsackData.getWeight()[i][0] != Float.MAX_VALUE){
-        genes[i] = new IntegerGene(conf, 0, knapsackData.getM()-1);
-        indexes.add(i);
+        ArrayList<Integer> alleleIndex = new ArrayList<>();
+        for (int j = 0; j < knapsackData.getM(); j++){
+          if (knapsackData.getProfit()[i][j] > 0){
+            alleleIndex.add(j);
+          }
+        }
+        alleleIndex.add(knapsackData.getM() - 1);
+
+        alleleIndexes.add(alleleIndex);
+        geneIndexes.add(i);
       }
     }
 
-    myFunc.setIndexes(indexes);
+    Gene[] genes = new Gene[geneIndexes.size()];
+
+    int k = 0;
+    for (List<Integer> alleleIndex : alleleIndexes){
+      genes[k] = new IntegerGene(conf, 0, alleleIndex.size()-1);
+      k++;
+    }
+
+    myFunc.setAlleleIndexes(alleleIndexes);
+    myFunc.setGeneIndexes(geneIndexes);
 
     IChromosome sampleChromosome = new Chromosome(conf, genes);
     conf.setSampleChromosome(sampleChromosome);
@@ -76,6 +94,9 @@ public class GeneticSolver {
       } else {
         population.evolve();
       }
+      double v1 = population.getFittestChromosome().getFitnessValue();
+      System.out.println("The best solution has a fitness value of " +
+          v1);
     }
     long endTime = System.currentTimeMillis();
     System.out.println("Total evolution time: " + (endTime - startTime)
@@ -83,8 +104,7 @@ public class GeneticSolver {
 
     IChromosome bestSolutionSoFar = population.getFittestChromosome();
     double v1 = bestSolutionSoFar.getFitnessValue();
-    System.out.println("The best solution has a fitness value of " +
-        bestSolutionSoFar.getFitnessValue());
+    System.out.println("The best solution has a fitness value of " + v1);
     bestSolutionSoFar.setFitnessValueDirectly(-1);
 
     return getResult(bestSolutionSoFar);

@@ -123,7 +123,7 @@ public class QualityChart extends JFrame {
     OptimizationServer optimizationServer = app.optimizationServer;
     int[] result = null;
     try {
-      result = optimizationServer.solve(knapsackData, "ilp");
+      result = optimizationServer.solve(knapsackData, "genetic");
     } catch (Exception exc) {
       System.out.println(exc.toString());
     }

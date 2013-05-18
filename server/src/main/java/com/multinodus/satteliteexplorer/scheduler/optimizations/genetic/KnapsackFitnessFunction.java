@@ -16,7 +16,8 @@ import java.util.List;
 public class KnapsackFitnessFunction extends FitnessFunction {
   private IKnapsackData knapsackData;
   private int penalty = 10;
-  private List<Integer> indexes;
+  private List<Integer> geneIndexes;
+  private List<List<Integer>> alleleIndexes;
 
   public KnapsackFitnessFunction(IKnapsackData knapsackData) {
     super();    //To change body of overridden methods use File | Settings | File Templates.
@@ -28,8 +29,9 @@ public class KnapsackFitnessFunction extends FitnessFunction {
     double total = 0;
     float[] occupancy = new float[knapsackData.getM()];
     float[] profit = new float[knapsackData.getM()];
-    for (int taskIndex = 0; taskIndex < chromosome.size(); taskIndex++) {
-      int episodeIndex = (Integer) chromosome.getGene(taskIndex).getAllele();
+    for (int index = 0; index < chromosome.size(); index++) {
+      int taskIndex = geneIndexes.get(index);
+      int episodeIndex = alleleIndexes.get(index).get((Integer) chromosome.getGene(index).getAllele());
       float  cost = knapsackData.getProfit()[taskIndex][episodeIndex];
       total += cost;
       occupancy[episodeIndex] += knapsackData.getWeight()[taskIndex][episodeIndex];
@@ -38,8 +40,11 @@ public class KnapsackFitnessFunction extends FitnessFunction {
     for (int m = 0; m < knapsackData.getM(); m++){
       if (occupancy[m] > knapsackData.getCapacity()[m]){
         total -= profit[m];
+        total -= occupancy[m] - knapsackData.getCapacity()[m];
       }
     }
+
+    total += 20000;
 
     if (total < 0) {
       total = 0;
@@ -47,7 +52,11 @@ public class KnapsackFitnessFunction extends FitnessFunction {
     return total;
   }
 
-  public void setIndexes(List<Integer> indexes) {
-    this.indexes = indexes;
+  public void setGeneIndexes(List<Integer> geneIndexes) {
+    this.geneIndexes = geneIndexes;
+  }
+
+  public void setAlleleIndexes(List<List<Integer>> alleleIndexes) {
+    this.alleleIndexes = alleleIndexes;
   }
 }
