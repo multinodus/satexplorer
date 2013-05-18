@@ -55,16 +55,8 @@ public class QualityChart extends JFrame {
       System.out.println(e.toString());
     }
 
-    PredictorOfObservations predictorOfObservations = PredictorOfObservations.getInstance();
-    Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations = Maps.newHashMap();
-    Map<SatModel, List<PredictedDataElement>> dataCenterObservations = Maps.newHashMap();
-    predictorOfObservations.observe(SI_Transform.INITIAL_TIME, new Date(SI_Transform.INITIAL_TIME.getTime() + 40 * DateTimeConstants.MSECS_IN_HOUR),
-        app.scene.getWorld().getTasks(), app.scene.getWorld().getSatModels(), app.scene.getWorld().getDataCenters(), 0.05f, taskObservations, dataCenterObservations);
-    IKnapsackData knapsackData = predictorOfObservations.calculateKnapsackData(predictorOfObservations.findEpisodes(taskObservations, dataCenterObservations));
-
-
 //    DefaultXYZDataset dataset = createDataset(taskObservations);
-    XYDataset dataset = solve(knapsackData);
+    XYDataset dataset = solve();
     JFreeChart chart = createChart(dataset);
 
     ChartPanel chartPanel = new ChartPanel(chart);
@@ -115,15 +107,7 @@ public class QualityChart extends JFrame {
     return dataset;
   }
 
-  private XYDataset solve(IKnapsackData knapsackData) {
-    OptimizationServer optimizationServer = app.optimizationServer;
-    int[] result = null;
-    try {
-      result = optimizationServer.solve(knapsackData, "genetic");
-    } catch (Exception exc) {
-      System.out.println(exc.toString());
-    }
-
+  private XYDataset solve() {
     XYSeriesCollection dataset = new XYSeriesCollection();
 //    XYSeries[] serieses = new XYSeries[knapsackData.getM()];
 //    for (int j = 0; j < serieses.length; j++) {

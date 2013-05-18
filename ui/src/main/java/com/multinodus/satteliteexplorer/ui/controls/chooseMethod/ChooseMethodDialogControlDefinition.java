@@ -2,6 +2,7 @@ package com.multinodus.satteliteexplorer.ui.controls.chooseMethod;
 
 import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
 import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
+import com.multinodus.satteliteexplorer.ui.scene.UIApplication;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.ControlBuilder;
 import de.lessvoid.nifty.builder.ControlDefinitionBuilder;
@@ -14,7 +15,7 @@ public class ChooseMethodDialogControlDefinition {
   public static final String NAME = "chooseMethodDialog";
   private static CommonBuilders builders = new CommonBuilders();
 
-  public static void register(final Nifty nifty) {
+  public static void register(final Nifty nifty, final UIApplication app) {
     new ControlDefinitionBuilder(NAME) {{
       controller(new ChooseMethodDialogController());
       control(new ControlBuilder(DialogPanelControlDefinition.NAME) {{
@@ -34,6 +35,14 @@ public class ChooseMethodDialogControlDefinition {
           childLayoutHorizontal();
           control(builders.createLabel("Тайм-аут (с):"));
           control(new ControlBuilder("timeout", "textfield"));
+        }});
+        panel(builders.vspacer());
+
+        panel(builders.vspacer());
+        panel(new PanelBuilder() {{
+          childLayoutHorizontal();
+          control(builders.createLabel("Горизонт планирования (часов):"));
+          control(new ControlBuilder("horizont", "textfield"));
         }});
         panel(builders.vspacer());
 

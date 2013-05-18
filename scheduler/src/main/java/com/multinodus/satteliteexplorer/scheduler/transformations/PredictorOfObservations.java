@@ -7,8 +7,10 @@ import com.google.common.collect.Multimap;
 import com.jme3.math.*;
 import com.multinodus.satteliteexplorer.db.EntityContext;
 import com.multinodus.satteliteexplorer.db.entities.*;
+import com.multinodus.satteliteexplorer.scheduler.World;
 import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
 import com.multinodus.satteliteexplorer.scheduler.models.SunModel;
+import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
 import com.multinodus.satteliteexplorer.scheduler.util.DateTimeConstants;
 import com.multinodus.satteliteexplorer.scheduler.util.KnapsackData;
 import com.multinodus.satteliteexplorer.scheduler.util.Pair;
@@ -60,7 +62,16 @@ public class PredictorOfObservations {
     }
   }
 
-  public KnapsackData calculateKnapsackData(List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes) {
+  public IKnapsackData getKnapsackData(World world, int hourHorizont){
+    Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations = Maps.newHashMap();
+    Map<SatModel, List<PredictedDataElement>> dataCenterObservations = Maps.newHashMap();
+    observe(SI_Transform.INITIAL_TIME, new Date(SI_Transform.INITIAL_TIME.getTime() + hourHorizont * DateTimeConstants.MSECS_IN_HOUR),
+        world.getTasks(), world.getSatModels(), world.getDataCenters(), 0.05f, taskObservations, dataCenterObservations);
+    IKnapsackData knapsackData = calculateKnapsackData(findEpisodes(taskObservations, dataCenterObservations));
+    return knapsackData;
+  }
+
+  private IKnapsackData calculateKnapsackData(List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes) {
     List<Object> satList = EntityContext.get().getAllEntities(Sat.class);
     List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
 
@@ -119,7 +130,7 @@ public class PredictorOfObservations {
     return new KnapsackData(n, m, profit, weight, capacity);
   }
 
-  public List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> findEpisodes(Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
+  private List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> findEpisodes(Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
                                                                                    Map<SatModel, List<PredictedDataElement>> dataCenterObservations) {
     List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes = Lists.newArrayList();
     for (SatModel sat : taskObservations.keySet()) {
@@ -163,7 +174,7 @@ public class PredictorOfObservations {
     return episodes;
   }
 
-  public void predictObservations(Date now, Date end, SatModel sat, Collection<Task> tasks, Collection<DataCenter> dataCenters, float earthSpeed,
+  private void predictObservations(Date now, Date end, SatModel sat, Collection<Task> tasks, Collection<DataCenter> dataCenters, float earthSpeed,
                                   Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
                                   Map<SatModel, List<PredictedDataElement>> dataCenterObservations) {
     Date rrt = new Date(System.currentTimeMillis());

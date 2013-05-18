@@ -37,6 +37,8 @@ import com.jme3.system.AppSettings;
 import com.multinodus.satteliteexplorer.db.entities.User;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServer;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServerImpl;
+import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDialogController;
+import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessController;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.Planet;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.PlanetAppState;
 
@@ -54,6 +56,12 @@ public class UIApplication extends SimpleApplication {
   public OptimizationServer optimizationServer;
   private boolean isOperator = false;
   private boolean playing = false;
+
+  private int hoursHorizont;
+  private int timeout;
+  private String method;
+
+  public static UIApplication app;
 
   public static void main(String[] args) {
     final LoginForm loginForm = new LoginForm();
@@ -77,6 +85,8 @@ public class UIApplication extends SimpleApplication {
         settings.setResolution(screenSize.width, screenSize.height - 65);
         settings.setTitle("Автоматизированная система планирования распределения задач ДЗЗ в группировке КА");
         UIApplication app = new UIApplication();
+        UIApplication.app = app;
+
         app.user = user;
 
         app.setDisplayStatView(false);
@@ -182,5 +192,29 @@ public class UIApplication extends SimpleApplication {
 
   public void setPlaying(boolean playing) {
     this.playing = playing;
+  }
+
+  public String getMethod() {
+    return method;
+  }
+
+  public void setMethod(String method) {
+    this.method = method;
+  }
+
+  public int getTimeout() {
+    return timeout;
+  }
+
+  public void setTimeout(int timeout) {
+    this.timeout = timeout;
+  }
+
+  public int getHoursHorizont() {
+    return hoursHorizont;
+  }
+
+  public void setHoursHorizont(int hoursHorizont) {
+    this.hoursHorizont = hoursHorizont;
   }
 }

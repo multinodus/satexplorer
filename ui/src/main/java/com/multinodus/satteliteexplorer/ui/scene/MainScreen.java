@@ -2,6 +2,7 @@ package com.multinodus.satteliteexplorer.ui.scene;
 
 import com.jme3.niftygui.NiftyJmeDisplay;
 import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDialogControlDefinition;
+import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDialogController;
 import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
 import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.common.ImagePanelDefinition;
@@ -14,6 +15,8 @@ import com.multinodus.satteliteexplorer.ui.controls.orbit.OrbitDialogControlDefi
 import com.multinodus.satteliteexplorer.ui.controls.region.RegionDialogControlDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.role.RoleDialogDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.sat.SatControlDefinition;
+import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessController;
+import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.task.TaskDialogDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.user.UserDialogDefinition;
 import de.lessvoid.nifty.Nifty;
@@ -51,6 +54,7 @@ public class MainScreen {
     nifty.loadStyleFile("nifty-default-styles.xml");
     nifty.loadControlFile("nifty-default-controls.xml");
     nifty.registerMouseCursor("hand", "Interface/mouse-cursor-hand.png", 5, 4);
+
     //nifty.setDebugOptionPanelColors(true);
     registerMenuButtonHintStyle(nifty);
     registerStyles(nifty);
@@ -70,8 +74,9 @@ public class MainScreen {
     EquipmentTypeDialogDefinition.register(nifty);
     RoleDialogDefinition.register(nifty);
     UserDialogDefinition.register(nifty);
-    ImagePanelDefinition.register(nifty);
-    ChooseMethodDialogControlDefinition.register(nifty);
+//    ImagePanelDefinition.register(nifty);
+    ChooseMethodDialogControlDefinition.register(nifty, app);
+    SchedulingProcessDefinition.register(nifty, app);
 
     createDemoScreen(nifty);
     nifty.gotoScreen("demo");
@@ -131,6 +136,8 @@ public class MainScreen {
                       control(new ControlBuilder("dialogRole", RoleDialogDefinition.NAME));
                       control(new ControlBuilder("dialogUser", UserDialogDefinition.NAME));
                       control(new ControlBuilder(ChooseMethodDialogControlDefinition.NAME, ChooseMethodDialogControlDefinition.NAME));
+//                      control(new ControlBuilder(ImagePanelDefinition.NAME, ImagePanelDefinition.NAME));
+                      control(new ControlBuilder(SchedulingProcessDefinition.NAME, SchedulingProcessDefinition.NAME));
                     }
                     if (app.user.getRole().getName().equals("admin")) {
 
