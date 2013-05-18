@@ -9,17 +9,22 @@ package com.multinodus.satteliteexplorer.scheduler.optimizations;
  */
 public interface IKnapsackData {
   public int getN();
+
   public void setN(int n);
 
   public int getM();
+
   public void setM(int m);
 
   public float[][] getProfit();
+
   public void setProfit(float[][] profit);
 
   public float[][] getWeight();
+
   public void setWeight(float[][] weight);
 
   public float[] getCapacity();
+
   public void setCapacity(float[] capacity);
 }

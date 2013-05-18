@@ -16,7 +16,7 @@ public class KnapsackData implements IKnapsackData {
   public float weight[][];
   public float capacity[];
 
-  public KnapsackData(int n, int m, float profit[][], float weight[][], float capacity[]){
+  public KnapsackData(int n, int m, float profit[][], float weight[][], float capacity[]) {
     this.n = n;
     this.m = m;
     this.profit = profit;

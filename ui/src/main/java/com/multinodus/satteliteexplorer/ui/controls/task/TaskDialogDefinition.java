@@ -1,5 +1,7 @@
 package com.multinodus.satteliteexplorer.ui.controls.task;
 
+import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
+import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.ControlBuilder;
 import de.lessvoid.nifty.builder.ControlDefinitionBuilder;
@@ -7,8 +9,6 @@ import de.lessvoid.nifty.builder.PanelBuilder;
 import de.lessvoid.nifty.controls.button.builder.ButtonBuilder;
 import de.lessvoid.nifty.controls.dropdown.builder.DropDownBuilder;
 import de.lessvoid.nifty.controls.label.builder.LabelBuilder;
-import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
-import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
 
 /**
  * The ChatControlDialogRegister registers a new control (the whole ChatControlDialog) with

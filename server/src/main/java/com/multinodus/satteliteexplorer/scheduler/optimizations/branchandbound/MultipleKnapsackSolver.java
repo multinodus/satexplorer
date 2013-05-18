@@ -9,7 +9,7 @@ package com.multinodus.satteliteexplorer.scheduler.optimizations.branchandbound;
  */
 public class MultipleKnapsackSolver {
   public void multipleKnapsack(int n, int m, int profit[], int weight[],
-                                      int capacity[], int depth, int sol[]) {
+                               int capacity[], int depth, int sol[]) {
     int i, i1, p, idx, idx1, idx2, j, y, tmp, netp, slackbnd, res1a, ubtmp;
     int minweight, totalweight, depthtmp, n1, m1, proftmp, ubslack;
     int q = 0, upperbnd = 0, indexj = 0, indexi = 0;
@@ -330,9 +330,9 @@ public class MultipleKnapsackSolver {
   }
 
   private void mkpsCurrentUpperBound(int n, int m, int profit[],
-                                            int weight[], int aux2[], int i, int netp, int res1[],
-                                            int res3[], int aux5[], int aux7[], int aux8[], int aux9[],
-                                            int aux10[], int aux11[]) {
+                                     int weight[], int aux2[], int i, int netp, int res1[],
+                                     int res3[], int aux5[], int aux7[], int aux8[], int aux9[],
+                                     int aux10[], int aux11[]) {
 /* this method is used internally by multipleKnapsack */
 // Compute an upper bound of the current solution
     int j, q, wk1, wk2;
@@ -373,9 +373,9 @@ public class MultipleKnapsackSolver {
   }
 
   private void mkpsFeasibleSolution(int n, int m, int profit[],
-                                           int weight[], int i, int netp, int res2[], int aux1[], int aux2[],
-                                           int aux3[], int aux7[], int aux8[], int aux9[], int aux10[],
-                                           int aux11[], int aux12[][], int aux14[][], int aux15[][]) {
+                                    int weight[], int i, int netp, int res2[], int aux1[], int aux2[],
+                                    int aux3[], int aux7[], int aux8[], int aux9[], int aux10[],
+                                    int aux11[], int aux12[][], int aux14[][], int aux15[][]) {
 /* this method is used internally by multipleKnapsack */
 // Get a feasible solution
     int p, j, q, netpa, accu1, accu2, accu3, accu4, accu5;
@@ -464,10 +464,10 @@ public class MultipleKnapsackSolver {
   }
 
   private void mkpsCalculateBound(int i, int p, int res3[],
-                                         boolean control[], int slackbnd, int upperbnd, int indexj,
-                                         int indexi, int n, int res1[], int res1a, int ubtmp,
-                                         int aux0[], int aux2[], int aux5[], int aux6[], int aux9[],
-                                         int aux12[][]) {
+                                  boolean control[], int slackbnd, int upperbnd, int indexj,
+                                  int indexi, int n, int res1[], int res1a, int ubtmp,
+                                  int aux0[], int aux2[], int aux5[], int aux6[], int aux9[],
+                                  int aux12[][]) {
 /* this method is used internally by multipleKnapsack */
 // Upper bound computation
     int j, id1, id2, id3, id4;
@@ -512,7 +512,7 @@ public class MultipleKnapsackSolver {
   }
 
   private void mkpsSingleKnapsack(int n, int ns, int ref1[],
-                                         int netp, int ref2[], int aux8[], int aux10[], int aux11[]) {
+                                  int netp, int ref2[], int aux8[], int aux10[], int aux11[]) {
 /* this method is used internally by multipleKnapsack */
 // Compute the solution with one knapsack
     int p, p1, in, j, j1, q, diff, index2, index3, index4, index5, index6;

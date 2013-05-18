@@ -74,7 +74,7 @@ public class UIApplication extends SimpleApplication {
         AppSettings settings = new AppSettings(true);
 //        settings.setFullscreen(true);
         settings.setFrequency(60);
-        settings.setResolution(screenSize.width, screenSize.height-65);
+        settings.setResolution(screenSize.width, screenSize.height - 65);
         settings.setTitle("Автоматизированная система планирования распределения задач ДЗЗ в группировке КА");
         UIApplication app = new UIApplication();
         app.user = user;
@@ -89,7 +89,7 @@ public class UIApplication extends SimpleApplication {
         app.optimizationServer = new OptimizationServerImpl();
 
         app.start();
-      } catch (Exception exc){
+      } catch (Exception exc) {
         System.out.println(exc.toString());
       }
     }

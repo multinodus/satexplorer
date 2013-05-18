@@ -14,7 +14,6 @@ import org.jgap.audit.EvolutionMonitor;
 import org.jgap.impl.DefaultConfiguration;
 import org.jgap.impl.IntegerGene;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,10 +50,10 @@ public class GeneticSolver {
     List<List<Integer>> alleleIndexes = new ArrayList<List<Integer>>();
 
     for (int i = 0; i < knapsackData.getN(); i++) {
-      if (knapsackData.getWeight()[i][0] != Float.MAX_VALUE){
+      if (knapsackData.getWeight()[i][0] != Float.MAX_VALUE) {
         ArrayList<Integer> alleleIndex = new ArrayList<>();
-        for (int j = 0; j < knapsackData.getM(); j++){
-          if (knapsackData.getProfit()[i][j] > 0){
+        for (int j = 0; j < knapsackData.getM(); j++) {
+          if (knapsackData.getProfit()[i][j] > 0) {
             alleleIndex.add(j);
           }
         }
@@ -68,8 +67,8 @@ public class GeneticSolver {
     Gene[] genes = new Gene[geneIndexes.size()];
 
     int k = 0;
-    for (List<Integer> alleleIndex : alleleIndexes){
-      genes[k] = new IntegerGene(conf, 0, alleleIndex.size()-1);
+    for (List<Integer> alleleIndex : alleleIndexes) {
+      genes[k] = new IntegerGene(conf, 0, alleleIndex.size() - 1);
       k++;
     }
 

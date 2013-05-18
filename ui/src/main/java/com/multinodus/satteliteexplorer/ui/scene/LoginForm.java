@@ -2,7 +2,6 @@ package com.multinodus.satteliteexplorer.ui.scene;
 
 import com.multinodus.satteliteexplorer.db.EntityContext;
 import com.multinodus.satteliteexplorer.db.entities.User;
-import com.multinodus.satteliteexplorer.scheduler.World;
 
 import javax.swing.*;
 import java.awt.*;

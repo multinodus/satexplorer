@@ -359,8 +359,7 @@ public abstract class Problem {
     } else {
       Variable minPrtyVar = null;
       for (int i = 0; i < vars.size(); i++) {
-        Variable vvar = (Variable) vars.elementAt(i);
-	/* we are trying to find the highest lower priority variable */
+        Variable vvar = (Variable) vars.elementAt(i);  /* we are trying to find the highest lower priority variable */
         if (comparePriority(vvar, v) && (minPrtyVar == null ||
             comparePriority(minPrtyVar, vvar))) {
           minPrtyVar = vvar;

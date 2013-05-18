@@ -2,11 +2,6 @@ package com.multinodus.satteliteexplorer.ui.scene;
 
 import com.jme3.niftygui.NiftyJmeDisplay;
 import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDialogControlDefinition;
-import de.lessvoid.nifty.Nifty;
-import de.lessvoid.nifty.builder.*;
-import de.lessvoid.nifty.controls.button.builder.ButtonBuilder;
-import de.lessvoid.nifty.screen.Screen;
-import de.lessvoid.nifty.tools.Color;
 import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
 import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.common.ImagePanelDefinition;
@@ -21,6 +16,11 @@ import com.multinodus.satteliteexplorer.ui.controls.role.RoleDialogDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.sat.SatControlDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.task.TaskDialogDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.user.UserDialogDefinition;
+import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.builder.*;
+import de.lessvoid.nifty.controls.button.builder.ButtonBuilder;
+import de.lessvoid.nifty.screen.Screen;
+import de.lessvoid.nifty.tools.Color;
 
 /**
  * Nifty GUI 1.3 demo using Java.
@@ -116,7 +116,7 @@ public class MainScreen {
                 panel(new PanelBuilder("dialogParent") {
                   {
                     childLayoutOverlay();
-    //                width("85%");
+                    //                width("85%");
                     alignLeft();
                     valignCenter();
                     if (app.user.getRole().getName().equals("operator")) {
@@ -145,7 +145,7 @@ public class MainScreen {
                       alignRight();
                       width("130px");
                       height("35px");
-    //                  backgroundColor("#5588");
+                      //                  backgroundColor("#5588");
                       childLayoutVertical();
                       control(MenuButtonControlDefinition.getControlBuilder("menuButtonListBox", "", ""));
                       control(MenuButtonControlDefinition.getControlBuilder("menuButtonOrbit", "Орбиты", ""));
@@ -166,21 +166,21 @@ public class MainScreen {
                     }
                   });
                 }
-    //            panel(new PanelBuilder("navigation2") {
-    //              {
-    //                width("100%");
-    //                height("35px");
-    //                backgroundColor("#5588");
-    //                childLayoutHorizontal();
-    //                padding("20px");
-    //                if (UIApplication.user.getRole().getName().equals("admin")) {
-    //
-    //                }
-    //                if (UIApplication.user.getRole().getName().equals("operator")) {
-    //
-    //                }
-    //              }
-    //            });
+                //            panel(new PanelBuilder("navigation2") {
+                //              {
+                //                width("100%");
+                //                height("35px");
+                //                backgroundColor("#5588");
+                //                childLayoutHorizontal();
+                //                padding("20px");
+                //                if (UIApplication.user.getRole().getName().equals("admin")) {
+                //
+                //                }
+                //                if (UIApplication.user.getRole().getName().equals("operator")) {
+                //
+                //                }
+                //              }
+                //            });
               }
             });
 
@@ -196,20 +196,22 @@ public class MainScreen {
                   childLayoutCenter();
                   alignCenter();
                   valignCenter();
-                control(new ButtonBuilder("playButton", ">") {{
-                  width("40px");
-                  height("40px");
-                }
-                });
+                  control(new ButtonBuilder("playButton", ">") {
+                    {
+                      width("40px");
+                      height("40px");
+                    }
+                  });
                 }});
                 panel(new PanelBuilder() {{
                   childLayoutCenter();
                   alignCenter();
                   valignCenter();
-                  control(new ButtonBuilder("pauseButton", "||") {{
-                    width("40px");
-                    height("40px");
-                  }
+                  control(new ButtonBuilder("pauseButton", "||") {
+                    {
+                      width("40px");
+                      height("40px");
+                    }
                   });
                 }});
 

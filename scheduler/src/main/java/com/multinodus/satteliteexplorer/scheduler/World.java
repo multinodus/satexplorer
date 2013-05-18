@@ -180,7 +180,7 @@ public class World {
     }
 
     dataCenters = new ArrayList<DataCenter>();
-    for (Object dataCenter : EntityContext.get().getAllEntities(DataCenter.class)){
+    for (Object dataCenter : EntityContext.get().getAllEntities(DataCenter.class)) {
       dataCenters.add((DataCenter) dataCenter);
     }
 

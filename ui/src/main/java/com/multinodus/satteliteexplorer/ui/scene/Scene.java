@@ -99,7 +99,7 @@ public class Scene {
 
   private void update() {
     try {
-      if (app.isPlaying()){
+      if (app.isPlaying()) {
         world.update();
       }
       Thread.sleep(50);

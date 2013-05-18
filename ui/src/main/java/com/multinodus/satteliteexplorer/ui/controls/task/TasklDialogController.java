@@ -1,5 +1,10 @@
 package com.multinodus.satteliteexplorer.ui.controls.task;
 
+import com.multinodus.satteliteexplorer.db.EntityContext;
+import com.multinodus.satteliteexplorer.db.entities.Equipment;
+import com.multinodus.satteliteexplorer.db.entities.Region;
+import com.multinodus.satteliteexplorer.db.entities.Task;
+import com.multinodus.satteliteexplorer.ui.controls.common.JustAnExampleModelClass;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
 import de.lessvoid.nifty.controls.*;
@@ -7,11 +12,6 @@ import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.input.NiftyInputEvent;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.xml.xpp3.Attributes;
-import com.multinodus.satteliteexplorer.db.EntityContext;
-import com.multinodus.satteliteexplorer.db.entities.Equipment;
-import com.multinodus.satteliteexplorer.db.entities.Region;
-import com.multinodus.satteliteexplorer.db.entities.Task;
-import com.multinodus.satteliteexplorer.ui.controls.common.JustAnExampleModelClass;
 
 import java.util.ArrayList;
 import java.util.List;

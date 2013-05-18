@@ -74,7 +74,7 @@ public class Simulator implements MessageSender {
 
       /*Instrumentation Code*/
       PrintWriter pwtr = null;
-      String fname = System.getProperty("user.dir")+"\\Logs\\Summary.txt";
+      String fname = System.getProperty("user.dir") + "\\Logs\\Summary.txt";
       try {
         File file = new File(fname);
         FileWriter ffile = new FileWriter(file);
@@ -163,8 +163,7 @@ public class Simulator implements MessageSender {
         Thread.sleep(pollTime);    /* check for termination */
         boolean termFlag = true;
         for (int i = 0; i < Agents.size(); i++) {
-          AgentThread at = (AgentThread) Agents.elementAt(i);
-	    /* check to see if some (non-master) agent does not want to terminate*/
+          AgentThread at = (AgentThread) Agents.elementAt(i);      /* check to see if some (non-master) agent does not want to terminate*/
           if (!at.algorithm.iWantToTerminate) {
             if (at.algorithm.localAgentID != Master.masterID) {
               termFlag = false;

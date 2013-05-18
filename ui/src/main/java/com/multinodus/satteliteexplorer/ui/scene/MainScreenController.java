@@ -1,25 +1,16 @@
 package com.multinodus.satteliteexplorer.ui.scene;
 
-import de.lessvoid.nifty.EndNotify;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
 import de.lessvoid.nifty.controls.ButtonClickedEvent;
-import de.lessvoid.nifty.controls.Console;
-import de.lessvoid.nifty.controls.ConsoleCommands;
-import de.lessvoid.nifty.controls.ConsoleCommands.ConsoleCommand;
-import de.lessvoid.nifty.controls.ConsoleExecuteCommandEvent;
-import de.lessvoid.nifty.effects.Effect;
 import de.lessvoid.nifty.effects.EffectEventId;
-import de.lessvoid.nifty.effects.impl.Move;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.elements.events.NiftyMousePrimaryClickedEvent;
 import de.lessvoid.nifty.input.NiftyInputEvent;
 import de.lessvoid.nifty.screen.KeyInputHandler;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
-import de.lessvoid.nifty.tools.Color;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;

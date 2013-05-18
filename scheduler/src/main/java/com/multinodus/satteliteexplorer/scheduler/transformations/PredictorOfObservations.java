@@ -9,7 +9,10 @@ import com.multinodus.satteliteexplorer.db.EntityContext;
 import com.multinodus.satteliteexplorer.db.entities.*;
 import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
 import com.multinodus.satteliteexplorer.scheduler.models.SunModel;
-import com.multinodus.satteliteexplorer.scheduler.util.*;
+import com.multinodus.satteliteexplorer.scheduler.util.DateTimeConstants;
+import com.multinodus.satteliteexplorer.scheduler.util.KnapsackData;
+import com.multinodus.satteliteexplorer.scheduler.util.Pair;
+import com.multinodus.satteliteexplorer.scheduler.util.VectorConstants;
 
 import java.util.*;
 
@@ -67,7 +70,7 @@ public class PredictorOfObservations {
 
     int m = episodes.size() + 1;
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
       profit[i] = new float[m];
       weight[i] = new float[m];
     }
@@ -82,9 +85,9 @@ public class PredictorOfObservations {
       taskIndex++;
     }
 
-    for (int j = 0; j < episodes.size(); j++){
+    for (int j = 0; j < episodes.size(); j++) {
       Pair<SatModel, List<Pair<Task, PredictedDataElement>>> episode = episodes.get(j);
-      for (Pair<Task, PredictedDataElement> p : episode.s){
+      for (Pair<Task, PredictedDataElement> p : episode.s) {
         Date explorationDate = p.s.date;
         Task task = p.f;
         int i = taskIndexes.get(p.f);
@@ -99,15 +102,15 @@ public class PredictorOfObservations {
       }
     }
 
-    for (int  i = 0; i < n; i++){
-      for (int j = 0; j < episodes.size(); j++){
-        if (weight[i][j] < 0.001){
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < episodes.size(); j++) {
+        if (weight[i][j] < 0.001) {
           weight[i][j] = Float.MAX_VALUE;
         }
       }
     }
 
-    for (int j = 0; j < episodes.size(); j++){
+    for (int j = 0; j < episodes.size(); j++) {
       capacity[j] = episodes.get(j).f.getSat().getEquipment().getStorageCapacity();
     }
 
@@ -117,14 +120,14 @@ public class PredictorOfObservations {
   }
 
   public List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> findEpisodes(Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
-                           Map<SatModel,  List<PredictedDataElement>> dataCenterObservations){
+                                                                                   Map<SatModel, List<PredictedDataElement>> dataCenterObservations) {
     List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes = Lists.newArrayList();
-    for (SatModel sat : taskObservations.keySet()){
+    for (SatModel sat : taskObservations.keySet()) {
       List<Pair<Task, PredictedDataElement>> allDataElements = Lists.newArrayList();
       Multimap<Task, PredictedDataElement> multimap = taskObservations.get(sat);
-      for (Task task : multimap.keys()){
+      for (Task task : multimap.keys()) {
         Collection<PredictedDataElement> observations = multimap.get(task);
-        for (PredictedDataElement dataElement : observations){
+        for (PredictedDataElement dataElement : observations) {
           allDataElements.add(new Pair<Task, PredictedDataElement>(task, dataElement));
         }
       }
@@ -136,12 +139,12 @@ public class PredictorOfObservations {
       });
 
       List<PredictedDataElement> dataCenterExplorations = dataCenterObservations.get(sat);
-      if (!dataCenterExplorations.isEmpty()){
+      if (!dataCenterExplorations.isEmpty()) {
         int dataCenterIndex = 0;
         PredictedDataElement previousDataElement = null;
         PredictedDataElement dataCenterExploration = dataCenterExplorations.get(0);
         List<Pair<Task, PredictedDataElement>> episode = Lists.newArrayList();
-        for (Pair<Task, PredictedDataElement> p : allDataElements){
+        for (Pair<Task, PredictedDataElement> p : allDataElements) {
           if ((previousDataElement == null || previousDataElement.date.before(dataCenterExploration.date)) &&
               (p.s.date.after(dataCenterExploration.date))) {
             episodes.add(new Pair<SatModel, List<Pair<Task, PredictedDataElement>>>(sat, episode));
@@ -161,8 +164,8 @@ public class PredictorOfObservations {
   }
 
   public void predictObservations(Date now, Date end, SatModel sat, Collection<Task> tasks, Collection<DataCenter> dataCenters, float earthSpeed,
-                                                                  Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
-                                                                  Map<SatModel,  List<PredictedDataElement>> dataCenterObservations) {
+                                  Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
+                                  Map<SatModel, List<PredictedDataElement>> dataCenterObservations) {
     Date rrt = new Date(System.currentTimeMillis());
 
     Orbit orbit = sat.getOrbit();
@@ -207,7 +210,7 @@ public class PredictorOfObservations {
       }
 
       Map<DataCenter, RegionQuaternions> dataCenterRegionQuaternionsMap = Maps.newHashMap();
-      for (DataCenter dataCenter : dataCenters){
+      for (DataCenter dataCenter : dataCenters) {
         Quaternion quaternionLongitude = qt.createQuaternion(basicVectors.i_3, -dataCenter.getLongitude());
 
         Quaternion quaternionLatitude = qt.createQuaternion(basicVectors.i_2, dataCenter.getLatitude());
@@ -276,7 +279,7 @@ public class PredictorOfObservations {
           }
         }
 
-        for (DataCenter dataCenter : dataCenters){
+        for (DataCenter dataCenter : dataCenters) {
           RegionQuaternions q = dataCenterRegionQuaternionsMap.get(dataCenter);
           float angle = predictAngleToObject(sat, s, trueAnomaly, q.quaternionLongitude, q.quaternionLatitude, q.quaternionIL, qt);
           // TODO set radio vision angle

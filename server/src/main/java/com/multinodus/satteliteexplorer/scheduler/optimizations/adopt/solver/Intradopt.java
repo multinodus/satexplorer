@@ -103,8 +103,7 @@ public class Intradopt extends Algorithm {
           } catch (NoSuchElementException ex) {
             msg = null;
           }
-        }
-	/* allow pseudoagent to execute */
+        }  /* allow pseudoagent to execute */
         if (msgDelivered) {
           Utility.Dprint("   " + uname + " executing...", Utility.MSG_LEVEL);
           adpt.backtrack();

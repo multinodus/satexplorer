@@ -1,12 +1,16 @@
 package com.multinodus.satteliteexplorer.ui.scene;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.jme3.math.FastMath;
-import com.multinodus.satteliteexplorer.db.entities.DataCenter;
+import com.multinodus.satteliteexplorer.db.entities.Task;
+import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
-import com.multinodus.satteliteexplorer.ui.engine.util.Pair;
+import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServer;
+import com.multinodus.satteliteexplorer.scheduler.transformations.PredictedDataElement;
+import com.multinodus.satteliteexplorer.scheduler.transformations.PredictorOfObservations;
+import com.multinodus.satteliteexplorer.scheduler.transformations.SI_Transform;
+import com.multinodus.satteliteexplorer.scheduler.util.DateTimeConstants;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
@@ -16,17 +20,7 @@ import org.jfree.chart.renderer.xy.XYBlockRenderer;
 import org.jfree.chart.renderer.xy.XYShapeRenderer;
 import org.jfree.data.xy.DefaultXYZDataset;
 import org.jfree.data.xy.XYDataset;
-import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import com.multinodus.satteliteexplorer.db.EntityContext;
-import com.multinodus.satteliteexplorer.db.entities.Sat;
-import com.multinodus.satteliteexplorer.db.entities.Task;
-import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
-import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServer;
-import com.multinodus.satteliteexplorer.scheduler.transformations.PredictedDataElement;
-import com.multinodus.satteliteexplorer.scheduler.transformations.PredictorOfObservations;
-import com.multinodus.satteliteexplorer.scheduler.transformations.SI_Transform;
-import com.multinodus.satteliteexplorer.scheduler.util.DateTimeConstants;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -34,8 +28,10 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.

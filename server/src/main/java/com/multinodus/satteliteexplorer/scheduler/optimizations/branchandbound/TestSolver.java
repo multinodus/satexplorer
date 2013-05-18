@@ -20,11 +20,10 @@ public class TestSolver {
     solver.multipleKnapsack(n, m, profit, weight, capacity, depth, sol);
     if (sol[0] > 0) {
       System.out.println("Optimal solution found:");
-      for (int i=1; i<=n; i++)
+      for (int i = 1; i <= n; i++)
         System.out.print(" " + sol[i]);
       System.out.println("\n\nTotal profit = " + sol[0]);
-    }
-    else
+    } else
       System.out.println("Error returned = " + sol[0]);
   }
 }

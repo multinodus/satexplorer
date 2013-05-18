@@ -1,10 +1,10 @@
 package com.multinodus.satteliteexplorer.db;
 
 import com.google.common.collect.Lists;
+import com.multinodus.satteliteexplorer.db.entities.Sat;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import com.multinodus.satteliteexplorer.db.entities.Sat;
 
 import java.util.Collection;
 import java.util.HashMap;

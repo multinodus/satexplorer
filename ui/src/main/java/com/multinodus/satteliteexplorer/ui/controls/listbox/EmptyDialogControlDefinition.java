@@ -1,10 +1,10 @@
 package com.multinodus.satteliteexplorer.ui.controls.listbox;
 
+import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
+import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.ControlBuilder;
 import de.lessvoid.nifty.builder.ControlDefinitionBuilder;
-import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
-import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
 
 /**
  * The ListBoxDialogControlDefinition registers a new control with Nifty

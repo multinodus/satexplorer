@@ -32,13 +32,13 @@ public class KnapsackFitnessFunction extends FitnessFunction {
     for (int index = 0; index < chromosome.size(); index++) {
       int taskIndex = geneIndexes.get(index);
       int episodeIndex = alleleIndexes.get(index).get((Integer) chromosome.getGene(index).getAllele());
-      float  cost = knapsackData.getProfit()[taskIndex][episodeIndex];
+      float cost = knapsackData.getProfit()[taskIndex][episodeIndex];
       total += cost;
       occupancy[episodeIndex] += knapsackData.getWeight()[taskIndex][episodeIndex];
       profit[episodeIndex] += cost;
     }
-    for (int m = 0; m < knapsackData.getM(); m++){
-      if (occupancy[m] > knapsackData.getCapacity()[m]){
+    for (int m = 0; m < knapsackData.getM(); m++) {
+      if (occupancy[m] > knapsackData.getCapacity()[m]) {
         total -= profit[m];
         total -= occupancy[m] - knapsackData.getCapacity()[m];
       }

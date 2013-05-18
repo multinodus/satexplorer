@@ -22,7 +22,7 @@ public class SceneVariant {
   private Set<Task> taskSet = Sets.newHashSet();
   private long initialTime;
 
-  public SceneVariant(){
+  public SceneVariant() {
 
   }
 
@@ -48,9 +48,9 @@ public class SceneVariant {
 
   @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinTable(name = "sceneVariant_dataCenter", joinColumns = {
-      @JoinColumn(name = "sceneId", nullable = false, updatable = false) },
-      inverseJoinColumns = { @JoinColumn(name = "dataCenterId",
-          nullable = false, updatable = false) })
+      @JoinColumn(name = "sceneId", nullable = false, updatable = false)},
+      inverseJoinColumns = {@JoinColumn(name = "dataCenterId",
+          nullable = false, updatable = false)})
   public Set<DataCenter> getDataCenterSet() {
     return dataCenterSet;
   }
@@ -61,9 +61,9 @@ public class SceneVariant {
 
   @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinTable(name = "sceneVariant_sat", joinColumns = {
-      @JoinColumn(name = "sceneId", nullable = false, updatable = false) },
-      inverseJoinColumns = { @JoinColumn(name = "satId",
-          nullable = false, updatable = false) })
+      @JoinColumn(name = "sceneId", nullable = false, updatable = false)},
+      inverseJoinColumns = {@JoinColumn(name = "satId",
+          nullable = false, updatable = false)})
   public Set<Sat> getSatSet() {
     return satSet;
   }
@@ -74,9 +74,9 @@ public class SceneVariant {
 
   @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinTable(name = "sceneVariant_task", joinColumns = {
-      @JoinColumn(name = "sceneId", nullable = false, updatable = false) },
-      inverseJoinColumns = { @JoinColumn(name = "taskId",
-          nullable = false, updatable = false) })
+      @JoinColumn(name = "sceneId", nullable = false, updatable = false)},
+      inverseJoinColumns = {@JoinColumn(name = "taskId",
+          nullable = false, updatable = false)})
   public Set<Task> getTaskSet() {
     return taskSet;
   }

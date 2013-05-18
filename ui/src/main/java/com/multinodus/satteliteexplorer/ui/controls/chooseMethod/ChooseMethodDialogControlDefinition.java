@@ -2,7 +2,6 @@ package com.multinodus.satteliteexplorer.ui.controls.chooseMethod;
 
 import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
 import com.multinodus.satteliteexplorer.ui.controls.common.DialogPanelControlDefinition;
-import com.multinodus.satteliteexplorer.ui.controls.orbit.OrbitDialogController;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.ControlBuilder;
 import de.lessvoid.nifty.builder.ControlDefinitionBuilder;

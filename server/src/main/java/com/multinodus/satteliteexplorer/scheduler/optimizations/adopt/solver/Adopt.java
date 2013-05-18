@@ -355,7 +355,7 @@ public class Adopt {
       }
     } else {
       /* val is null, meaning my value isnt in vw.
-	 so update costs for all my values */
+   so update costs for all my values */
       if (vw.compatible(CurrentContext)) {
         for (int i = 0; i < costs.size(); i++) {
           Cost c = (Cost) costs.elementAt(i);

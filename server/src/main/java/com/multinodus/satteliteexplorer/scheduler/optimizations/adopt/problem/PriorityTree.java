@@ -295,8 +295,7 @@ public class PriorityTree {
         if (s[i] == ')') {
           Utility.Dprint(" Returning: " + result.toString(), Utility.TRACE_RIDICULOUS_LEVEL);
           return result;
-        } else {
-	  /* get to next open paren */
+        } else {    /* get to next open paren */
           while (s[i++] != '(') ;
           i--;
           while (i < j) {

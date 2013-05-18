@@ -16,7 +16,7 @@ import java.rmi.server.UnicastRemoteObject;
  * Time: 22:01
  * To change this template use File | Settings | File Templates.
  */
-public class OptimizationServerImpl implements OptimizationServer{
+public class OptimizationServerImpl implements OptimizationServer {
   public static final String BINDING_NAME = "optimizeService";
   public static final String GENETIC_SOLVER = "genetic";
   public static final String ILPSolver = "ilp";
@@ -24,18 +24,18 @@ public class OptimizationServerImpl implements OptimizationServer{
 
   @Override
   public int[] solve(IKnapsackData knapsackData, String method) throws RemoteException {
-    if (method.equals(GENETIC_SOLVER)){
+    if (method.equals(GENETIC_SOLVER)) {
       GeneticSolver geneticSolver = new GeneticSolver();
       try {
         int[] result = geneticSolver.solve(knapsackData, true);
         System.out.println("Solved");
         return result;
-      } catch (Exception exc){
+      } catch (Exception exc) {
         System.out.println(exc.toString());
         return null;
       }
     }
-    if (method.equals(ILPSolver)){
+    if (method.equals(ILPSolver)) {
       ILPSolver ilpSolver = new ILPSolver();
       ilpSolver.solve(knapsackData);
     }

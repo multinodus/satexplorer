@@ -273,8 +273,7 @@ public class SBB extends Adopt {
           int delta = pbm.delta(x_i, extendedSolution);
           int extendedSolutionCost = pbm.sumDeltas(CurrentContextCost, delta);
           SEND_TOKEN(extendedSolution, extendedSolutionCost, next);
-        } else {
-	  /* no more branches left */
+        } else {    /* no more branches left */
 	  /* am I highest var? */
           if (previous == null) {
 	    /* choose best val. */
