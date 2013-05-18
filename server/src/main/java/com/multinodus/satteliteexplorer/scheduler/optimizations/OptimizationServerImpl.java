@@ -1,5 +1,6 @@
 package com.multinodus.satteliteexplorer.scheduler.optimizations;
 
+import com.multinodus.satteliteexplorer.scheduler.optimizations.branchandbound.ILPSolver;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.genetic.GeneticSolver;
 
 import java.rmi.Remote;
@@ -18,20 +19,25 @@ import java.rmi.server.UnicastRemoteObject;
 public class OptimizationServerImpl implements OptimizationServer{
   public static final String BINDING_NAME = "optimizeService";
   public static final String GENETIC_SOLVER = "genetic";
+  public static final String ILPSolver = "ilp";
 
 
   @Override
-  public int[] solve(int satSize, int taskSize, double[][] explorationCost, String method) throws RemoteException {
+  public int[] solve(IKnapsackData knapsackData, String method) throws RemoteException {
     if (method.equals(GENETIC_SOLVER)){
       GeneticSolver geneticSolver = new GeneticSolver();
       try {
-        int[] result = geneticSolver.solve(satSize, taskSize, explorationCost, true);
+        int[] result = geneticSolver.solve(knapsackData, true);
         System.out.println("Solved");
         return result;
       } catch (Exception exc){
         System.out.println(exc.toString());
         return null;
       }
+    }
+    if (method.equals(ILPSolver)){
+      ILPSolver ilpSolver = new ILPSolver();
+      ilpSolver.solve(knapsackData);
     }
     return null;
   }

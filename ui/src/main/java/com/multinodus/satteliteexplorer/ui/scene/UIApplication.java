@@ -36,6 +36,7 @@ import com.jme3.scene.Node;
 import com.jme3.system.AppSettings;
 import com.multinodus.satteliteexplorer.db.entities.User;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServer;
+import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServerImpl;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.Planet;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.PlanetAppState;
 
@@ -85,6 +86,7 @@ public class UIApplication extends SimpleApplication {
 
 //        Registry registry = LocateRegistry.getRegistry("localhost", 2099);
 //        app.optimizationServer = (OptimizationServer) registry.lookup(BINDING_NAME);
+        app.optimizationServer = new OptimizationServerImpl();
 
         app.start();
       } catch (Exception exc){

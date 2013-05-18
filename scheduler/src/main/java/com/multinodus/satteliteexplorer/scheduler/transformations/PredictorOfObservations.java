@@ -9,10 +9,7 @@ import com.multinodus.satteliteexplorer.db.EntityContext;
 import com.multinodus.satteliteexplorer.db.entities.*;
 import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
 import com.multinodus.satteliteexplorer.scheduler.models.SunModel;
-import com.multinodus.satteliteexplorer.scheduler.util.DateTimeConstants;
-import com.multinodus.satteliteexplorer.scheduler.util.KnapsackData;
-import com.multinodus.satteliteexplorer.scheduler.util.Pair;
-import com.multinodus.satteliteexplorer.scheduler.util.VectorConstants;
+import com.multinodus.satteliteexplorer.scheduler.util.*;
 
 import java.util.*;
 
@@ -60,40 +57,68 @@ public class PredictorOfObservations {
     }
   }
 
-  public KnapsackData calculateKnapsackData(Map<SatModel, List<List<Pair<Task, PredictedDataElement>>>> episodes) {
+  public KnapsackData calculateKnapsackData(List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes) {
     List<Object> satList = EntityContext.get().getAllEntities(Sat.class);
     List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
 
     int n = taskList.size();
-    int profit[] = new int[n];
-    int weight[] = new int[n];
+    float profit[][] = new float[n][];
+    float weight[][] = new float[n][];
 
-    int m = 0;
-    for (List<List<Pair<Task, PredictedDataElement>>> satEpisode : episodes.values()){
-      m += satEpisode.size();
+    int m = episodes.size() + 1;
+
+    for (int i = 0; i < n; i++){
+      profit[i] = new float[m];
+      weight[i] = new float[m];
     }
 
-    int capacity[] = new int[m];
+    float capacity[] = new float[m];
 
-    int i = 0;
-    // TODO
-    for (Object otask : taskList){
-      Task task = (Task)taskList;
-      profit[i] = (int)(task.getCost()*1000);
-      weight[i] = 10;
-      i++;
+    Map<Object, Integer> taskIndexes = Maps.newHashMap();
+
+    int taskIndex = 0;
+    for (Object task : taskList) {
+      taskIndexes.put(task, taskIndex);
+      taskIndex++;
     }
 
-    for (int j = 0; j < m; j++){
-      capacity[j] = 100;
+    for (int j = 0; j < episodes.size(); j++){
+      Pair<SatModel, List<Pair<Task, PredictedDataElement>>> episode = episodes.get(j);
+      for (Pair<Task, PredictedDataElement> p : episode.s){
+        Date explorationDate = p.s.date;
+        Task task = p.f;
+        int i = taskIndexes.get(p.f);
+        float cost;
+        if (explorationDate.after(task.getStart()) && explorationDate.before(task.getFinish())) {
+          cost = task.getCost();
+        } else {
+          cost = task.getCost() / 4;
+        }
+        profit[i][j] = cost;
+        weight[i][j] = episode.f.getSat().getEquipment().getSnapshotVolume();
+      }
     }
+
+    for (int  i = 0; i < n; i++){
+      for (int j = 0; j < episodes.size(); j++){
+        if (weight[i][j] < 0.001){
+          weight[i][j] = Float.MAX_VALUE;
+        }
+      }
+    }
+
+    for (int j = 0; j < episodes.size(); j++){
+      capacity[j] = episodes.get(j).f.getSat().getEquipment().getStorageCapacity();
+    }
+
+    capacity[episodes.size()] = Float.MAX_VALUE;
 
     return new KnapsackData(n, m, profit, weight, capacity);
   }
 
-  public Map<SatModel, List<List<Pair<Task, PredictedDataElement>>>> findEpisodes(Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
+  public List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> findEpisodes(Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
                            Map<SatModel,  List<PredictedDataElement>> dataCenterObservations){
-    Map<SatModel, List<List<Pair<Task, PredictedDataElement>>>> episodes = Maps.newHashMap();
+    List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes = Lists.newArrayList();
     for (SatModel sat : taskObservations.keySet()){
       List<Pair<Task, PredictedDataElement>> allDataElements = Lists.newArrayList();
       Multimap<Task, PredictedDataElement> multimap = taskObservations.get(sat);
@@ -111,7 +136,6 @@ public class PredictorOfObservations {
       });
 
       List<PredictedDataElement> dataCenterExplorations = dataCenterObservations.get(sat);
-      List<List<Pair<Task, PredictedDataElement>>> satEpisodes = Lists.newArrayList();
       if (!dataCenterExplorations.isEmpty()){
         int dataCenterIndex = 0;
         PredictedDataElement previousDataElement = null;
@@ -120,7 +144,7 @@ public class PredictorOfObservations {
         for (Pair<Task, PredictedDataElement> p : allDataElements){
           if ((previousDataElement == null || previousDataElement.date.before(dataCenterExploration.date)) &&
               (p.s.date.after(dataCenterExploration.date))) {
-            satEpisodes.add(episode);
+            episodes.add(new Pair<SatModel, List<Pair<Task, PredictedDataElement>>>(sat, episode));
             episode = Lists.newArrayList();
             dataCenterIndex++;
             dataCenterExploration = dataCenterExplorations.get(dataCenterIndex);
@@ -128,11 +152,10 @@ public class PredictorOfObservations {
           episode.add(p);
           previousDataElement = p.s;
         }
-        satEpisodes.add(episode);
+        episodes.add(new Pair<SatModel, List<Pair<Task, PredictedDataElement>>>(sat, episode));
       } else {
-        satEpisodes.add(allDataElements);
+        episodes.add(new Pair<SatModel, List<Pair<Task, PredictedDataElement>>>(sat, allDataElements));
       }
-      episodes.put(sat, satEpisodes);
     }
     return episodes;
   }

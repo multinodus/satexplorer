@@ -20,5 +20,20 @@
             <artifactId>jgap</artifactId>
             <version>3.6.2</version>
         </dependency>
+        <dependency>
+            <groupId>net.sf.javailp</groupId>
+            <artifactId>javailp</artifactId>
+            <version>1.2a</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sat4j</groupId>
+            <artifactId>org.sat4j.core</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sat4j</groupId>
+            <artifactId>org.sat4j.pb</artifactId>
+            <version>2.3.1</version>
+        </dependency>
     </dependencies>
 </project>

@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.jme3.math.FastMath;
 import com.multinodus.satteliteexplorer.db.entities.DataCenter;
+import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
 import com.multinodus.satteliteexplorer.ui.engine.util.Pair;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -63,9 +64,11 @@ public class QualityChart extends JFrame {
     Map<SatModel, List<PredictedDataElement>> dataCenterObservations = Maps.newHashMap();
     predictorOfObservations.observe(SI_Transform.INITIAL_TIME, new Date(SI_Transform.INITIAL_TIME.getTime() + 40 * DateTimeConstants.MSECS_IN_HOUR),
         app.scene.getWorld().getTasks(), app.scene.getWorld().getSatModels(), app.scene.getWorld().getDataCenters(), 0.05f, taskObservations, dataCenterObservations);
+    IKnapsackData knapsackData = predictorOfObservations.calculateKnapsackData(predictorOfObservations.findEpisodes(taskObservations, dataCenterObservations));
+
 
 //    DefaultXYZDataset dataset = createDataset(taskObservations);
-    XYDataset dataset = solve(taskObservations, dataCenterObservations);
+    XYDataset dataset = solve(knapsackData);
     JFreeChart chart = createChart(dataset);
 
     ChartPanel chartPanel = new ChartPanel(chart);
@@ -116,89 +119,31 @@ public class QualityChart extends JFrame {
     return dataset;
   }
 
-  private XYDataset solve(Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations,
-                          Map<SatModel, List<PredictedDataElement>> dataCenterObservations) {
-
-
-
-    List<Object> satList = EntityContext.get().getAllEntities(Sat.class);
-    List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
-
-    int satSize = satList.size();
-    int taskSize = taskList.size();
-
-    Map<Object, Integer> satIndexes = Maps.newHashMap();
-    Map<Object, Integer> taskIndexes = Maps.newHashMap();
-
-    int i = 0;
-    for (Object sat : satList) {
-      satIndexes.put(sat, i);
-      i++;
-    }
-
-    i = 0;
-    for (Object task : taskList) {
-      taskIndexes.put(task, i);
-      i++;
-    }
-
-    double[][] explorationCost = new double[taskSize][];
-    for (int taskIndex = 0; taskIndex < taskSize; taskIndex++) {
-      explorationCost[taskIndex] = new double[satSize + 1];
-    }
-
-    for (SatModel sat : taskObservations.keySet()) {
-      Multimap<Task, PredictedDataElement> observation = taskObservations.get(sat);
-      for (com.multinodus.satteliteexplorer.db.entities.Task task : observation.keys()) {
-        Collection<PredictedDataElement> elements = observation.get(task);
-
-        double cost = 0;
-        for (PredictedDataElement element : elements) {
-          if (element.date.after(task.getStart()) && element.date.before(task.getFinish())) {
-            cost = task.getCost();
-            break;
-          } else {
-            cost = task.getCost() / 4;
-          }
-        }
-        explorationCost[taskIndexes.get(task)][satIndexes.get(sat.getSat())] = cost;
-      }
-    }
-
-    for (int j = 0; j < explorationCost.length; j++) {
-      double sum = 0;
-      for (int k = 0; k < explorationCost[j].length; k++) {
-        sum += explorationCost[j][k];
-      }
-      if (sum < 0.00001) {
-        explorationCost[j][satSize] = 1;
-      }
-    }
-
+  private XYDataset solve(IKnapsackData knapsackData) {
     OptimizationServer optimizationServer = app.optimizationServer;
     int[] result = null;
     try {
-      result = optimizationServer.solve(satSize, taskSize, explorationCost, "genetic");
+      result = optimizationServer.solve(knapsackData, "ilp");
     } catch (Exception exc) {
       System.out.println(exc.toString());
     }
 
     XYSeriesCollection dataset = new XYSeriesCollection();
-    XYSeries[] serieses = new XYSeries[satSize + 1];
-    for (int j = 0; j < serieses.length; j++) {
-      serieses[j] = new XYSeries(j);
-    }
-
-    double[][] d = new double[3][result.length];
-    for (int j = 0; j < result.length; j++) {
-      Task task = (Task) taskList.get(j);
-      serieses[result[j]].add(task.getRegion().getLongitude() * FastMath.RAD_TO_DEG,
-          task.getRegion().getLatitude() * FastMath.RAD_TO_DEG);
-    }
-
-    for (XYSeries series : serieses) {
-      dataset.addSeries(series);
-    }
+//    XYSeries[] serieses = new XYSeries[knapsackData.getM()];
+//    for (int j = 0; j < serieses.length; j++) {
+//      serieses[j] = new XYSeries(j);
+//    }
+//
+//    double[][] d = new double[3][result.length];
+//    for (int j = 0; j < result.length; j++) {
+//      Task task = (Task) taskList.get(j);
+//      serieses[result[j]].add(task.getRegion().getLongitude() * FastMath.RAD_TO_DEG,
+//          task.getRegion().getLatitude() * FastMath.RAD_TO_DEG);
+//    }
+//
+//    for (XYSeries series : serieses) {
+//      dataset.addSeries(series);
+//    }
     return dataset;
   }
 

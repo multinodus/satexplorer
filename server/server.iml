@@ -12,6 +12,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: net.sf.jgap:jgap:3.6.2" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.javailp:javailp:1.2a" level="project" />
+    <orderEntry type="library" name="Maven: org.sat4j:org.sat4j.core:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.sat4j:org.sat4j.pb:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.sat4j:org.sat4j.core:test-jar:tests:2.3.1" level="project" />
   </component>
 </module>
 

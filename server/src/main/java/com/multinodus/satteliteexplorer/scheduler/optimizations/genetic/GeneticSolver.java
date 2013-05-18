@@ -14,8 +14,11 @@ import org.jgap.audit.EvolutionMonitor;
 import org.jgap.impl.DefaultConfiguration;
 import org.jgap.impl.IntegerGene;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GeneticSolver {
-  private static final int MAX_ALLOWED_EVOLUTIONS = 50;
+  private static final int MAX_ALLOWED_EVOLUTIONS = 10;
 
   public EvolutionMonitor m_monitor;
 
@@ -33,7 +36,7 @@ public class GeneticSolver {
     conf.setPreservFittestIndividual(true);
     conf.setKeepPopulationSizeConstant(false);
 
-    FitnessFunction myFunc =
+    KnapsackFitnessFunction myFunc =
         new KnapsackFitnessFunction(knapsackData);
     conf.setFitnessFunction(myFunc);
     if (a_doMonitor) {
@@ -43,10 +46,17 @@ public class GeneticSolver {
       conf.setMonitor(m_monitor);
     }
 
-    Gene[] genes = new Gene[knapsackData.getN() + 1];
-    for (int i = 0; i < knapsackData.getN() + 1; i++) {
-      genes[i] = new IntegerGene(conf, 0, knapsackData.getM());
+    Gene[] genes = new Gene[knapsackData.getN()];
+    List<Integer> indexes = new ArrayList<Integer>();
+
+    for (int i = 0; i < knapsackData.getN(); i++) {
+      if (knapsackData.getWeight()[i][0] != Float.MAX_VALUE){
+        genes[i] = new IntegerGene(conf, 0, knapsackData.getM()-1);
+        indexes.add(i);
+      }
     }
+
+    myFunc.setIndexes(indexes);
 
     IChromosome sampleChromosome = new Chromosome(conf, genes);
     conf.setSampleChromosome(sampleChromosome);

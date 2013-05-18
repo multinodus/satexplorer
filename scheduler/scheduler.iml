@@ -25,6 +25,12 @@
     <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:4.1.8.Final" level="project" />
     <orderEntry type="library" name="Maven: javassist:javassist:3.12.1.GA" level="project" />
+    <orderEntry type="module" module-name="server" />
+    <orderEntry type="library" name="Maven: net.sf.jgap:jgap:3.6.2" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.javailp:javailp:1.2a" level="project" />
+    <orderEntry type="library" name="Maven: org.sat4j:org.sat4j.core:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.sat4j:org.sat4j.pb:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.sat4j:org.sat4j.core:test-jar:tests:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: com.jme3:jME3-core:1.0" level="project" />
   </component>
 </module>

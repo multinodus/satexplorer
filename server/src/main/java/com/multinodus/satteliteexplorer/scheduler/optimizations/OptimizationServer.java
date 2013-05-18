@@ -11,5 +11,5 @@ import java.rmi.RemoteException;
  * To change this template use File | Settings | File Templates.
  */
 public interface OptimizationServer extends Remote {
-  public int[] solve(int satSize, int taskSize, double[][] explorationCost, String method) throws RemoteException;
+  public int[] solve(IKnapsackData knapsackData, String method) throws RemoteException;
 }

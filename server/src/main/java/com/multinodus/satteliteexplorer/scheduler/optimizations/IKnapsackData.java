@@ -14,12 +14,12 @@ public interface IKnapsackData {
   public int getM();
   public void setM(int m);
 
-  public int[] getProfit();
-  public void setProfit(int[] profit);
+  public float[][] getProfit();
+  public void setProfit(float[][] profit);
 
-  public int[] getWeight();
-  public void setWeight(int[] weight);
+  public float[][] getWeight();
+  public void setWeight(float[][] weight);
 
-  public int[] getCapacity();
-  public void setCapacity(int[] capacity);
+  public float[] getCapacity();
+  public void setCapacity(float[] capacity);
 }
