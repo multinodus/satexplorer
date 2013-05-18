@@ -1,6 +1,7 @@
 package com.multinodus.satteliteexplorer.ui.scene;
 
 import com.jme3.niftygui.NiftyJmeDisplay;
+import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDialogControlDefinition;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.*;
 import de.lessvoid.nifty.controls.button.builder.ButtonBuilder;
@@ -70,6 +71,7 @@ public class MainScreen {
     RoleDialogDefinition.register(nifty);
     UserDialogDefinition.register(nifty);
     ImagePanelDefinition.register(nifty);
+    ChooseMethodDialogControlDefinition.register(nifty);
 
     createDemoScreen(nifty);
     nifty.gotoScreen("demo");
@@ -94,7 +96,7 @@ public class MainScreen {
               "menuButtonOrbit", "dialogOrbit",
               "menuButtonRole", "dialogRole",
               "menuButtonUser", "dialogUser",
-              "menuButtonSchedule", "chartImg"));
+              "menuButtonSchedule", ChooseMethodDialogControlDefinition.NAME));
         }
 //        if (UIApplication.user.getRole().getName().equals("admin")) {
 //          controller(new MainScreenController(
@@ -128,7 +130,7 @@ public class MainScreen {
                       control(new ControlBuilder("dialogEquipmentType", EquipmentTypeDialogDefinition.NAME));
                       control(new ControlBuilder("dialogRole", RoleDialogDefinition.NAME));
                       control(new ControlBuilder("dialogUser", UserDialogDefinition.NAME));
-                      control(new ControlBuilder("chartImg", ImagePanelDefinition.NAME));
+                      control(new ControlBuilder(ChooseMethodDialogControlDefinition.NAME, ChooseMethodDialogControlDefinition.NAME));
                     }
                     if (app.user.getRole().getName().equals("admin")) {
 

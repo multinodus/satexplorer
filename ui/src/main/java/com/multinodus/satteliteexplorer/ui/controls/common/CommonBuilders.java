@@ -67,7 +67,7 @@ public class CommonBuilders {
   }
 
   public LabelBuilder createLabel(final String text) {
-    return createLabel(text, "100px");
+    return createLabel(text, "200px");
   }
 
   public LabelBuilder createLabel(final String text, final String width) {

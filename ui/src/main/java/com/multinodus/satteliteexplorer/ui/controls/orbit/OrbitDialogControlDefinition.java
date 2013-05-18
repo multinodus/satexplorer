@@ -30,6 +30,42 @@ public class OrbitDialogControlDefinition {
         }});
 
         panel(builders.vspacer());
+        panel(builders.vspacer());
+        panel(new PanelBuilder() {{
+          childLayoutHorizontal();
+          control(builders.createLabel("Экцентриситет:"));
+          control(new ControlBuilder("eccentricity", "textfield"));
+        }});
+        panel(builders.vspacer());
+
+        panel(new PanelBuilder() {{
+          childLayoutHorizontal();
+          control(builders.createLabel("Долгота восходящего узла:"));
+          control(new ControlBuilder("longitudeOfAscendingNode", "textfield"));
+        }});
+        panel(builders.vspacer());
+
+        panel(new PanelBuilder() {{
+          childLayoutHorizontal();
+          control(builders.createLabel("Наклонение:"));
+          control(new ControlBuilder("inclination", "textfield"));
+        }});
+        panel(builders.vspacer());
+
+        panel(new PanelBuilder() {{
+          childLayoutHorizontal();
+          control(builders.createLabel("Аргумент перигелия:"));
+          control(new ControlBuilder("argumentOfPericenter", "textfield"));
+        }});
+        panel(builders.vspacer());
+
+        panel(new PanelBuilder() {{
+          childLayoutHorizontal();
+          control(builders.createLabel("Большая полуось:"));
+          control(new ControlBuilder("semiMajorAxis", "textfield"));
+        }});
+
+        panel(builders.vspacer());
         panel(new PanelBuilder() {{
           childLayoutHorizontal();
           control(new LabelBuilder() {{
@@ -67,42 +103,6 @@ public class OrbitDialogControlDefinition {
           }});
           panel(builders.hspacer("9px"));
           control(new ButtonBuilder("updateButtonOrbit", "Update"));
-        }});
-
-        panel(builders.vspacer());
-        panel(builders.vspacer());
-        panel(new PanelBuilder() {{
-          childLayoutHorizontal();
-          control(builders.createLabel("Экцентриситет:"));
-          control(new ControlBuilder("eccentricity", "textfield"));
-        }});
-        panel(builders.vspacer());
-
-        panel(new PanelBuilder() {{
-          childLayoutHorizontal();
-          control(builders.createLabel("Долгота восходящего узла:"));
-          control(new ControlBuilder("longitudeOfAscendingNode", "textfield"));
-        }});
-        panel(builders.vspacer());
-
-        panel(new PanelBuilder() {{
-          childLayoutHorizontal();
-          control(builders.createLabel("Наклонение:"));
-          control(new ControlBuilder("inclination", "textfield"));
-        }});
-        panel(builders.vspacer());
-
-        panel(new PanelBuilder() {{
-          childLayoutHorizontal();
-          control(builders.createLabel("Аргумент перигелия:"));
-          control(new ControlBuilder("argumentOfPericenter", "textfield"));
-        }});
-        panel(builders.vspacer());
-
-        panel(new PanelBuilder() {{
-          childLayoutHorizontal();
-          control(builders.createLabel("Большая полуось:"));
-          control(new ControlBuilder("semiMajorAxis", "textfield"));
         }});
       }});
     }}.registerControlDefintion(nifty);

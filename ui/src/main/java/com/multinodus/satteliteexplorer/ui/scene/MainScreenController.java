@@ -28,15 +28,10 @@ import java.util.logging.Logger;
 
 public class MainScreenController implements ScreenController, KeyInputHandler {
   private static final Logger logger = Logger.getLogger(MainScreenController.class.getName());
-  private static final Color HELP_COLOR = new Color("#aaaf");
 
   private UIApplication app;
   private Nifty nifty;
   private Screen screen;
-  private Element consolePopup;
-  private Element creditsPopup;
-  private Console console;
-  private ConsoleCommands consoleCommands;
 
   // This simply maps the IDs of the MenuButton elements to the corresponding Dialog elements we'd
   // like to show with the given MenuButton. This map will make our life a little bit easier when
@@ -97,75 +92,12 @@ public class MainScreenController implements ScreenController, KeyInputHandler {
 
   @Override
   public boolean keyEvent(final NiftyInputEvent inputEvent) {
-    if (inputEvent == NiftyInputEvent.ConsoleToggle) {
-      if (screen.isActivePopup(consolePopup)) {
-        nifty.closePopup(consolePopup.getId());
-      } else {
-        nifty.showPopup(screen, consolePopup.getId(), null);
-      }
-      return true;
-    }
     return false;
-  }
-
-  public void openLink(final String url) {
-    if (!java.awt.Desktop.isDesktopSupported()) {
-      System.err.println("Desktop is not supported (Can't open link)");
-      return;
-    }
-
-    java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
-    if (!desktop.isSupported(java.awt.Desktop.Action.BROWSE)) {
-      System.err.println("Desktop (BROWSE) is not supported (Can't open link)");
-      return;
-    }
-
-    try {
-      java.net.URI uri = new java.net.URI(url);
-      desktop.browse(uri);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-
-  private void modifyMoveEffect(final EffectEventId effectEventId, final Element element, final String direction) {
-    List<Effect> moveEffects = element.findElementByName("#effectPanel").getEffects(effectEventId, Move.class);
-    if (!moveEffects.isEmpty()) {
-      moveEffects.get(0).getParameters().put("direction", direction);
-    }
   }
 
   @NiftyEventSubscriber(pattern = "menuButton.*")
   public void onMenuButtonListBoxClick(final String id, final NiftyMousePrimaryClickedEvent clickedEvent) {
-    if ("menuButtonCredits".equals(id)) {
-      showCredits();
-      return;
-    }
-    if ("menuButtonSchedule".equals(id)) {
-      QualityChart frame = new QualityChart(app);
-      frame.setSize(new Dimension(800, 600));
-//      frame.show();
-    }
     changeDialogTo(id);
-  }
-
-  private void showCredits() {
-    nifty.showPopup(screen, creditsPopup.getId(), null);
-  }
-
-  @NiftyEventSubscriber(id = "creditsBack")
-  public void onCreditsBackClick(final String id, final ButtonClickedEvent event) {
-    nifty.closePopup(creditsPopup.getId());
-  }
-
-  @NiftyEventSubscriber(id = "resetScreenButton")
-  public void onTestButtonClick(final String id, final ButtonClickedEvent clickedEvent) {
-    screen.findElementByName(buttonToDialogMap.get(currentMenuButtonId)).hide(new EndNotify() {
-      @Override
-      public void perform() {
-        nifty.gotoScreen("demo");
-      }
-    });
   }
 
   private void changeDialogTo(final String id) {
@@ -175,16 +107,11 @@ public class MainScreenController implements ScreenController, KeyInputHandler {
 
 
       Element nextElement = screen.findElementByName(buttonToDialogMap.get(id));
-      modifyMoveEffect(EffectEventId.onShow, nextElement, currentIndex < nextIndex ? "right" : "left");
       if (id.indexOf("ListBox") == -1) {
         nextElement.show();
       }
-//      if (id.indexOf("chartImg")!=-1){
-//        nextElement.onStartScreen();
-//      }
 
       Element currentElement = screen.findElementByName(buttonToDialogMap.get(currentMenuButtonId));
-      modifyMoveEffect(EffectEventId.onHide, currentElement, currentIndex < nextIndex ? "left" : "right");
       currentElement.hide();
 
       screen.findElementByName(currentMenuButtonId).stopEffect(EffectEventId.onCustom);
@@ -192,80 +119,4 @@ public class MainScreenController implements ScreenController, KeyInputHandler {
       currentMenuButtonId = id;
     }
   }
-
-  @NiftyEventSubscriber(id = "console")
-  public void onConsoleEvent(final String id, final ConsoleExecuteCommandEvent executeCommandEvent) {
-    System.out.println(executeCommandEvent.getCommandLine());
-  }
-
-  private class ShowCommand implements ConsoleCommand {
-    @Override
-    public void execute(final String[] args) {
-      if (args.length != 2) {
-        console.outputError("command argument error");
-        return;
-      }
-      // this really is a hack to get from the command argument, like: "ListBox" to the matching "menuButtonId"
-      String menuButtonId = "menuButton" + args[1];
-      if (!buttonToDialogMap.containsKey(menuButtonId)) {
-        console.outputError("'" + menuButtonId + "' is not a registered dialog.");
-        return;
-      }
-
-      // just a gimmick
-      if (menuButtonId.equals(currentMenuButtonId)) {
-        console.outputError("Hah! Already there! I'm smart... :>");
-        return;
-      }
-
-      // finally switch
-      changeDialogTo(menuButtonId);
-    }
-  }
-
-  private class NiftyCommand implements ConsoleCommand {
-    @Override
-    public void execute(final String[] args) {
-      if (args.length != 2) {
-        console.outputError("command argument error");
-        return;
-      }
-      String param = args[1];
-      if ("screen".equals(param)) {
-        String screenDebugOutput = nifty.getCurrentScreen().debugOutput();
-        console.output(screenDebugOutput);
-        System.out.println(screenDebugOutput);
-      } else {
-        console.outputError("unknown parameter [" + args[1] + "]");
-      }
-    }
-  }
-
-  private class HelpCommand implements ConsoleCommand {
-    @Override
-    public void execute(final String[] args) {
-      console.output("---------------------------", HELP_COLOR);
-      console.output("Supported commands", HELP_COLOR);
-      console.output("---------------------------", HELP_COLOR);
-      for (String command : consoleCommands.getRegisteredCommands()) {
-        console.output(command, HELP_COLOR);
-      }
-    }
-  }
-
-  private class ExitCommand implements ConsoleCommand {
-    @Override
-    public void execute(final String[] args) {
-      console.output("good bye");
-      nifty.closePopup(consolePopup.getId());
-    }
-  }
-
-  private class ClearCommand implements ConsoleCommand {
-    @Override
-    public void execute(final String[] args) {
-      console.clear();
-    }
-  }
-
 }

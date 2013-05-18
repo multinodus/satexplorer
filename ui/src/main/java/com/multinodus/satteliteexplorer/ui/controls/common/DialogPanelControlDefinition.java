@@ -27,8 +27,8 @@ public class DialogPanelControlDefinition {
           childLayoutVertical();
           alignCenter();
           valignCenter();
-          width("90%");
-          height("90%");
+          width("40%");
+          height("60%");
           padding("14px,20px,26px,19px");
           onShowEffect(builders.createFadeEffectIn());
           onHideEffect(builders.createFadeEffectOut());
