@@ -2,6 +2,7 @@ package com.multinodus.satteliteexplorer.db;
 
 import com.google.common.collect.Lists;
 import com.multinodus.satteliteexplorer.db.entities.Sat;
+import com.multinodus.satteliteexplorer.db.entities.Task;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -46,9 +47,9 @@ public class EntityContext {
         List entities = session.createQuery("select h from " + className.getSimpleName() + " as h")
             .list();
         tx.commit();
-        if (className == Sat.class) {
-          entities = Lists.newArrayList(entities.get(0));
-        }
+//        if (className == Task.class) {
+//          entities = Lists.newArrayList(entities.subList(0, 800));
+//        }
         storage.put(className, entities);
         return entities;
       } catch (RuntimeException e) {

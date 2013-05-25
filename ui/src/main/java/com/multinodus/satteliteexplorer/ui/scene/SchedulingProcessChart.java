@@ -97,11 +97,13 @@ public class SchedulingProcessChart {
     // change the auto tick unit selection to integer units only...
     final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-    rangeAxis.setTickLabelPaint(Color.red);
-    rangeAxis.setLabelPaint(Color.red);
+    rangeAxis.setTickLabelPaint(Color.white);
+    rangeAxis.setLabelPaint(Color.white);
 
-    plot.getDomainAxis().setTickLabelPaint(Color.red);
-    plot.getDomainAxis().setLabelPaint(Color.red);
+    plot.getDomainAxis().setTickLabelPaint(Color.white);
+    plot.getDomainAxis().setLabelPaint(Color.white);
+
+    chart.getTitle().setPaint(Color.white);
     // OPTIONAL CUSTOMISATION COMPLETED.
 
     return chart;

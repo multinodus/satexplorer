@@ -24,15 +24,8 @@ public class GeneticSolver {
 
   public int[] solve(IKnapsackData knapsackData, boolean a_doMonitor)
       throws Exception {
-    // Start with a DefaultConfiguration, which comes setup with the
-    // most common settings.
-    // -------------------------------------------------------------
     Configuration conf = new DefaultConfiguration();
-    // Care that the fittest individual of the current population is
-    // always taken to the next generation.
-    // Consider: With that, the pop. size may exceed its original
-    // size by one sometimes!
-    // -------------------------------------------------------------
+
     conf.setPreservFittestIndividual(true);
     conf.setKeepPopulationSizeConstant(false);
 
@@ -40,8 +33,6 @@ public class GeneticSolver {
         new KnapsackFitnessFunction(knapsackData);
     conf.setFitnessFunction(myFunc);
     if (a_doMonitor) {
-      // Turn on monitoring/auditing of evolution progress.
-      // --------------------------------------------------
       m_monitor = new EvolutionMonitor();
       conf.setMonitor(m_monitor);
     }
@@ -139,14 +130,7 @@ public class GeneticSolver {
     return result;
   }
 
-  /**
-   * @param a_pop the population to verify
-   * @return true if all chromosomes in the populationa are unique
-   * @author Klaus Meffert
-   * @since 3.3.1
-   */
   private boolean uniqueChromosomes(Population a_pop) {
-    // Check that all chromosomes are unique
     for (int i = 0; i < a_pop.size() - 1; i++) {
       IChromosome c = a_pop.getChromosome(i);
       for (int j = i + 1; j < a_pop.size(); j++) {
