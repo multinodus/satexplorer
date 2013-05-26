@@ -69,7 +69,7 @@ public class SchedulingProcessChart {
   }
 
   private JFreeChart createChart(final XYDataset dataset) {
-    final JFreeChart chart = ChartFactory.createXYLineChart(
+    JFreeChart chart = ChartFactory.createXYLineChart(
         "История изменения целевой функции",   // chart title
         "Итерации",                     // x axis label
         "Целевая функция",               // y axis label
@@ -82,20 +82,20 @@ public class SchedulingProcessChart {
 
     chart.setBackgroundPaint(new Color(255, 255, 255, 0));
 
-    final XYPlot plot = chart.getXYPlot();
+    XYPlot plot = chart.getXYPlot();
     plot.setBackgroundPaint(new Color(255, 255, 255, 0));
     plot.setBackgroundImageAlpha(0.0f);
     plot.setDomainGridlinePaint(Color.white);
     plot.setRangeGridlinePaint(Color.white);
 
-    final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
+    XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
     renderer.setSeriesLinesVisible(1, false);
     renderer.setSeriesShapesVisible(0, false);
     renderer.setSeriesStroke(0, new BasicStroke(5));
     plot.setRenderer(renderer);
 
     // change the auto tick unit selection to integer units only...
-    final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
+     NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
     rangeAxis.setTickLabelPaint(Color.white);
     rangeAxis.setLabelPaint(Color.white);

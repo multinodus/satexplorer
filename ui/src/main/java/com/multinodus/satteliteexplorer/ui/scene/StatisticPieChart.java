@@ -32,7 +32,7 @@ public class StatisticPieChart {
   private ChartPanel chartPanel;
 
   public StatisticPieChart(IKnapsackData knapsackData, int[] schedule, java.util.List<Object> taskList) {
-    final CategoryDataset dataset = createDataset(knapsackData, schedule, taskList);
+    CategoryDataset dataset = createDataset(knapsackData, schedule, taskList);
     chart = createChart(dataset);
     chartPanel = new ChartPanel(chart, true, true, true, false, true);
     chartPanel.setPreferredSize(new java.awt.Dimension(600, 380));
@@ -82,17 +82,17 @@ public class StatisticPieChart {
   }
 
   private JFreeChart createChart(final CategoryDataset dataset) {
-    final JFreeChart chart = ChartFactory.createMultiplePieChart(
-        "Multiple Pie Chart",  // chart title
+    JFreeChart chart = ChartFactory.createMultiplePieChart(
+        "Доля выполненных задач",  // chart title
         dataset,               // dataset
         TableOrder.BY_ROW,
         true,                  // include legend
         true,
         false
     );
-    final MultiplePiePlot plot = (MultiplePiePlot) chart.getPlot();
-    final JFreeChart subchart = plot.getPieChart();
-    final PiePlot p = (PiePlot) subchart.getPlot();
+    MultiplePiePlot plot = (MultiplePiePlot) chart.getPlot();
+    JFreeChart subchart = plot.getPieChart();
+    PiePlot p = (PiePlot) subchart.getPlot();
     p.setLabelGenerator(new StandardPieSectionLabelGenerator("{0}"));
     p.setLabelFont(new Font("SansSerif", Font.PLAIN, 8));
     p.setInteriorGap(0.30);
