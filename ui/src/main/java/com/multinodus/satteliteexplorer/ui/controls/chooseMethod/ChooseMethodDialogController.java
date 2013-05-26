@@ -1,8 +1,15 @@
 package com.multinodus.satteliteexplorer.ui.controls.chooseMethod;
 
+import com.google.common.collect.Maps;
+import com.multinodus.satteliteexplorer.db.EntityContext;
+import com.multinodus.satteliteexplorer.db.entities.Task;
+import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServer;
+import com.multinodus.satteliteexplorer.scheduler.transformations.PredictedDataElement;
 import com.multinodus.satteliteexplorer.scheduler.transformations.PredictorOfObservations;
+import com.multinodus.satteliteexplorer.scheduler.util.Pair;
+import com.multinodus.satteliteexplorer.scheduler.util.Triple;
 import com.multinodus.satteliteexplorer.ui.controls.common.ImagePanelDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.common.JustAnExampleModelClass;
 import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessDefinition;
@@ -20,6 +27,7 @@ import de.lessvoid.xml.xpp3.Attributes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 public class ChooseMethodDialogController implements Controller {
@@ -108,9 +116,33 @@ public class ChooseMethodDialogController implements Controller {
     OptimizationServer optimizationServer = UIApplication.app.optimizationServer;
     int[] result = null;
     try {
-      IKnapsackData knapsackData = PredictorOfObservations.getInstance().getKnapsackData(UIApplication.app.scene.getWorld(),
+      Pair<IKnapsackData, List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>>>  knapsackData = PredictorOfObservations.getInstance().getKnapsackData(UIApplication.app.scene.getWorld(),
           UIApplication.app.getHoursHorizont());
-      optimizationServer.solve(knapsackData, UIApplication.app.getMethod());
+      int[] schedule = optimizationServer.solve(knapsackData.f, UIApplication.app.getMethod());
+
+      List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
+      Map<Task, Pair<SatModel, PredictedDataElement>> detailedSchedule = Maps.newHashMap();
+      for (int i = 0; i < schedule.length; i++){
+        Task task = (Task)taskList.get(i);
+        SatModel satModel = null;
+        PredictedDataElement predictedDataElement = null;
+        Pair<SatModel, List<Pair<Task, PredictedDataElement>>> p = knapsackData.s.get(schedule[i]);
+        if (p!=null){
+          satModel = p.f;
+          for (Pair<Task, PredictedDataElement> exploration : p.s){
+            if (exploration.f == task){
+              predictedDataElement = exploration.s;
+              break;
+            }
+          }
+        }
+        detailedSchedule.put(task, new Pair<SatModel, PredictedDataElement>(satModel, predictedDataElement));
+      }
+
+      int[] episodeTaskCount = new int[knapsackData.s.size()];
+      for (int i = 0; i < schedule.length; i++){
+        episodeTaskCount[schedule[i]] += 1;
+      }
 
       SchedulingProcessChart chart = new SchedulingProcessChart();
       chart.addValue(1);

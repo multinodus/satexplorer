@@ -62,13 +62,14 @@ public class PredictorOfObservations {
     }
   }
 
-  public IKnapsackData getKnapsackData(World world, int hourHorizont){
+  public Pair<IKnapsackData, List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>>> getKnapsackData(World world, int hourHorizont){
     Map<SatModel, Multimap<Task, PredictedDataElement>> taskObservations = Maps.newHashMap();
     Map<SatModel, List<PredictedDataElement>> dataCenterObservations = Maps.newHashMap();
     observe(SI_Transform.INITIAL_TIME, new Date(SI_Transform.INITIAL_TIME.getTime() + hourHorizont * DateTimeConstants.MSECS_IN_HOUR),
         world.getTasks(), world.getSatModels(), world.getDataCenters(), 0.05f, taskObservations, dataCenterObservations);
-    IKnapsackData knapsackData = calculateKnapsackData(findEpisodes(taskObservations, dataCenterObservations));
-    return knapsackData;
+    List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes = findEpisodes(taskObservations, dataCenterObservations);
+    IKnapsackData knapsackData = calculateKnapsackData(episodes);
+    return new Pair<IKnapsackData, List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>>>(knapsackData, episodes);
   }
 
   private IKnapsackData calculateKnapsackData(List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes) {

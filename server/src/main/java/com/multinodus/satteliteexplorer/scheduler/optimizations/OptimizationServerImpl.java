@@ -24,20 +24,23 @@ public class OptimizationServerImpl implements OptimizationServer {
 
   @Override
   public int[] solve(IKnapsackData knapsackData, String method) throws RemoteException {
+    ISolver solver = null;
     if (method.equals(GENETIC_SOLVER)) {
+      solver = new GeneticSolver();
       GeneticSolver geneticSolver = new GeneticSolver();
+    }
+    if (method.equals(ILPSolver)) {
+      solver = new ILPSolver();
+    }
+    if (solver != null){
       try {
-        int[] result = geneticSolver.solve(knapsackData, true);
+        int[] result = solver.solve(knapsackData);
         System.out.println("Solved");
         return result;
       } catch (Exception exc) {
         System.out.println(exc.toString());
         return null;
       }
-    }
-    if (method.equals(ILPSolver)) {
-      ILPSolver ilpSolver = new ILPSolver();
-      ilpSolver.solve(knapsackData);
     }
     return null;
   }

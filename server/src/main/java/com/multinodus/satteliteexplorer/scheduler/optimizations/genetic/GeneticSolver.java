@@ -9,6 +9,7 @@ package com.multinodus.satteliteexplorer.scheduler.optimizations.genetic;
  */
 
 import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
+import com.multinodus.satteliteexplorer.scheduler.optimizations.ISolver;
 import org.jgap.*;
 import org.jgap.audit.EvolutionMonitor;
 import org.jgap.impl.DefaultConfiguration;
@@ -17,13 +18,14 @@ import org.jgap.impl.IntegerGene;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneticSolver {
+public class GeneticSolver implements ISolver {
   private static final int MAX_ALLOWED_EVOLUTIONS = 150;
 
   public EvolutionMonitor m_monitor;
 
-  public int[] solve(IKnapsackData knapsackData, boolean a_doMonitor)
+  public int[] solve(IKnapsackData knapsackData)
       throws Exception {
+    boolean a_doMonitor = true;
     Configuration conf = new DefaultConfiguration();
 
     conf.setPreservFittestIndividual(true);
@@ -97,7 +99,7 @@ public class GeneticSolver {
     System.out.println("The best solution has a fitness value of " + v1);
     bestSolutionSoFar.setFitnessValueDirectly(-1);
 
-    return getResult(bestSolutionSoFar);
+    return getResult(bestSolutionSoFar, geneIndexes, alleleIndexes, knapsackData.getN(), knapsackData.getM());
   }
 
   private Genotype createInitialGenotype(Configuration conf, Gene[] genes, int taskSize, int satSize, double[][] explorationCost)
@@ -120,11 +122,16 @@ public class GeneticSolver {
     return population;
   }
 
-  private int[] getResult(IChromosome bestSolutionSoFar) {
-    int[] result = new int[bestSolutionSoFar.size()];
+  private int[] getResult(IChromosome bestSolutionSoFar, List<Integer> geneIndexes, List<List<Integer>> alleleIndexes, int n, int m) {
+    int[] result = new int[n];
+
+    int msubone=  m - 1;
+    for (int i = 0; i < n; i++){
+      result[i] = msubone;
+    }
 
     for (int i = 0; i < bestSolutionSoFar.size(); i++) {
-      result[i] = (Integer) bestSolutionSoFar.getGene(i).getAllele();
+      result[geneIndexes.get(i)] =  alleleIndexes.get(i).get((Integer) bestSolutionSoFar.getGene(i).getAllele());
     }
 
     return result;

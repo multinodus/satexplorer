@@ -1,6 +1,7 @@
 package com.multinodus.satteliteexplorer.scheduler.optimizations.branchandbound;
 
 import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
+import com.multinodus.satteliteexplorer.scheduler.optimizations.ISolver;
 import net.sf.javailp.*;
 
 /**
@@ -10,10 +11,10 @@ import net.sf.javailp.*;
  * Time: 11:57
  * To change this template use File | Settings | File Templates.
  */
-public class ILPSolver {
+public class ILPSolver implements ISolver {
   private final static int scale = 100;
 
-  public void solve(IKnapsackData knapsackData) {
+  public int[] solve(IKnapsackData knapsackData) {
     SolverFactory factory = new SolverFactorySAT4J();
 //    factory.setParameter(Solver.VERBOSE, 0);
     factory.setParameter(Solver.TIMEOUT, 60);
@@ -50,8 +51,9 @@ public class ILPSolver {
           linear.add(k, String.format("x%d%d", i, j));
         }
       }
-
-      problem.add(linear, "<=", (int) (capacity[j] * scale));
+      if (linear.size() > 0){
+        problem.add(linear, "<=", (int) (capacity[j] * scale));
+      }
     }
 
     for (int i = 0; i < knapsackData.getN(); i++) {
@@ -66,5 +68,23 @@ public class ILPSolver {
     Result result = solver.solve(problem);
 
     System.out.println(result);
+
+    int[] output = new int[knapsackData.getN()];
+
+    for (int i = 0; i < knapsackData.getN(); i++){
+      int selectedIndex = -1;
+      for (int j = 0; j < knapsackData.getM(); j++){
+        Number number = result.getPrimalValue(String.format("x%d%d", i, j));
+        if(number!=null && number.shortValue() == 1){
+          selectedIndex = j;
+        }
+      }
+      if (selectedIndex == -1){
+        selectedIndex = knapsackData.getM() - 1;
+      }
+      output[i] = selectedIndex;
+    }
+
+    return output;
   }
 }
