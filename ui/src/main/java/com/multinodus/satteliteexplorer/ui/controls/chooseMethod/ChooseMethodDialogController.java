@@ -139,7 +139,7 @@ public class ChooseMethodDialogController implements Controller {
         detailedSchedule.put(task, new Pair<SatModel, PredictedDataElement>(satModel, predictedDataElement));
       }
 
-      int[] episodeTaskCount = new int[knapsackData.s.size()];
+      int[] episodeTaskCount = new int[knapsackData.s.size() + 1];
       for (int i = 0; i < schedule.length; i++){
         episodeTaskCount[schedule[i]] += 1;
       }
