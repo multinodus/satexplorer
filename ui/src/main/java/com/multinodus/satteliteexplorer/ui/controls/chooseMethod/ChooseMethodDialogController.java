@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.multinodus.satteliteexplorer.db.EntityContext;
 import com.multinodus.satteliteexplorer.db.entities.Task;
+import com.multinodus.satteliteexplorer.scheduler.models.RegionModel;
 import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.OptimizationServer;
@@ -147,6 +148,13 @@ public class ChooseMethodDialogController implements Controller {
       for (int i = 0; i < schedule.length; i++){
         episodeTaskCount[schedule[i]] += 1;
         exploredTasks.put(schedule[i], (Task)taskList.get(i));
+      }
+
+      for (RegionModel regionModel : UIApplication.app.scene.getWorld().getRegionModels()){
+        Pair<SatModel, PredictedDataElement> p = detailedSchedule.get(regionModel.getTask());
+        if (p!=null){
+          regionModel.setSatModel(p.f);
+        }
       }
 
       updateCharts(knapsackData.s, exploredTasks, episodeTaskCount, taskList, schedule, knapsackData.f);

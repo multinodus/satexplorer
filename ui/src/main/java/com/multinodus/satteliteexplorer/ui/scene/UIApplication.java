@@ -29,6 +29,7 @@ import com.jme3.input.controls.KeyTrigger;
 import com.jme3.input.controls.MouseButtonTrigger;
 import com.jme3.light.AmbientLight;
 import com.jme3.light.DirectionalLight;
+import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector3f;
@@ -60,6 +61,8 @@ public class UIApplication extends SimpleApplication {
   private int hoursHorizont;
   private int timeout;
   private String method;
+
+  private Material easyMaterial;
 
   public static UIApplication app;
 
@@ -120,6 +123,7 @@ public class UIApplication extends SimpleApplication {
         new MouseButtonTrigger(MouseInput.BUTTON_RIGHT));
     inputManager.addListener(actionListener, "COLLISION_TEST");
 
+    easyMaterial =  app.assetManager.loadMaterial("Materials/EasyMaterial.j3m");
 
     // Setup camera
     this.getCamera().setFrustumFar(10000000f);
@@ -216,5 +220,9 @@ public class UIApplication extends SimpleApplication {
 
   public void setHoursHorizont(int hoursHorizont) {
     this.hoursHorizont = hoursHorizont;
+  }
+
+  public Material getEasyMaterial() {
+    return easyMaterial;
   }
 }

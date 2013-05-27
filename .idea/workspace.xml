@@ -14,35 +14,33 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Add AnalysisController, SatExplorationController. Fix fonts">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/main/resources/Interface/Fonts/tnr-16_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CostPieChart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CustomLabelGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/NumberPieChart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/main/resources/Interface/Fonts/tnr-16.fnt" />
-      <change type="DELETED" beforePath="C:\Users\т\IdeaProjects\satexplorer\ui\src\main\java\com\multinodus\satteliteexplorer\ui\scene\StatisticPieChart.java" afterPath="" />
+    <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Fix charts">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/DataCenterModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/DataCenterView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.lck" afterPath="$PROJECT_DIR$/hsqldb/storage.lck" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/analysis/AnalysisDefinition.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/analysis/AnalysisDefinition.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatDistibutionChart.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatDistibutionChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/resources/Interface/fonts.xml" afterPath="$PROJECT_DIR$/ui/src/main/resources/Interface/fonts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/RegionModel.java" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/RegionModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/RegionView.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/RegionView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java" afterPath="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.properties" afterPath="$PROJECT_DIR$/hsqldb/storage.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SatteliteExplorer.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Scene.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368287095308" ignored="false" />
+    <file path="/Scene.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369689878380" ignored="false" />
     <file path="/PlanetSimpleTest.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368178234952" ignored="false" />
-    <file path="/a.dummy" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369657956130" ignored="false" />
+    <file path="/a.dummy" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369685041776" ignored="false" />
     <file path="/Utility.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362327445749" ignored="false" />
     <file path="/Quad.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362322738775" ignored="false" />
     <file path="/Planet.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362327409374" ignored="false" />
     <file path="/EarthView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362328785373" ignored="false" />
-    <file path="/RegionView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367420396718" ignored="false" />
+    <file path="/RegionView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369690166533" ignored="false" />
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
-    <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369675450801" ignored="false" />
+    <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369686907752" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369658656583" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369684997643" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368183207290" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281247800" ignored="false" />
@@ -53,7 +51,7 @@
     <file path="/SatMovement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367260560245" ignored="false" />
     <file path="/Task.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367266053315" ignored="false" />
     <file path="/Equipment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368278181462" ignored="false" />
-    <file path="/World.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368973802650" ignored="false" />
+    <file path="/World.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369687797418" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281282175" ignored="false" />
     <file path="/Sat.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281123538" ignored="false" />
     <file path="/PredictorDataElement.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367432638878" ignored="false" />
@@ -69,7 +67,7 @@
     <file path="/ImagePanelController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368189926307" ignored="false" />
     <file path="/OptimizationServer.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368864022444" ignored="false" />
     <file path="/OptimizationServerImpl.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369562401160" ignored="false" />
-    <file path="/UIApplication.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368898944864" ignored="false" />
+    <file path="/UIApplication.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369689686800" ignored="false" />
     <file path="/build.pom" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368215821257" ignored="false" />
     <file path="/pom.xml" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368876065611" ignored="false" />
     <file path="/client.bat" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368273438835" ignored="false" />
@@ -98,7 +96,7 @@
     <file path="/ILPSolver.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369562318430" ignored="false" />
     <file path="/Triple.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368866690626" ignored="false" />
     <file path="/IKnapsackData.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368869858933" ignored="false" />
-    <file path="/ChooseMethodDialogController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369682316925" ignored="false" />
+    <file path="/ChooseMethodDialogController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369688034819" ignored="false" />
     <file path="/ChooseMethodDialogControlDefinition.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368899862664" ignored="false" />
     <file path="/SchedulingProcessDefinition.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368903268128" ignored="false" />
     <file path="/SchedulingProcesslController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368896640482" ignored="false" />
@@ -117,6 +115,9 @@
     <file path="/CostPieChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369683951495" ignored="false" />
     <file path="/NumberPieChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369681997688" ignored="false" />
     <file path="/CustomLabelGenerator.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369684869150" ignored="false" />
+    <file path="/DataCenterModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369686550045" ignored="false" />
+    <file path="/DataCenterView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369686938731" ignored="false" />
+    <file path="/RegionModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369687839952" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,40 +178,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TaskDialogDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/task/TaskDialogDefinition.java">
+      <file leaf-file-name="RegionView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/RegionView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="65" selection-start="2280" selection-end="2280" vertical-scroll-proportion="0.0">
+            <state line="50" column="10" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.8552279">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDialogDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/user/UserDialogDefinition.java">
+      <file leaf-file-name="UIApplication.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="48" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
+            <state line="224" column="37" selection-start="7658" selection-end="7658" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnalysisController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/analysis/AnalysisController.java">
+      <file leaf-file-name="RegionModel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/RegionModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
+            <state line="124" column="14" selection-start="4063" selection-end="4063" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnalysisDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/analysis/AnalysisDefinition.java">
+      <file leaf-file-name="ChooseMethodDialogControlDefinition.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogControlDefinition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="70" selection-start="3208" selection-end="3208" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="13" column="13" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -218,57 +217,53 @@
       <file leaf-file-name="ChooseMethodDialogController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="198" column="0" selection-start="8182" selection-end="8182" vertical-scroll-proportion="0.0">
+            <state line="155" column="28" selection-start="6538" selection-end="6538" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CostPieChart.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CostPieChart.java">
+      <file leaf-file-name="Scene.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="4" selection-start="3249" selection-end="3300" vertical-scroll-proportion="0.0">
+            <state line="51" column="84" selection-start="1824" selection-end="1824" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomLabelGenerator.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CustomLabelGenerator.java">
+      <file leaf-file-name="DataCenterView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/DataCenterView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="14" selection-start="784" selection-end="784" vertical-scroll-proportion="0.65833336">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NumberPieChart.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/NumberPieChart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="55" selection-start="3247" selection-end="3247" vertical-scroll-proportion="0.0">
+            <state line="26" column="66" selection-start="849" selection-end="849" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SatDistibutionChart.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatDistibutionChart.java">
+      <file leaf-file-name="World.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="44" selection-start="3595" selection-end="3595" vertical-scroll-proportion="0.0">
+            <state line="174" column="32" selection-start="6103" selection-end="6103" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SatExlorationChart.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatExlorationChart.java">
+      <file leaf-file-name="DataCenterModel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/DataCenterModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="100" selection-start="2725" selection-end="2745" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="26" column="16" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EasyMaterial.j3m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/resources/Materials/EasyMaterial.j3m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -292,22 +287,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/dataCenter/DataCenterDialogDefinition.java" />
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/equipment/EquipmentDialogControlDefinition.java" />
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/equipmentType/EquipmentTypeDialogDefinition.java" />
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/orbit/OrbitDialogControlDefinition.java" />
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/region/RegionDialogControlDefinition.java" />
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/role/RoleDialogDefinition.java" />
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/sat/SatControlDefinition.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/task/TaskDialogDefinition.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/user/UserDialogDefinition.java" />
         <option value="$PROJECT_DIR$/ui/src/main/resources/Interface/fonts.xml" />
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/analysis/AnalysisDefinition.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CostPieChart.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/NumberPieChart.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatDistibutionChart.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CustomLabelGenerator.java" />
+        <option value="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/DataCenterModel.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/DataCenterView.java" />
+        <option value="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java" />
+        <option value="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/RegionModel.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/RegionView.java" />
       </list>
     </option>
   </component>
@@ -493,6 +488,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Materials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Interface" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -616,6 +641,152 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scene" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multinodus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satteliteexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multinodus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satteliteexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multinodus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satteliteexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chooseMethod" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -971,6 +1142,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multinodus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satteliteexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scheduler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="satexplorer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1084,11 +1301,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.multinodus.satteliteexplorer.ui.scene.models" />
+      <recent name="com.multinodus.satteliteexplorer.scheduler.models" />
       <recent name="com.multinodus.satteliteexplorer.ui.scene" />
       <recent name="com.multinodus.satteliteexplorer.ui.controls.analys" />
       <recent name="com.multinodus.satteliteexplorer.ui.controls.schedulingProcess" />
-      <recent name="com.multinodus.satteliteexplorer.ui.controls.chooseMethod" />
-      <recent name="com.multinodus.satteliteexplorer.scheduler.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\т\IdeaProjects\satexplorer\ui\src\main\resources\Interface\Fonts" />
@@ -1489,7 +1706,11 @@
       <created>1369658352877</created>
       <updated>1369658352877</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fix charts">
+      <created>1369684942524</created>
+      <updated>1369684942524</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1519,7 +1740,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47189096" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22998296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39011925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.73594546" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38841566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1581,7 +1802,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AnalysisController, SatExplorationController. Fix fonts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix charts" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1612,13 +1833,13 @@
     <MESSAGE value="Fix genetic solver" />
     <MESSAGE value="Fix UI" />
     <MESSAGE value="Reformat" />
-    <MESSAGE value="Fix charts" />
     <MESSAGE value="Fix visible angle" />
     <MESSAGE value="Product schedule's data" />
     <MESSAGE value="Add SatWorkloadChart" />
     <MESSAGE value="Add StatisticPieChart" />
     <MESSAGE value="Add SatDistibutionChart" />
     <MESSAGE value="Add AnalysisController, SatExplorationController. Fix fonts" />
+    <MESSAGE value="Fix charts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1632,75 +1853,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/equipmentType/EquipmentTypeDialogDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="78" selection-start="2314" selection-end="2314" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/orbit/OrbitDialogControlDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="71" selection-start="3396" selection-end="3396" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/region/RegionDialogControlDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="73" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/role/RoleDialogDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="70" selection-start="2239" selection-end="2239" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/sat/SatControlDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="64" selection-start="2242" selection-end="2242" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/task/TaskDialogDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="65" selection-start="2280" selection-end="2280" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/resources/Interface/fonts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="251" selection-end="251" vertical-scroll-proportion="0.5537459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/user/UserDialogDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="48" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatExlorationChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="100" selection-start="2725" selection-end="2745" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/analysis/AnalysisController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="13" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
@@ -1714,13 +1866,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="0" selection-start="8182" selection-end="8182" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1747,10 +1892,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CustomLabelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="14" selection-start="784" selection-end="784" vertical-scroll-proportion="0.65833336">
+        <state line="22" column="33" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/resources/Materials/EasyMaterial.j3m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogControlDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="28" selection-start="6538" selection-end="6538" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/DataCenterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="66" selection-start="849" selection-end="849" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/RegionModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="14" selection-start="4063" selection-end="4063" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="32" selection-start="6103" selection-end="6103" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="224" column="37" selection-start="7658" selection-end="7658" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/models/DataCenterModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="16" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="84" selection-start="1824" selection-end="1824" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/RegionView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="10" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.8552279">
+          <folding />
         </state>
       </provider>
     </entry>

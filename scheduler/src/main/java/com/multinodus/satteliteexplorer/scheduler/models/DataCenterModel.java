@@ -2,8 +2,8 @@ package com.multinodus.satteliteexplorer.scheduler.models;
 
 import com.jme3.math.Matrix3f;
 import com.jme3.math.Vector3f;
+import com.multinodus.satteliteexplorer.db.entities.DataCenter;
 import com.multinodus.satteliteexplorer.db.entities.Region;
-import com.multinodus.satteliteexplorer.db.entities.Task;
 import com.multinodus.satteliteexplorer.scheduler.transformations.QuaternionTransformations;
 import com.multinodus.satteliteexplorer.scheduler.transformations.SI_Transform;
 import com.multinodus.satteliteexplorer.scheduler.util.VectorConstants;
@@ -16,19 +16,16 @@ import com.multinodus.satteliteexplorer.scheduler.util.VectorConstants;
  * Time: 22:01
  * To change this template use File | Settings | File Templates.
  */
-public class RegionModel implements IUpdatable {
-  Task task;
-  Region region;
+public class DataCenterModel implements IUpdatable {
+  DataCenter dataCenter;
   Vector3f position;
   Vector3f realPosition;
   boolean isNight;
-  SatModel satModel;
 
-  public RegionModel(Region region, Task task) {
-    this.region = region;
-    this.task = task;
+  public DataCenterModel(DataCenter dataCenter) {
+    this.dataCenter = dataCenter;
 
-    position = calcPosition(region.getLongitude(), region.getLatitude(),
+    position = calcPosition(dataCenter.getLongitude(), dataCenter.getLatitude(),
         (float) SI_Transform.distanceSIInModel(SI_Transform.EARTH_RADIUS));
 
     realPosition = new Vector3f();
@@ -84,7 +81,7 @@ public class RegionModel implements IUpdatable {
   }
 
   public void update() {
-    position = calcPosition(region.getLongitude(), region.getLatitude(),
+    position = calcPosition(dataCenter.getLongitude(), dataCenter.getLatitude(),
         (float) SI_Transform.distanceSIInModel(SI_Transform.EARTH_RADIUS));
 
     realPosition.setX((float) SI_Transform.distanceModelInSI(position.x));
@@ -103,7 +100,7 @@ public class RegionModel implements IUpdatable {
       anglePOSandSun = (float) (2 * Math.PI - anglePOSandSun);
     }
 
-    isNight = !QuaternionTransformations.I().isLit(region, 0.314, s, anglePOSandSun);
+    isNight = false;
   }
 
   public Vector3f getRealPosition() {
@@ -112,21 +109,5 @@ public class RegionModel implements IUpdatable {
 
   public Vector3f getPosition() {
     return position;
-  }
-
-  public float getRadius() {
-    return region.getRadius();
-  }
-
-  public SatModel getSatModel() {
-    return satModel;
-  }
-
-  public void setSatModel(SatModel satModel) {
-    this.satModel = satModel;
-  }
-
-  public Task getTask() {
-    return task;
   }
 }

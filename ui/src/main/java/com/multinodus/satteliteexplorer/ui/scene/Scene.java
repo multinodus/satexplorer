@@ -3,17 +3,13 @@ package com.multinodus.satteliteexplorer.ui.scene;
 import com.jme3.asset.AssetManager;
 import com.jme3.light.SpotLight;
 import com.jme3.math.ColorRGBA;
+import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
+import com.jme3.scene.shape.Torus;
 import com.multinodus.satteliteexplorer.scheduler.World;
-import com.multinodus.satteliteexplorer.scheduler.models.EarthModel;
-import com.multinodus.satteliteexplorer.scheduler.models.IUpdatable;
-import com.multinodus.satteliteexplorer.scheduler.models.RegionModel;
-import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
-import com.multinodus.satteliteexplorer.ui.scene.models.EarthView;
-import com.multinodus.satteliteexplorer.ui.scene.models.IView;
-import com.multinodus.satteliteexplorer.ui.scene.models.RegionView;
-import com.multinodus.satteliteexplorer.ui.scene.models.SatView;
+import com.multinodus.satteliteexplorer.scheduler.models.*;
+import com.multinodus.satteliteexplorer.ui.scene.models.*;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.Planet;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.PlanetAppState;
 
@@ -48,13 +44,24 @@ public class Scene {
         RegionModel regionModel = (RegionModel) entity;
 
         //Cylinder sphere = new Cylinder(32, 32, 1000, 10000);
-//        Torus sphere = new Torus(32, 32, 100, regionModel.getRadius());
-//        Geometry regionSpatial = new Geometry("", sphere);
-//        regionSpatial.setMaterial(assetManager.loadMaterial("Materials/EasyMaterial.j3m"));
-//        rootNode.attachChild(regionSpatial);
+        Torus sphere = new Torus(4, 4, 50, 500);
+        Geometry regionSpatial = new Geometry("", sphere);
+        regionSpatial.setMaterial(assetManager.loadMaterial("Materials/EasyMaterial.j3m"));
+        rootNode.attachChild(regionSpatial);
 
-        RegionView regionView = new RegionView(regionModel, null);
+        RegionView regionView = new RegionView(regionModel, regionSpatial, rootNode);
         views.add(regionView);
+      }
+      if (entity instanceof DataCenterModel) {
+        DataCenterModel dataCenter = (DataCenterModel) entity;
+
+        Torus sphere = new Torus(32, 32, 50, 5000);
+        Geometry regionSpatial = new Geometry("", sphere);
+        regionSpatial.setMaterial(assetManager.loadMaterial("Materials/EasyMaterial.j3m"));
+        rootNode.attachChild(regionSpatial);
+
+        DataCenterView dataCenterView = new DataCenterView(dataCenter, regionSpatial);
+        views.add(dataCenterView);
       }
       if (entity instanceof SatModel) {
         SatModel satModel = (SatModel) entity;

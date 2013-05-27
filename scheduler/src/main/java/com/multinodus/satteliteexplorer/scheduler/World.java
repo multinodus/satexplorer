@@ -3,10 +3,7 @@ package com.multinodus.satteliteexplorer.scheduler;
 import com.jme3.math.FastMath;
 import com.multinodus.satteliteexplorer.db.EntityContext;
 import com.multinodus.satteliteexplorer.db.entities.*;
-import com.multinodus.satteliteexplorer.scheduler.models.EarthModel;
-import com.multinodus.satteliteexplorer.scheduler.models.IUpdatable;
-import com.multinodus.satteliteexplorer.scheduler.models.RegionModel;
-import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
+import com.multinodus.satteliteexplorer.scheduler.models.*;
 import com.multinodus.satteliteexplorer.scheduler.transformations.SI_Transform;
 import com.multinodus.satteliteexplorer.scheduler.util.DateTimeConstants;
 
@@ -23,6 +20,7 @@ public class World {
   private Collection<IUpdatable> entities = new ArrayList<IUpdatable>();
   private List<SatModel> satModels;
   private List<RegionModel> regionModels;
+  private List<DataCenterModel> dataCenterModels;
   private List<Task> tasks;
   private List<DataCenter> dataCenters;
   private Date currentTime;
@@ -167,21 +165,24 @@ public class World {
     }
 
     regionModels = new ArrayList<RegionModel>();
-    for (Object region : EntityContext.get().getAllEntities(Region.class)) {
-      Region r = (Region) region;
-      RegionModel regionModel = new RegionModel(r);
+    tasks = new ArrayList<Task>();
+    for (Object task : EntityContext.get().getAllEntities(Task.class)) {
+      tasks.add((Task) task);
+
+      Region r = ((Task) task).getRegion();
+      RegionModel regionModel = new RegionModel(r, (Task)task);
       regionModels.add(regionModel);
       entities.add(regionModel);
     }
 
-    tasks = new ArrayList<Task>();
-    for (Object task : EntityContext.get().getAllEntities(Task.class)) {
-      tasks.add((Task) task);
-    }
-
+    dataCenterModels = new ArrayList<DataCenterModel>();
     dataCenters = new ArrayList<DataCenter>();
     for (Object dataCenter : EntityContext.get().getAllEntities(DataCenter.class)) {
-      dataCenters.add((DataCenter) dataCenter);
+      DataCenter d = (DataCenter) dataCenter;
+      dataCenters.add(d);
+      DataCenterModel dataCenterModel = new DataCenterModel(d);
+      dataCenterModels.add(dataCenterModel);
+      entities.add(dataCenterModel);
     }
 
     currentTime = earthModel.getCurrentTime();
