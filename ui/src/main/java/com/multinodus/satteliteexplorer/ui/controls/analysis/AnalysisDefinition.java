@@ -74,12 +74,24 @@ public class AnalysisDefinition {
               }});
             }});
 
-            control(new TabBuilder("tab_statisticPie", "План съемки спутников") {{
+            control(new TabBuilder("tab_costPie", "Доля выполненных задач по стоимости") {{
               panel(new PanelBuilder() {{
                 childLayoutHorizontal();
-                image(new ImageBuilder("statisticPieImg") {{
-                  name("statisticPieImg");
-//                  filename("Textures/statisticPie_chart.png");
+                image(new ImageBuilder("costPieImg") {{
+                  name("costPieImg");
+//                  filename("Textures/costPie_chart.png");
+                  width("100%");
+                  height("100%");
+                }});
+              }});
+            }});
+
+            control(new TabBuilder("tab_numberPie", "Доля выполненных задач по количеству") {{
+              panel(new PanelBuilder() {{
+                childLayoutHorizontal();
+                image(new ImageBuilder("numberPieImg") {{
+                  name("numberPieImg");
+//                  filename("Textures/numberPie_chart.png");
                   width("100%");
                   height("100%");
                 }});

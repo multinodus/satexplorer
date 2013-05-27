@@ -10,14 +10,11 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
-import org.jfree.chart.plot.MultiplePiePlot;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.general.DatasetUtilities;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
-import org.jfree.util.TableOrder;
 
 import java.awt.*;
 import java.io.File;
@@ -31,13 +28,12 @@ import java.util.Map;
  * Time: 16:24
  * To change this template use File | Settings | File Templates.
  */
-public class SatDistibutionChart {
+public class NumberPieChart {
   private JFreeChart chart;
   private ChartPanel chartPanel;
 
-  public SatDistibutionChart(java.util.List<Pair<SatModel, java.util.List<Pair<Task, PredictedDataElement>>>> episodes,
-                             int[] episodesTaskCount) {
-    PieDataset dataset = createDataset(episodes, episodesTaskCount);
+  public NumberPieChart(IKnapsackData knapsackData, int[] schedule, java.util.List<Object> taskList) {
+    PieDataset dataset = createDataset(knapsackData, schedule, taskList);
     chart = createChart(dataset);
     chartPanel = new ChartPanel(chart, true, true, true, false, true);
     chartPanel.setPreferredSize(new Dimension(600, 380));
@@ -46,7 +42,7 @@ public class SatDistibutionChart {
   public void saveImage() {
     chartPanel.repaint();
     try {
-      File outputfile = new File(System.getProperty("user.dir") + "/ui/target/classes/Textures/" + "satDistribution_chart.png");
+      File outputfile = new File(System.getProperty("user.dir") + "/ui/target/classes/Textures/" + "numberPie_chart.png");
       ChartUtilities.saveChartAsPNG(outputfile,
           chart,
           700, 300,
@@ -58,34 +54,30 @@ public class SatDistibutionChart {
     }
   }
 
-  private PieDataset createDataset(java.util.List<Pair<SatModel, java.util.List<Pair<Task, PredictedDataElement>>>> episodes,
-                                   int[] episodesTaskCount) {
+  private PieDataset createDataset(IKnapsackData knapsackData, int[] schedule, java.util.List<Object> taskList) {
     DefaultPieDataset dataset = new DefaultPieDataset();
-
-    Map<SatModel, Integer> distibution = Maps.newHashMap();
-
-    for (int i = 0; i < episodesTaskCount.length - 1; i++){
-      SatModel satModel = episodes.get(i).f;
-      Integer value = null;
-      if (distibution.containsKey(satModel)){
-        value = distibution.get(satModel);
-        value += episodesTaskCount[i];
-      } else {
-        value = episodesTaskCount[i];
+    double costTotal = 0;
+    double costSum = 0;
+    int number = 0;
+    int garbageIndex = knapsackData.getM() - 1;
+    for (int i = 0; i < schedule.length; i++){
+      if (schedule[i] != garbageIndex){
+        costSum += knapsackData.getProfit()[i][schedule[i]];
+        number++;
       }
-      distibution.put(satModel, value);
+      costTotal += ((Task)taskList.get(i)).getCost();
     }
 
-    for (SatModel satModel : distibution.keySet()){
-      dataset.setValue(satModel.getSat().getSatId().toString(), distibution.get(satModel));
-    }
+    dataset.setValue("Выполнено", number);
+    dataset.setValue("Не выполнено", schedule.length - number);
 
     return dataset;
   }
 
+
   private JFreeChart createChart(final PieDataset dataset) {
     final JFreeChart chart = ChartFactory.createPieChart(
-        "Распределение задач по КА",  // chart title
+        "Доля выполненных задач по количеству",  // chart title
         dataset,               // dataset
         true,                  // include legend
         true,

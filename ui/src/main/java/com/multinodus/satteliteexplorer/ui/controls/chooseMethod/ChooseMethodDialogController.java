@@ -12,11 +12,11 @@ import com.multinodus.satteliteexplorer.scheduler.transformations.PredictedDataE
 import com.multinodus.satteliteexplorer.scheduler.transformations.PredictorOfObservations;
 import com.multinodus.satteliteexplorer.scheduler.util.Pair;
 import com.multinodus.satteliteexplorer.scheduler.util.Triple;
+import com.multinodus.satteliteexplorer.ui.controls.analysis.AnalysisDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.common.ImagePanelDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.common.JustAnExampleModelClass;
 import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessDefinition;
-import com.multinodus.satteliteexplorer.ui.scene.SchedulingProcessChart;
-import com.multinodus.satteliteexplorer.ui.scene.UIApplication;
+import com.multinodus.satteliteexplorer.ui.scene.*;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
 import de.lessvoid.nifty.controls.*;
@@ -128,7 +128,7 @@ public class ChooseMethodDialogController implements Controller {
         Task task = (Task)taskList.get(i);
         SatModel satModel = null;
         PredictedDataElement predictedDataElement = null;
-        Pair<SatModel, List<Pair<Task, PredictedDataElement>>> p = knapsackData.s.get(schedule[i]);
+        Pair<SatModel, List<Pair<Task, PredictedDataElement>>> p = schedule[i] < knapsackData.s.size() ? knapsackData.s.get(schedule[i]) : null;
         if (p!=null){
           satModel = p.f;
           for (Pair<Task, PredictedDataElement> exploration : p.s){
@@ -149,31 +149,62 @@ public class ChooseMethodDialogController implements Controller {
         exploredTasks.put(schedule[i], (Task)taskList.get(i));
       }
 
-      SchedulingProcessChart chart = new SchedulingProcessChart();
-      chart.addValue(1);
-      chart.addValue(3);
-      chart.addValue(13);
-      chart.addValue(56);
-      chart.addValue(79);
-      chart.addValue(92);
-      chart.addValue(132);
-      chart.addValue(157);
-      chart.addValue(182);
-      chart.addValue(193);
-      chart.addValue(199);
-      chart.addValue(200);
-      chart.addValue(203);
-      chart.saveImage();
-      changeImage(schedulingProcessElement);
+      updateCharts(knapsackData.s, exploredTasks, episodeTaskCount, taskList, schedule, knapsackData.f);
     } catch (Exception exc) {
       System.out.println(exc.toString());
     }
   }
 
-  public void changeImage(Element schedulingProcessElement) {
-    NiftyImage newImage = nifty.getRenderEngine().createImage("Textures/new_chart.png", false);
+  public void updateCharts(List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>> episodes, Multimap<Integer, Task> exploredTasks,
+                           int[] episodeTaskCount, List<Object> taskList, int[] schedule, IKnapsackData knapsackData) {
+    SchedulingProcessChart chart = new SchedulingProcessChart();
+    chart.addValue(1);
+    chart.addValue(3);
+    chart.addValue(13);
+    chart.addValue(56);
+    chart.addValue(79);
+    chart.addValue(92);
+    chart.addValue(132);
+    chart.addValue(157);
+    chart.addValue(182);
+    chart.addValue(193);
+    chart.addValue(199);
+    chart.addValue(200);
+    chart.addValue(203);
+    chart.saveImage();
 
-    Element element = schedulingProcessElement.findElementByName("schedulingProcessImg");
+    SatDistibutionChart satDistibutionChart = new SatDistibutionChart(episodes, episodeTaskCount);
+    satDistibutionChart.saveImage();
+
+//    SatExlorationChart satExlorationChart = new SatExlorationChart(episodes, exploredTasks, selectedSat)
+//    satExlorationChart.saveImage();
+
+    SatWorkloadChart satWorkloadChart = new SatWorkloadChart(episodes, episodeTaskCount);
+    satWorkloadChart.saveImage();
+
+    CostPieChart costPieChart = new CostPieChart(knapsackData, schedule, taskList);
+    costPieChart.saveImage();
+
+    NumberPieChart numberPieChart = new NumberPieChart(knapsackData, schedule, taskList);
+    numberPieChart.saveImage();
+
+    changeImage();
+  }
+
+  public void changeImage() {
+    changeImage(SchedulingProcessDefinition.NAME, "Textures/new_chart.png", "schedulingProcessImg");
+    changeImage(AnalysisDefinition.NAME, "Textures/satDistribution_chart.png", "satDistributionImg");
+//    changeImage(AnalysisDefinition.NAME, "Textures/satExploration_chart.png", "satExplorationImg");
+    changeImage(AnalysisDefinition.NAME, "Textures/satWorkload_chart.png", "satWorkloadImg");
+    changeImage(AnalysisDefinition.NAME, "Textures/numberPie_chart.png", "numberPieImg");
+    changeImage(AnalysisDefinition.NAME, "Textures/costPie_chart.png", "costPieImg");
+  }
+
+  public void changeImage(String elementName, String imagePath, String imageElementName){
+    Element schedulingProcessElement = this.screen.findElementByName(elementName);
+    NiftyImage newImage = nifty.getRenderEngine().createImage(imagePath, false);
+
+    Element element = schedulingProcessElement.findElementByName(imageElementName);
 
     element.getRenderer(ImageRenderer.class).setImage(newImage);
   }
