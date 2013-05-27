@@ -75,7 +75,7 @@ public class OrbitDialogControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonOrbit", "Add"));
+          control(new ButtonBuilder("addButtonOrbit", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -89,7 +89,7 @@ public class OrbitDialogControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonOrbit", "Remove"));
+          control(new ButtonBuilder("removeButtonOrbit", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -102,7 +102,7 @@ public class OrbitDialogControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonOrbit", "Update"));
+          control(new ButtonBuilder("updateButtonOrbit", "Обновить"));
         }});
       }});
     }}.registerControlDefintion(nifty);

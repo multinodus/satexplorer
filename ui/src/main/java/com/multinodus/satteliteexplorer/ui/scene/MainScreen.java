@@ -1,6 +1,7 @@
 package com.multinodus.satteliteexplorer.ui.scene;
 
 import com.jme3.niftygui.NiftyJmeDisplay;
+import com.multinodus.satteliteexplorer.ui.controls.analysis.AnalysisDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDialogControlDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDialogController;
 import com.multinodus.satteliteexplorer.ui.controls.common.CommonBuilders;
@@ -51,7 +52,7 @@ public class MainScreen {
     /**
      * nifty demo code
      */
-    nifty.loadStyleFile("nifty-default-styles.xml");
+    nifty.loadStyleFile("Interface/nifty-default-styles.xml");
     nifty.loadControlFile("nifty-default-controls.xml");
     nifty.registerMouseCursor("hand", "Interface/mouse-cursor-hand.png", 5, 4);
 
@@ -77,6 +78,7 @@ public class MainScreen {
 //    ImagePanelDefinition.register(nifty);
     ChooseMethodDialogControlDefinition.register(nifty, app);
     SchedulingProcessDefinition.register(nifty, app);
+    AnalysisDefinition.register(nifty, app);
 
     createDemoScreen(nifty);
     nifty.gotoScreen("demo");
@@ -101,7 +103,8 @@ public class MainScreen {
               "menuButtonOrbit", "dialogOrbit",
               "menuButtonRole", "dialogRole",
               "menuButtonUser", "dialogUser",
-              "menuButtonSchedule", ChooseMethodDialogControlDefinition.NAME));
+              "menuButtonSchedule", ChooseMethodDialogControlDefinition.NAME,
+              "menuButtonAnalyzeSchedule", AnalysisDefinition.NAME));
         }
 //        if (UIApplication.user.getRole().getName().equals("admin")) {
 //          controller(new MainScreenController(
@@ -138,6 +141,7 @@ public class MainScreen {
                       control(new ControlBuilder(ChooseMethodDialogControlDefinition.NAME, ChooseMethodDialogControlDefinition.NAME));
 //                      control(new ControlBuilder(ImagePanelDefinition.NAME, ImagePanelDefinition.NAME));
                       control(new ControlBuilder(SchedulingProcessDefinition.NAME, SchedulingProcessDefinition.NAME));
+                      control(new ControlBuilder(AnalysisDefinition.NAME, AnalysisDefinition.NAME));
                     }
                     if (app.user.getRole().getName().equals("admin")) {
 
@@ -331,7 +335,6 @@ public class MainScreen {
 
       {
         id("creditsCaption");
-        font("Interface/verdana-48-regular.fnt");
         width("100%");
         textHAlignCenter();
       }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty-styles>
+  <useStyles filename="Interface/fonts.xml" />
+  <useStyles filename="Interface/panel/nifty-panel.xml" />
+  <useStyles filename="Interface/button/nifty-button.xml" />
+  <useStyles filename="Interface/label/nifty-label.xml" />
+  <useStyles filename="Interface/textfield/nifty-textfield.xml" />
+  <useStyles filename="Interface/dropdown/nifty-drop-down.xml" />
+  <useStyles filename="Interface/imageselect/nifty-image-select.xml" />
+  <useStyles filename="Interface/checkbox/nifty-checkbox.xml" />
+  <useStyles filename="Interface/radiobutton/nifty-radiobutton.xml" />
+  <useStyles filename="Interface/scrollbar/nifty-scrollbar-style.xml" />
+  <useStyles filename="Interface/slider/nifty-slider-style.xml" />
+  <useStyles filename="Interface/scrollpanel/nifty-scrollpanel-style.xml" />
+  <useStyles filename="Interface/console/nifty-console-style.xml" />
+  <useStyles filename="Interface/chat-control/nifty-chat-control.xml" />
+  <useStyles filename="Interface/menu/nifty-menu-style.xml" />
+  <useStyles filename="Interface/listbox/nifty-listbox-style.xml" />
+  <useStyles filename="Interface/window/nifty-window.xml" />
+  <useStyles filename="Interface/hint/nifty-hint.xml" />
+  <useStyles filename="Interface/tabs/nifty-tabs.xml" />
+  <useStyles filename="Interface/messagebox/nifty-messagebox.xml" />
+</nifty-styles>

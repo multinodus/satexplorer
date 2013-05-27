@@ -43,7 +43,7 @@ public class UserDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonUser", "Add"));
+          control(new ButtonBuilder("addButtonUser", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -57,7 +57,7 @@ public class UserDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonUser", "Remove"));
+          control(new ButtonBuilder("removeButtonUser", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -70,7 +70,7 @@ public class UserDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonUser", "Update"));
+          control(new ButtonBuilder("updateButtonUser", "Обновить"));
         }});
 
         panel(builders.vspacer());

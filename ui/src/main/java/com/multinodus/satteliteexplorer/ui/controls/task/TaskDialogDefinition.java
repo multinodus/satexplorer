@@ -44,7 +44,7 @@ public class TaskDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonTask", "Add"));
+          control(new ButtonBuilder("addButtonTask", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -58,7 +58,7 @@ public class TaskDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonTask", "Remove"));
+          control(new ButtonBuilder("removeButtonTask", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -71,7 +71,7 @@ public class TaskDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonTask", "Update"));
+          control(new ButtonBuilder("updateButtonTask", "Обновить"));
         }});
 
         panel(builders.vspacer());

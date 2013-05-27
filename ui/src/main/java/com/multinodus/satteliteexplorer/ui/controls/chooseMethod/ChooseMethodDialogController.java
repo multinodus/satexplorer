@@ -1,6 +1,8 @@
 package com.multinodus.satteliteexplorer.ui.controls.chooseMethod;
 
+import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 import com.multinodus.satteliteexplorer.db.EntityContext;
 import com.multinodus.satteliteexplorer.db.entities.Task;
 import com.multinodus.satteliteexplorer.scheduler.models.SatModel;
@@ -139,9 +141,12 @@ public class ChooseMethodDialogController implements Controller {
         detailedSchedule.put(task, new Pair<SatModel, PredictedDataElement>(satModel, predictedDataElement));
       }
 
+      Multimap<Integer, Task> exploredTasks = ArrayListMultimap.create();
+
       int[] episodeTaskCount = new int[knapsackData.s.size() + 1];
       for (int i = 0; i < schedule.length; i++){
         episodeTaskCount[schedule[i]] += 1;
+        exploredTasks.put(schedule[i], (Task)taskList.get(i));
       }
 
       SchedulingProcessChart chart = new SchedulingProcessChart();

@@ -143,11 +143,6 @@
         </dependency>
         <dependency>
             <groupId>com.jme3</groupId>
-            <artifactId>nifty-style-black</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.jme3</groupId>
             <artifactId>stack-alloc</artifactId>
             <version>1.0</version>
         </dependency>

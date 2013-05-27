@@ -43,7 +43,7 @@ public class RoleDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonRole", "Add"));
+          control(new ButtonBuilder("addButtonRole", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -57,7 +57,7 @@ public class RoleDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonRole", "Remove"));
+          control(new ButtonBuilder("removeButtonRole", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -70,7 +70,7 @@ public class RoleDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonRole", "Update"));
+          control(new ButtonBuilder("updateButtonRole", "Обновить"));
         }});
 
         panel(builders.vspacer());

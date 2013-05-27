@@ -39,7 +39,7 @@ public class RegionDialogControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonRegion", "Add"));
+          control(new ButtonBuilder("addButtonRegion", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -53,7 +53,7 @@ public class RegionDialogControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonRegion", "Remove"));
+          control(new ButtonBuilder("removeButtonRegion", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -66,7 +66,7 @@ public class RegionDialogControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonRegion", "Update"));
+          control(new ButtonBuilder("updateButtonRegion", "Обновить"));
         }});
 
         panel(builders.vspacer());

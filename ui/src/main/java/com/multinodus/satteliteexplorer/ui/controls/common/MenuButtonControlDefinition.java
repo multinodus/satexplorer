@@ -45,7 +45,6 @@ public class MenuButtonControlDefinition {
           effectValue("offset", "100%", "color", "#feef");
         }});
         onHoverEffect(new HoverEffectBuilder("hint") {{
-          font("Interface/Fonts/arial14.fnt");
           effectParameter("hintText", controlParameter(PARAMETER_HINT));
           effectParameter("hintStyle", "special-hint");
           effectParameter("hintDelay", "750");
@@ -53,7 +52,6 @@ public class MenuButtonControlDefinition {
           effectParameter("offsetY", "50");
         }});
         control(new LabelBuilder() {{
-          font("Interface/Fonts/arial14.fnt");
           color("eeef");
           text(controlParameter(PARAMETER_LABEL));
           alignCenter();

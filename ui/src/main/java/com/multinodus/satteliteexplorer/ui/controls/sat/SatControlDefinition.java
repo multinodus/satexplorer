@@ -44,7 +44,7 @@ public class SatControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonSat", "Add"));
+          control(new ButtonBuilder("addButtonSat", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -58,7 +58,7 @@ public class SatControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonSat", "Remove"));
+          control(new ButtonBuilder("removeButtonSat", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -71,7 +71,7 @@ public class SatControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonSat", "Update"));
+          control(new ButtonBuilder("updateButtonSat", "Обновить"));
         }});
 
         panel(builders.vspacer());

@@ -43,7 +43,7 @@ public class DataCenterDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonDataCenter", "Add"));
+          control(new ButtonBuilder("addButtonDataCenter", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -57,7 +57,7 @@ public class DataCenterDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonDataCenter", "Remove"));
+          control(new ButtonBuilder("removeButtonDataCenter", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -70,7 +70,7 @@ public class DataCenterDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonDataCenter", "Update"));
+          control(new ButtonBuilder("updateButtonDataCenter", "Обновить"));
         }});
 
         panel(builders.vspacer());

@@ -43,7 +43,7 @@ public class EquipmentTypeDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("addButtonEquipmentType", "Add"));
+          control(new ButtonBuilder("addButtonEquipmentType", "Добавить"));
         }});
 
         // the changed event and the remove item button
@@ -57,7 +57,7 @@ public class EquipmentTypeDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("removeButtonEquipmentType", "Remove"));
+          control(new ButtonBuilder("removeButtonEquipmentType", "Удалить"));
         }});
 
         panel(builders.vspacer());
@@ -70,7 +70,7 @@ public class EquipmentTypeDialogDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("updateButtonEquipmentType", "Update"));
+          control(new ButtonBuilder("updateButtonEquipmentType", "Обновить"));
         }});
 
         panel(builders.vspacer());

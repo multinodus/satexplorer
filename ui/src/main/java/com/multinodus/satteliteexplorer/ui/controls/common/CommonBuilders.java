@@ -72,7 +72,6 @@ public class CommonBuilders {
 
   public LabelBuilder createLabel(final String text, final String width) {
     return new LabelBuilder() {{
-      font("Interface/Fonts/arial14.fnt");
       text(text);
       width(width);
       alignLeft();
@@ -83,7 +82,6 @@ public class CommonBuilders {
 
   public LabelBuilder createLabel(final String id, final String text, final String width) {
     return new LabelBuilder(id, text) {{
-      font("Interface/Fonts/arial14.fnt");
       width(width);
       alignLeft();
       textVAlignCenter();
@@ -99,7 +97,6 @@ public class CommonBuilders {
 
   public LabelBuilder createShortLabel(final String name) {
     return new LabelBuilder() {{
-      font("Interface/Fonts/arial14.fnt");
       text(name);
       alignLeft();
       textVAlignCenter();
