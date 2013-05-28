@@ -42,6 +42,7 @@ import com.multinodus.satteliteexplorer.ui.controls.chooseMethod.ChooseMethodDia
 import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessController;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.Planet;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.PlanetAppState;
+import de.lessvoid.nifty.screen.Screen;
 
 import java.awt.*;
 
@@ -57,6 +58,7 @@ public class UIApplication extends SimpleApplication {
   public OptimizationServer optimizationServer;
   private boolean isOperator = false;
   private boolean playing = false;
+  public Screen mainScreen;
 
   private int hoursHorizont;
   private int timeout;
@@ -161,6 +163,8 @@ public class UIApplication extends SimpleApplication {
 
     MainScreen ui = new MainScreen();
     ui.simpleInitApp(this);
+
+    scene.bindTimeLabel(app.mainScreen.findElementByName("timeLabel"));
 
 //    NiftyImage newImage = ui.nifty.getRenderEngine().createImage("Textures/cross.jpg", false);
 //    Element img = ui.screen.findElementByName("bgimg");

@@ -4,6 +4,7 @@ import com.jme3.math.Matrix3f;
 import com.jme3.math.Spline;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
+import com.jme3.scene.Mesh;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Curve;
@@ -37,12 +38,31 @@ public class RegionView implements IView {
         rootNode.detachChild(connection);
       }
       Spline spline =new Spline();
-      spline.addControlPoint(regionModel.getPosition());
-      spline.addControlPoint(regionModel.getSatModel().getPosition());
-      spline.setCycle(true);
+      Vector3f start = regionModel.getPosition();
+      Vector3f finish = regionModel.getSatModel().getPosition();
+      Vector3f axis = start.cross(finish);
+      float angle = start.angleBetween(finish);
+
+      spline.addControlPoint(start);
+      int size = 10;
+      float delta = angle / size;
+      for (int i = 1; i < size; i++){
+        Vector3f vector3f = new Vector3f(start);
+        Matrix3f matrix3f = new Matrix3f();
+        matrix3f.fromAngleAxis(delta*i, axis);
+        vector3f = matrix3f.mult(vector3f);
+        spline.addControlPoint(vector3f);
+      }
+      spline.addControlPoint(finish);
+//      spline.setType(Spline.SplineType.Bezier);
+//      spline.setCycle(true);
       spline.setCurveTension(0.83f);
-      Curve curve=new Curve(spline,10); //10 is the number of sub-segments between control points
-      curve.setLineWidth(1000);
+//      Vector3f[] points = new Vector3f[spline.getControlPoints().size()];
+//      spline.getControlPoints().toArray(points);
+
+      Curve curve= new Curve(spline,10); //10 is the number of sub-segments between control points
+      curve.setLineWidth(10);
+      curve.setMode(Mesh.Mode.LineStrip);
       connection = new Geometry("", curve);
       connection.setMaterial(UIApplication.app.getEasyMaterial());
       rootNode.attachChild(connection);

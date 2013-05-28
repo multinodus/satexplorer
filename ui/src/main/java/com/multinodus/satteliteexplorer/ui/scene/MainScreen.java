@@ -80,7 +80,7 @@ public class MainScreen {
     SchedulingProcessDefinition.register(nifty, app);
     AnalysisDefinition.register(nifty, app);
 
-    createDemoScreen(nifty);
+    app.mainScreen = createDemoScreen(nifty);
     nifty.gotoScreen("demo");
 
     return niftyDisplay;

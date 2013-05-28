@@ -12,6 +12,8 @@ import com.multinodus.satteliteexplorer.scheduler.models.*;
 import com.multinodus.satteliteexplorer.ui.scene.models.*;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.Planet;
 import com.multinodus.satteliteexplorer.ui.scene.models.planet.PlanetAppState;
+import de.lessvoid.nifty.controls.Label;
+import de.lessvoid.nifty.elements.Element;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,6 +30,7 @@ public class Scene {
   private Collection<IView> views = new ArrayList<IView>();
   private boolean isStopped;
   private UIApplication app;
+  private Element timeLabel;
 
   public Scene(AssetManager assetManager, Node rootNode, PlanetAppState planetAppState, UIApplication app) {
     this.app = app;
@@ -119,9 +122,14 @@ public class Scene {
     for (IView view : views) {
       view.update();
     }
+    timeLabel.getNiftyControl(Label.class).setText(world.getCurrentTime().toString());
   }
 
   public World getWorld() {
     return world;
+  }
+
+  public void bindTimeLabel(Element timeLabel){
+    this.timeLabel = timeLabel;
   }
 }
