@@ -11,6 +11,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DatasetUtilities;
 
 import java.awt.*;
@@ -56,20 +57,17 @@ public class SatWorkloadChart {
 
   private CategoryDataset createDataset(java.util.List<Pair<SatModel, java.util.List<Pair<Task, PredictedDataElement>>>> episodes,
                                         int[] episodesTaskCount) {
-    double[][] data = new double[2][];
-    data[0] = new double[episodesTaskCount.length - 1];
-    data[1] = new double[episodesTaskCount.length - 1];
+    DefaultCategoryDataset result = new DefaultCategoryDataset();
 
     for (int i = 0; i < episodesTaskCount.length - 1; i++){
       SatModel satModel = episodes.get(i).f;
       double workload = satModel.getSat().getEquipment().getSnapshotVolume() * episodesTaskCount[i];
       double free = satModel.getSat().getEquipment().getStorageCapacity() - workload;
-      data[0][i] = workload;
-      data[1][i] = free;
+      result.addValue(workload, "Загруженно", String.format("Эпизод №%d, КА №%d", i, satModel.getSat().getSatId()));
+      result.addValue(free, "Свободно", String.format("Эпизод №%d, КА №%d", i, satModel.getSat().getSatId()));
     }
 
-    return DatasetUtilities.createCategoryDataset(
-        "Занято", "Свободно", data);
+    return result;
   }
 
   private JFreeChart createChart(final CategoryDataset dataset) {

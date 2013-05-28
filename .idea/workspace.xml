@@ -16,10 +16,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e286615a-e851-4920-b8e6-0fd3c4e76cd7" name="Default" comment="Fix 3d scene">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.lck" afterPath="$PROJECT_DIR$/hsqldb/storage.lck" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/MainScreen.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/MainScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/RegionView.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/models/RegionView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatWorkloadChart.java" afterPath="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatWorkloadChart.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hsqldb/storage.properties" afterPath="$PROJECT_DIR$/hsqldb/storage.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -36,7 +33,7 @@
     <file path="/SatView.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362331001994" ignored="false" />
     <file path="/fragment.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369686907752" ignored="false" />
     <file path="/SatModel.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1367438256932" ignored="false" />
-    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369691275672" ignored="false" />
+    <file path="/Dummy.txt" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369729975411" ignored="false" />
     <file path="/TestDynamicSprites.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1362833784965" ignored="false" />
     <file path="/JmeControlsDemo.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368183207290" ignored="false" />
     <file path="/LoginForm.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368281247800" ignored="false" />
@@ -98,7 +95,7 @@
     <file path="/SchedulingProcesslController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368896640482" ignored="false" />
     <file path="/SchedulingProcessController.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368899137825" ignored="false" />
     <file path="/SchedulingProcessChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1368959866400" ignored="false" />
-    <file path="/SatWorkloadChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369570511069" ignored="false" />
+    <file path="/SatWorkloadChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369730965842" ignored="false" />
     <file path="/StatisticPieChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369575295733" ignored="false" />
     <file path="/SatDistibutionChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369576571947" ignored="false" />
     <file path="/SatExlorationChart.java" changelist="e286615a-e851-4920-b8e6-0fd3c4e76cd7" time="1369648705232" ignored="false" />
@@ -201,15 +198,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChooseMethodDialogControlDefinition.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogControlDefinition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ChooseMethodDialogController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/chooseMethod/ChooseMethodDialogController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -219,11 +207,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scene.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Scene.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="23" selection-start="4083" selection-end="4083" vertical-scroll-proportion="0.76407504">
+            <state line="126" column="23" selection-start="4083" selection-end="4083" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SatWorkloadChart.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatWorkloadChart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="3" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.55988026">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -285,7 +284,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/user/UserDialogDefinition.java" />
         <option value="$PROJECT_DIR$/ui/src/main/resources/Interface/fonts.xml" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/controls/analysis/AnalysisDefinition.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CostPieChart.java" />
@@ -301,6 +299,7 @@
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/UIApplication.java" />
         <option value="$PROJECT_DIR$/scheduler/src/main/java/com/multinodus/satteliteexplorer/scheduler/World.java" />
         <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java" />
+        <option value="$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatWorkloadChart.java" />
       </list>
     </option>
   </component>
@@ -1712,7 +1711,11 @@
       <created>1369690472853</created>
       <updated>1369690472853</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Fix 3d scene">
+      <created>1369729948448</created>
+      <updated>1369729948448</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1744,7 +1747,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39011925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.73594546" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30664396" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1753,8 +1756,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26969698" sideWeight="0.2265758" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16742425" sideWeight="0.54003406" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3151515" sideWeight="0.71550256" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28449744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3151515" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28449744" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1855,13 +1858,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/CostPieChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="4" selection-start="3249" selection-end="3300" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/NumberPieChart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="94" column="55" selection-start="3247" selection-end="3247" vertical-scroll-proportion="0.0">
@@ -1966,8 +1962,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="23" selection-start="4083" selection-end="4083" vertical-scroll-proportion="0.76407504">
+        <state line="126" column="23" selection-start="4083" selection-end="4083" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/src/main/java/com/multinodus/satteliteexplorer/ui/scene/SatWorkloadChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="3" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.55988026">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
