@@ -159,7 +159,6 @@ public class UIApplication extends SimpleApplication {
     stateManager.attach(planetAppState);
 
     scene = new Scene(assetManager, rootNode, planetAppState, this);
-    scene.startWorldUpdate();
 
     MainScreen ui = new MainScreen();
     ui.simpleInitApp(this);

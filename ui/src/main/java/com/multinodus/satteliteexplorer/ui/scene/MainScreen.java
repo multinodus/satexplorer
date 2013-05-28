@@ -16,6 +16,7 @@ import com.multinodus.satteliteexplorer.ui.controls.orbit.OrbitDialogControlDefi
 import com.multinodus.satteliteexplorer.ui.controls.region.RegionDialogControlDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.role.RoleDialogDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.sat.SatControlDefinition;
+import com.multinodus.satteliteexplorer.ui.controls.scene.SceneControlDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessController;
 import com.multinodus.satteliteexplorer.ui.controls.schedulingProcess.SchedulingProcessDefinition;
 import com.multinodus.satteliteexplorer.ui.controls.task.TaskDialogDefinition;
@@ -79,6 +80,7 @@ public class MainScreen {
     ChooseMethodDialogControlDefinition.register(nifty, app);
     SchedulingProcessDefinition.register(nifty, app);
     AnalysisDefinition.register(nifty, app);
+    SceneControlDefinition.register(nifty, app);
 
     app.mainScreen = createDemoScreen(nifty);
     nifty.gotoScreen("demo");
@@ -104,6 +106,7 @@ public class MainScreen {
               "menuButtonRole", "dialogRole",
               "menuButtonUser", "dialogUser",
               "menuButtonSchedule", ChooseMethodDialogControlDefinition.NAME,
+              "menuButtonSceneVariant", SceneControlDefinition.NAME,
               "menuButtonAnalyzeSchedule", AnalysisDefinition.NAME));
         }
 //        if (UIApplication.user.getRole().getName().equals("admin")) {
@@ -142,6 +145,7 @@ public class MainScreen {
 //                      control(new ControlBuilder(ImagePanelDefinition.NAME, ImagePanelDefinition.NAME));
                       control(new ControlBuilder(SchedulingProcessDefinition.NAME, SchedulingProcessDefinition.NAME));
                       control(new ControlBuilder(AnalysisDefinition.NAME, AnalysisDefinition.NAME));
+                      control(new ControlBuilder(SceneControlDefinition.NAME, SceneControlDefinition.NAME));
                     }
                     if (app.user.getRole().getName().equals("admin")) {
 

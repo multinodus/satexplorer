@@ -30,7 +30,11 @@ public class World {
 
   public World() {
 //    generate();
-    load();
+
+    earthModel = new EarthModel();
+    entities.add(earthModel);
+
+    currentTime = earthModel.getCurrentTime();
   }
 
   public void add(IUpdatable entity) {
@@ -152,12 +156,9 @@ public class World {
     EntityContext.get().createEntities(entities);
   }
 
-  private void load() {
-    earthModel = new EarthModel();
-    entities.add(earthModel);
-
+  public void load(List<Sat> selectedSats, List<DataCenter> selectedDataCenters) {
     satModels = new ArrayList<SatModel>();
-    for (Object sat : EntityContext.get().getAllEntities(Sat.class)) {
+    for (Object sat : selectedSats) {
       Sat s = (Sat) sat;
       SatModel satModel = new SatModel(s);
       satModels.add(satModel);
@@ -177,15 +178,13 @@ public class World {
 
     dataCenterModels = new ArrayList<DataCenterModel>();
     dataCenters = new ArrayList<DataCenter>();
-    for (Object dataCenter : EntityContext.get().getAllEntities(DataCenter.class)) {
+    for (Object dataCenter : selectedDataCenters) {
       DataCenter d = (DataCenter) dataCenter;
       dataCenters.add(d);
       DataCenterModel dataCenterModel = new DataCenterModel(d);
       dataCenterModels.add(dataCenterModel);
       entities.add(dataCenterModel);
     }
-
-    currentTime = earthModel.getCurrentTime();
   }
 
   public Collection<IUpdatable> getEntities() {
@@ -214,5 +213,9 @@ public class World {
 
   public void setCurrentTime(Date currentTime) {
     this.currentTime = currentTime;
+  }
+
+  public EarthModel getEarthModel() {
+    return earthModel;
   }
 }

@@ -64,7 +64,7 @@ public class ChooseMethodDialogController implements Controller {
     timeoutTextField = screen.findNiftyControl("timeout", TextField.class);
     horizontTextField = screen.findNiftyControl("horizont", TextField.class);
 
-    okButton = screen.findNiftyControl("okButtonOrbit", Button.class);
+    okButton = screen.findNiftyControl("okButtonChooseMethod", Button.class);
   }
 
   @Override
@@ -96,7 +96,7 @@ public class ChooseMethodDialogController implements Controller {
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
-  @NiftyEventSubscriber(id = "okButtonOrbit")
+  @NiftyEventSubscriber(id = "okButtonChooseMethod")
   public void onOkButtonClicked(final String id, final ButtonClickedEvent event) {
     int index = dropDown.getSelectedIndex();
     String method = nativeMethods[index];

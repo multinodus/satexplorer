@@ -73,7 +73,9 @@ public class MainScreenController implements ScreenController, KeyInputHandler {
 
   @NiftyEventSubscriber(id = "playButton")
   public void onPlayButtonClicked(final String id, final ButtonClickedEvent event) {
-    app.setPlaying(true);
+    if (app.scene.getWorld() != null){
+      app.setPlaying(true);
+    }
   }
 
   @NiftyEventSubscriber(id = "pauseButton")

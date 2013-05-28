@@ -56,7 +56,7 @@ public class ChooseMethodDialogControlDefinition {
             textHAlignLeft();
           }});
           panel(builders.hspacer("9px"));
-          control(new ButtonBuilder("okButtonOrbit", "OK"));
+          control(new ButtonBuilder("okButtonChooseMethod", "OK"));
         }});
       }});
     }}.registerControlDefintion(nifty);

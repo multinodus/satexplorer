@@ -7,6 +7,8 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Torus;
+import com.multinodus.satteliteexplorer.db.entities.DataCenter;
+import com.multinodus.satteliteexplorer.db.entities.Sat;
 import com.multinodus.satteliteexplorer.scheduler.World;
 import com.multinodus.satteliteexplorer.scheduler.models.*;
 import com.multinodus.satteliteexplorer.ui.scene.models.*;
@@ -17,6 +19,7 @@ import de.lessvoid.nifty.elements.Element;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,11 +34,28 @@ public class Scene {
   private boolean isStopped;
   private UIApplication app;
   private Element timeLabel;
+  private Node rootNode;
+  private PlanetAppState planetAppState;
+  private AssetManager assetManager;
 
   public Scene(AssetManager assetManager, Node rootNode, PlanetAppState planetAppState, UIApplication app) {
     this.app = app;
+    this.assetManager = assetManager;
+    this.rootNode = rootNode;
+    this.planetAppState = planetAppState;
 
     world = new World();
+
+    Planet planet = Utility.createEarthLikePlanet(assetManager, 63781f, 800f, 4);
+    planetAppState.addPlanet(planet);
+    rootNode.attachChild(planet);
+
+    EarthView earthView = new EarthView(world.getEarthModel(), planet);
+    views.add(earthView);
+  }
+
+  public void createWorld(List<Sat> selectedSats, List<DataCenter> selectedDataCenters){
+    world.load(selectedSats, selectedDataCenters);
 
     Node satNode = new Node("SatNode");
     rootNode.attachChild(satNode);
@@ -85,15 +105,9 @@ public class Scene {
         SatView satView = new SatView(satModel, sat, spotLight, null);
         views.add(satView);
       }
-      if (entity instanceof EarthModel) {
-        Planet planet = Utility.createEarthLikePlanet(assetManager, 63781f, 800f, 4);
-        planetAppState.addPlanet(planet);
-        rootNode.attachChild(planet);
-
-        EarthView earthView = new EarthView((EarthModel) entity, planet);
-        views.add(earthView);
-      }
     }
+
+    startWorldUpdate();
   }
 
   public void startWorldUpdate() {

@@ -23,7 +23,7 @@ public class AnalysisDefinition {
 
   public static void register(final Nifty nifty, final UIApplication app) {
     new ControlDefinitionBuilder(NAME) {{
-      controller(new SchedulingProcessController());
+      controller(new AnalysisController());
       set("childRootId", "#effectPanel");
       panel(new PanelBuilder() {{
         visible(false);
