@@ -121,7 +121,7 @@ public class ChooseMethodDialogController implements Controller {
     try {
       Pair<IKnapsackData, List<Pair<SatModel, List<Pair<Task, PredictedDataElement>>>>>  knapsackData = PredictorOfObservations.getInstance().getKnapsackData(UIApplication.app.scene.getWorld(),
           UIApplication.app.getHoursHorizont());
-      int[] schedule = optimizationServer.solve(knapsackData.f, UIApplication.app.getMethod());
+      int[] schedule = optimizationServer.solve(knapsackData.f, UIApplication.app.getMethod(), UIApplication.app.getTimeout());
 
       List<Object> taskList = EntityContext.get().getAllEntities(Task.class);
       Map<Task, Pair<SatModel, PredictedDataElement>> detailedSchedule = Maps.newHashMap();

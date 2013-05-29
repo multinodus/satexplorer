@@ -47,9 +47,9 @@ public class EntityContext {
         List entities = session.createQuery("select h from " + className.getSimpleName() + " as h")
             .list();
         tx.commit();
-        if (className == Sat.class) {
-          entities = Lists.newArrayList(entities.subList(0, 3));
-        }
+//        if (className == Sat.class) {
+//          entities = Lists.newArrayList(entities.subList(0, 3));
+//        }
         storage.put(className, entities);
         return entities;
       } catch (RuntimeException e) {

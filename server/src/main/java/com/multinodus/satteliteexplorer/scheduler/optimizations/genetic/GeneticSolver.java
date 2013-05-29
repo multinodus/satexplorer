@@ -10,6 +10,7 @@ package com.multinodus.satteliteexplorer.scheduler.optimizations.genetic;
 
 import com.multinodus.satteliteexplorer.scheduler.optimizations.IKnapsackData;
 import com.multinodus.satteliteexplorer.scheduler.optimizations.ISolver;
+import javafx.util.converter.DateTimeStringConverter;
 import org.jgap.*;
 import org.jgap.audit.EvolutionMonitor;
 import org.jgap.impl.DefaultConfiguration;
@@ -19,13 +20,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GeneticSolver implements ISolver {
-  private static final int MAX_ALLOWED_EVOLUTIONS = 150;
+  private static final int MAX_ALLOWED_EVOLUTIONS = Integer.MAX_VALUE;
 
   public EvolutionMonitor m_monitor;
 
-  public int[] solve(IKnapsackData knapsackData)
+  public int[] solve(IKnapsackData knapsackData, int timeout)
       throws Exception {
-    boolean a_doMonitor = true;
+    boolean a_doMonitor = false;
     Configuration conf = new DefaultConfiguration();
 
     conf.setPreservFittestIndividual(true);
@@ -43,7 +44,7 @@ public class GeneticSolver implements ISolver {
     List<List<Integer>> alleleIndexes = new ArrayList<List<Integer>>();
 
     for (int i = 0; i < knapsackData.getN(); i++) {
-      if (knapsackData.getWeight()[i][0] != Float.MAX_VALUE) {
+//      if (knapsackData.getWeight()[i][0] != Float.MAX_VALUE) {
         ArrayList<Integer> alleleIndex = new ArrayList<>();
         for (int j = 0; j < knapsackData.getM(); j++) {
           if (knapsackData.getProfit()[i][j] > 0) {
@@ -52,9 +53,11 @@ public class GeneticSolver implements ISolver {
         }
         alleleIndex.add(knapsackData.getM() - 1);
 
-        alleleIndexes.add(alleleIndex);
-        geneIndexes.add(i);
-      }
+        if (alleleIndex.size()>1){
+          alleleIndexes.add(alleleIndex);
+          geneIndexes.add(i);
+        }
+//      }
     }
 
     Gene[] genes = new Gene[geneIndexes.size()];
@@ -71,12 +74,14 @@ public class GeneticSolver implements ISolver {
     IChromosome sampleChromosome = new Chromosome(conf, genes);
     conf.setSampleChromosome(sampleChromosome);
 
-    conf.setPopulationSize(20);
+    conf.setPopulationSize(10);
 
-    Genotype population = Genotype.randomInitialGenotype(conf);
-//    Genotype population = createInitialGenotype(conf, genes, taskSize, satSize, explorationCost);
+//    Genotype population = Genotype.randomInitialGenotype(conf);
+    Genotype population = createInitialGenotype(conf, genes);
 
+    long timeoutMS = timeout * 1000;
     long startTime = System.currentTimeMillis();
+    double best = Double.NEGATIVE_INFINITY;
     for (int i = 0; i < MAX_ALLOWED_EVOLUTIONS; i++) {
       if (!uniqueChromosomes(population.getPopulation())) {
         throw new RuntimeException("Invalid state in generation " + i);
@@ -86,35 +91,33 @@ public class GeneticSolver implements ISolver {
       } else {
         population.evolve();
       }
-      double v1 = population.getFittestChromosome().getFitnessValue();
-      System.out.println("The best solution has a fitness value of " +
-          v1);
+      double v1 = population.getFittestChromosome().getFitnessValue()  - KnapsackFitnessFunction.THRESHOLD;
+      if (v1 > best){
+        System.out.println("The best solution has a fitness value of " +
+            v1);
+        best = v1;
+      }
+      if (System.currentTimeMillis() - startTime > timeoutMS){
+        break;
+      }
     }
     long endTime = System.currentTimeMillis();
     System.out.println("Total evolution time: " + (endTime - startTime)
         + " ms");
 
     IChromosome bestSolutionSoFar = population.getFittestChromosome();
-    double v1 = bestSolutionSoFar.getFitnessValue();
+    double v1 = bestSolutionSoFar.getFitnessValue() - KnapsackFitnessFunction.THRESHOLD;
     System.out.println("The best solution has a fitness value of " + v1);
     bestSolutionSoFar.setFitnessValueDirectly(-1);
 
     return getResult(bestSolutionSoFar, geneIndexes, alleleIndexes, knapsackData.getN(), knapsackData.getM());
   }
 
-  private Genotype createInitialGenotype(Configuration conf, Gene[] genes, int taskSize, int satSize, double[][] explorationCost)
+  private Genotype createInitialGenotype(Configuration conf, Gene[] genes)
       throws Exception {
     Gene[] initial_genes = genes.clone();
-    for (int i = 0; i < taskSize; i++) {
-      double max = 0;
-      int index = 0;
-      for (int j = 0; j < satSize + 1; j++) {
-        if (explorationCost[i][j] > max) {
-          max = explorationCost[i][j];
-          index = j;
-        }
-      }
-      initial_genes[i].setAllele(index);
+    for (int i = 0; i < genes.length; i++) {
+      initial_genes[i].setAllele(((IntegerGene)initial_genes[i]).getUpperBounds());
     }
     Chromosome initial_chromosome = new Chromosome(conf, initial_genes);
     Population initial_population = new Population(conf, initial_chromosome);

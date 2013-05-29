@@ -14,10 +14,10 @@ import net.sf.javailp.*;
 public class ILPSolver implements ISolver {
   private final static int scale = 100;
 
-  public int[] solve(IKnapsackData knapsackData) {
+  public int[] solve(IKnapsackData knapsackData, int timeout) {
     SolverFactory factory = new SolverFactorySAT4J();
 //    factory.setParameter(Solver.VERBOSE, 0);
-    factory.setParameter(Solver.TIMEOUT, 60);
+    factory.setParameter(Solver.TIMEOUT, timeout);
 
     float[][] profit = knapsackData.getProfit();
     float[][] weight = knapsackData.getWeight();

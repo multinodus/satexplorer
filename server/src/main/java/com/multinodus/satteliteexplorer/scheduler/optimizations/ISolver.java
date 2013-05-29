@@ -8,6 +8,6 @@ package com.multinodus.satteliteexplorer.scheduler.optimizations;
  * To change this template use File | Settings | File Templates.
  */
 public interface ISolver {
-  public int[] solve(IKnapsackData knapsackData)
+  public int[] solve(IKnapsackData knapsackData, int timeout)
       throws Exception;
 }

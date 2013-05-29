@@ -18,6 +18,9 @@ public class KnapsackFitnessFunction extends FitnessFunction {
   private int penalty = 10;
   private List<Integer> geneIndexes;
   private List<List<Integer>> alleleIndexes;
+  private static double k = 50;
+
+  public static double THRESHOLD = 200000;
 
   public KnapsackFitnessFunction(IKnapsackData knapsackData) {
     super();    //To change body of overridden methods use File | Settings | File Templates.
@@ -40,11 +43,11 @@ public class KnapsackFitnessFunction extends FitnessFunction {
     for (int m = 0; m < knapsackData.getM(); m++) {
       if (occupancy[m] > knapsackData.getCapacity()[m]) {
         total -= profit[m];
-        total -= occupancy[m] - knapsackData.getCapacity()[m];
+        total -= k*(occupancy[m] - knapsackData.getCapacity()[m]);
       }
     }
 
-    total += 20000;
+    total += THRESHOLD;
 
     if (total < 0) {
       total = 0;
