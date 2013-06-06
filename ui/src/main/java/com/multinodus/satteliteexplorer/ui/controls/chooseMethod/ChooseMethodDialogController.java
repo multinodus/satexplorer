@@ -184,8 +184,9 @@ public class ChooseMethodDialogController implements Controller {
     SatDistibutionChart satDistibutionChart = new SatDistibutionChart(episodes, episodeTaskCount);
     satDistibutionChart.saveImage();
 
-//    SatExlorationChart satExlorationChart = new SatExlorationChart(episodes, exploredTasks, selectedSat)
-//    satExlorationChart.saveImage();
+    SatExlorationChart satExlorationChart = new SatExlorationChart(episodes, exploredTasks);
+    satExlorationChart.show();
+    satExlorationChart.saveImage();
 
     SatWorkloadChart satWorkloadChart = new SatWorkloadChart(episodes, episodeTaskCount);
     satWorkloadChart.saveImage();

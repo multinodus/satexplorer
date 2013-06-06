@@ -67,7 +67,7 @@ public class SatModel implements IUpdatable {
 
     update();
 
-    explorationAngle = (float) Math.atan((sat.getEquipment().getSpan()/2) / (sat.getOrbit().getSemiMajorAxis() - SI_Transform.EARTH_RADIUS));
+    explorationAngle = (float) Math.atan((2*sat.getEquipment().getSpan()/2) / (sat.getOrbit().getSemiMajorAxis() - SI_Transform.EARTH_RADIUS));
   }
 
   public void update() {
